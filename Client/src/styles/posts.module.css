@@ -1,0 +1,29 @@
+post a {
+  color: #3ba9ff;
+  font-weight: bold;
+  background-color: white;
+  border-radius: 5px;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+post a:hover {
+  text-decoration: underline;
+}
+
+postdisplay a {
+  font-weight: bold;
+}
+
+postdisplay a:hover {
+  text-decoration: underline;
+}
+
+post ul li {
+  margin-left: 20px;
+  list-style-type: disc;
+}
+
+supportbobble ul li {
+  list-style-type: disc;
+}

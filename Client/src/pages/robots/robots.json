@@ -1,0 +1,277 @@
+[
+  {
+    "name": "Artillery",
+    "type": "FRC",
+    "team-name": "Circuit Bizurkers",
+    "team-number": "7494",
+    "year": 2020,
+    "image": "artillery.jpg",
+    "gradient": "linear-gradient(180deg, rgba(196, 200, 255, 0.6) 0%, rgba(68, 162, 255, 0.6) 100%)",
+    "description": "Artillery was **Circuit Bizurkers'** second robot to compete in FRC.",
+    "game": "Infinite Recharge",
+    "specs": {
+      "weight": "118 lbs."
+    },
+    "competitions": [
+      {
+        "name": "FIT Channelview Event",
+        "detail": "Quarterfinalist Alliance, Won Safety Award sponsored by Underwriters Laboratories, Won **District Engineering Inspiration Award**"
+      }
+    ],
+    "features": [
+      "Limelight allowed for accurately aimed shots aided with computer-vision.",
+      "Superfast flywheel allowed for flexibility when choosing where to shoot.",
+      "Deep storage allowed for transport of 3 balls simultaneously."
+    ]
+  },
+  {
+    "name": "Ignite",
+    "type": "FTC",
+    "team-name": "Big Red",
+    "team-number": "12456",
+    "year": 2020,
+    "image": "ignite.jpg",
+    "gradient": "linear-gradient(180deg, rgba(206, 179, 179, 0.6) 0%, rgba(236, 112, 112, 0.6) 100%)",
+    "description": "Ignite was Big Red's robot used in FTC Skystone",
+    "game": "Skystone",
+    "specs": {
+      "weight": "≅ 29 lbs."
+    },
+    "competitions": [
+      {
+        "name": "Houston Southwest FTC League Meet 1"
+      },
+      {
+        "name": "Houston Southwest FTC League Meet 2"
+      },
+      {
+        "name": "Houston-Southwest League Championship",
+        "detail": "Collins Aerospace Innovate Award"
+      }
+    ],
+    "features": [
+      "Extendable bracket allowed for easy pulling of the Skystone placement plate.",
+      "Dual wheel intake and outtake allowed for effortless block grasping and storage.",
+      "Mechanum Wheels allow for strafing."
+    ]
+  },
+  {
+    "name": "Inertia",
+    "type": "FTC",
+    "team-name": "RoboVikings",
+    "team-number": "13822",
+    "year": 2020,
+    "image": "inertia.jpg",
+    "gradient": "linear-gradient(180deg, rgba(191, 175, 211, 0.6) 0%, rgba(155, 107, 214, 0.6) 100%)",
+    "description": "Inertia was RoboVikings' robot used in FTC Skystone",
+    "game": "Skystone",
+    "specs": {
+      "weight": "≅ 30 lbs."
+    },
+    "competitions": [
+      {
+        "name": "Houston Southwest FTC League Meet 1"
+      },
+      {
+        "name": "Houston Southwest FTC League Meet 2"
+      },
+      {
+        "name": "Houston-Southwest League Championship",
+        "detail": "Control Award (Sponsored by Arm, Inc)"
+      }
+    ],
+    "features": [
+      "Variable claw with a grippable surface allowed for easy stone grasping and moving.",
+      "Pulley allowed for easy stacking.",
+      "Mechanum wheels allow for strafing."
+    ]
+  },
+  {
+    "name": "Javelin",
+    "type": "FRC",
+    "team-name": "Circuit Bizurkers",
+    "team-number": "7494",
+    "year": 2019,
+    "image": "javelin.jpg",
+    "gradient": "linear-gradient(180deg, rgba(196, 200, 255, 0.6) 0%, rgba(68, 162, 255, 0.6) 100%)",
+    "description": "Javelin was **Circuit Bizurkers'** first robot to compete in FRC.",
+    "game": "Deep Space",
+    "specs": {
+      "weight": "112 lbs."
+    },
+    "competitions": [
+      {
+        "name": "FIT Channelview Event",
+        "detail": "Finalist Alliance"
+      },
+      {
+        "name": "FIT Pasadena Event",
+        "detail": "Rookie All Stars Award"
+      },
+      {
+        "name": "FIT Texas District Championship",
+        "detail": "Safety Award, Rookie All Stars Award"
+      },
+      {
+        "name": "Turing Division"
+      }
+    ],
+    "features": ["Rigid build allows for effective defense.", "Fast hatch rate"]
+  },
+  {
+    "name": "Elephant",
+    "type": "FTC",
+    "team-name": "Big Red",
+    "team-number": "12456",
+    "year": 2019,
+    "image": "elephant.jpg",
+    "gradient": "linear-gradient(180deg, rgba(206, 179, 179, 0.6) 0%, rgba(236, 112, 112, 0.6) 100%)",
+    "description": "Elephant was Big Red's robot used in FTC Rover Ruckus",
+    "game": "Rover Ruckus",
+    "specs": {
+      "weight": "≅ 30 lbs."
+    },
+    "competitions": [
+      {
+        "name": "Houston-Southwest League Qualifier"
+      },
+      {
+        "name": "League Qualifier"
+      },
+      {
+        "name": "League Qualifier"
+      },
+      {
+        "name": "Last Chance Qualifier (San Jacinto College)"
+      },
+      {
+        "name": "Texas UIL State Championships"
+      }
+    ],
+    "features": [
+      "Extending intake for Gold and Silver.",
+      "Mechanum Wheels allow for strafing"
+    ]
+  },
+  {
+    "name": "Gearshift",
+    "type": "FTC",
+    "team-name": "RoboVikings",
+    "team-number": "13822",
+    "year": 2019,
+    "image": "gearshift.jpg",
+    "gradient": "linear-gradient(180deg, rgba(191, 175, 211, 0.6) 0%, rgba(155, 107, 214, 0.6) 100%)",
+    "description": "Gearshift was RoboVikings' robot used in FTC Rover Ruckus",
+    "game": "Rover Ruckus",
+    "specs": {
+      "weight": "≅ 29 lbs."
+    },
+    "competitions": [
+      {
+        "name": "Houston-Southwest League Qualifier"
+      },
+      {
+        "name": "League Qualifier"
+      }
+    ],
+    "features": ["Extendable intake"]
+  },
+  {
+    "name": "Blowtorch",
+    "type": "FTC",
+    "team-name": "Big Red",
+    "team-number": "12456",
+    "year": 2018,
+    "image": "blowtorch.jpg",
+    "gradient": "linear-gradient(180deg, rgba(206, 179, 179, 0.6) 0%, rgba(236, 112, 112, 0.6) 100%)",
+    "description": "Blowtorch was Big Red's robot used in FTC Relic Recovery",
+    "game": "Relic Recovery",
+    "specs": {
+      "weight": "≅ 35 lbs."
+    },
+    "competitions": [
+      {
+        "name": "Houston-Southwest League Meet"
+      },
+      {
+        "name": "League Regional"
+      },
+      {
+        "name": "League Qualifier"
+      },
+      {
+        "name": "Last Chance Qualifier (San Jacinto College)"
+      },
+      {
+        "name": "Texas UIL State Championships"
+      }
+    ],
+    "features": [
+      "PID programming enables wheel fail tolerance",
+      "Mechanum Wheels allow for strafing"
+    ]
+  },
+  {
+    "name": "Matchstick",
+    "type": "FTC",
+    "team-name": "RoboVikings",
+    "team-number": "13822",
+    "year": 2018,
+    "image": "matchstick.jpg",
+    "gradient": "linear-gradient(180deg, rgba(191, 175, 211, 0.6) 0%, rgba(155, 107, 214, 0.6) 100%)",
+    "description": "Matchstick was RoboVikings' robot used in FTC Relic Recovery",
+    "game": "Relic Recovery",
+    "specs": {
+      "weight": "≅ 32 lbs."
+    },
+    "competitions": [
+      {
+        "name": "Houston-Southwest League Meet"
+      },
+      {
+        "name": "League Regional"
+      },
+      {
+        "name": "League Qualifier"
+      },
+      {
+        "name": "Last Chance Qualifier (San Jacinto College)"
+      }
+    ],
+    "features": ["Mechanum wheels allow for strafing"]
+  },
+  {
+    "name": "Box on Wheels",
+    "type": "FTC",
+    "team-name": "Big Red",
+    "team-number": "12456",
+    "year": 2017,
+    "image": "boxonwheels.jpg",
+    "gradient": "linear-gradient(180deg, rgba(206, 179, 179, 0.6) 0%, rgba(236, 112, 112, 0.6) 100%)",
+    "description": "Box on Wheels was Big Red's first robot. It played in FTC Velocity Vortex.",
+    "game": "Velocity Vortex",
+    "specs": {
+      "weight": "≅ 18 lbs."
+    },
+    "competitions": [
+      {
+        "name": "Houston-Southwest League Meet"
+      },
+      {
+        "name": "League Regional"
+      },
+      {
+        "name": "League Qualifier"
+      },
+      {
+        "name": "Last Chance Qualifier (San Jacinto College)"
+      },
+      {
+        "name": "Texas UIL State Championships"
+      }
+    ],
+    "features": [
+      "Had an \"Autonomous Button Pusher\" that used Computer Vision to press the correct button on the field."
+    ]
+  }
+]

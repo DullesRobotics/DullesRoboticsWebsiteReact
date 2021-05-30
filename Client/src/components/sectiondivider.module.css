@@ -1,0 +1,50 @@
+/*------------------*/
+/*  SKEW CLOCKWISE  */
+/*------------------*/
+.skew_cc {
+  width: 100%;
+  left: 0px;
+  background-image: linear-gradient(
+      to right bottom,
+      var(--color-1) 49%,
+      var(--color-2) 50%
+    ),
+    linear-gradient(-50deg, var(--color-1) 16px, var(--color-2) 0);
+}
+
+/*-------------------------*/
+/* SKEW COUNTER CLOCKWISE  */
+/*-------------------------*/
+.skew_c {
+  width: 100%;
+  left: 0px;
+  background-image: linear-gradient(
+    to left bottom,
+    var(--color-1) 49%,
+    var(--color-2) 50%
+  );
+}
+
+/*-------------------------*/
+/* SKEW DOWN TRIANGLE  */
+/*-------------------------*/
+.skew_triangle {
+  width: 0;
+  height: 0;
+  border-left: 50vw solid transparent;
+  border-right: 50vw solid transparent;
+  border-top: var(--tri-height) solid var(--color-1);
+  background-color: var(--color-2);
+}
+
+/*-------------------------*/
+/* SKEW DOWN TRIANGLE  */
+/*-------------------------*/
+.skew_triangle_inv {
+  width: 0;
+  height: 0;
+  border-left: 50vw solid transparent;
+  border-right: 50vw solid transparent;
+  border-bottom: var(--tri-height) solid var(--color-1);
+  background-color: var(--color-2);
+}

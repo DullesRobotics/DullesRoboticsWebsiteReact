@@ -1,0 +1,26 @@
+.primarybutton {
+  background-color: rgba(0, 112, 243, 1);
+}
+
+.primarybutton:hover {
+  background-color: rgba(39, 137, 249, 1);
+}
+
+.primarybutton:active {
+  background-color: rgba(4, 105, 221, 1);
+}
+
+.secondarybutton {
+  background-color: white;
+  color: rgba(0, 112, 243, 1);
+}
+
+.secondarybutton:hover,
+.secondarySelectedButton {
+  background-color: rgba(216, 234, 255, 1);
+  color: rgba(0, 112, 243, 1);
+}
+
+.secondarybutton:active {
+  background-color: rgba(207, 226, 247, 1);
+}

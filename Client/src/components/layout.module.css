@@ -1,0 +1,74 @@
+:root {
+  --top-spacing: 72px;
+  font-family: "Rajdhani", sans-serif;
+}
+
+body::-webkit-scrollbar {
+  width: 15px; /* width of the entire scrollbar */
+}
+body::-webkit-scrollbar-track {
+  background: #999999; /* color of the tracking area */
+}
+body::-webkit-scrollbar-thumb {
+  background-color: white; /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll bar */
+  border: 3px solid #999999; /* creates padding around scroll thumb */
+}
+
+html {
+  background-color: #989898;
+  /* scroll-padding-top: var(--top-spacing);
+  margin: var(--top-spacing) auto;
+  margin-bottom: -1 * var(--top-spacing); */
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.spacer {
+  background-color: #989898;
+  height: var(--top-spacing);
+}
+
+.blue {
+  color: rgba(4, 105, 221, 1);
+}
+
+.bluebackground {
+  background-color: rgba(4, 105, 221, 1);
+}
+
+.screenSize {
+  min-height: 85vh;
+}
+
+.header {
+  width: 100%;
+  margin: 0 auto;
+  position: fixed;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  z-index: 999;
+}
+
+.navbar {
+  padding-right: 16rem;
+  padding-left: 16rem;
+}
+
+@media (max-width: 1800px) {
+  .navbar {
+    padding-right: 4rem;
+    padding-left: 4rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .navbar {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}

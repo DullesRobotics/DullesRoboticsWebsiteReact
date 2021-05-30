@@ -1,0 +1,176 @@
+[
+  {
+    "earlyYear": 2020,
+    "year": 2021,
+    "ftc": [
+      {
+        "name": "FTC Inspire Award",
+        "description": "Awarded at the Houston Regional Championship Tournament. **Earns a team auto-admittance to nationals in 2022.**",
+        "icon": "thumbs-up",
+        "important": true
+      },
+      {
+        "name": "Dean's List Finalist",
+        "description": "**One our members has been made a Dean's List Finalist. They'll move on to compete for being a nationally ranked student at *FIRST*.** Awarded at the Houston Regional Championship Tournament.",
+        "icon": "user-astronaut",
+        "important": true
+      },
+      {
+        "name": "FTC Control Award",
+        "description": "Awarded at the Southwest Houston League Championship",
+        "icon": "code"
+      },
+      {
+        "name": "FTC Inspire Award",
+        "description": "Awarded at the Southwest Houston League Championship",
+        "icon": "thumbs-up"
+      }
+    ],
+    "disclaimer": "Nationals is not being held in 2021."
+  },
+  {
+    "earlyYear": 2019,
+    "year": 2020,
+    "ftc": [
+      {
+        "name": "FTC Control Award",
+        "description": "(Sponsored by Arm, Inc.) \n\nAwarded at the Southwest Houston League Championship",
+        "icon": "code"
+      },
+      {
+        "name": "FTC Collins Aerospace Innovate Award",
+        "description": "Awarded at the Southwest Houston League Championship",
+        "icon": "arrow-alt-circle-up"
+      }
+    ],
+    "frc": [
+      {
+        "name": "FRC Safety Award",
+        "description": "(Sponsored by Underwriters Laboratories) \n\nAwarded at the FiT District Channelview Event",
+        "icon": "clipboard-check"
+      },
+      {
+        "name": "FRC District Engineering Inspiration Award",
+        "description": "Awarded at the FiT District Channelview Event​",
+        "icon": "thumbs-up"
+      }
+    ],
+    "disclaimer": "The season ended early"
+  },
+  {
+    "earlyYear": 2018,
+    "year": 2019,
+    "ftc": [
+      {
+        "name": "FTC Rover Ruckus Inspire Award",
+        "description": "Awarded at the Southwest Houston League Championship",
+        "icon": "thumbs-up"
+      },
+      {
+        "name": "FTC Think Award",
+        "description": "Awarded at the Southwest Houston League Championship",
+        "icon": "lightbulb"
+      },
+      {
+        "name": "FTC Motivate Award",
+        "description": "Awarded at the Southwest Houston League Championship",
+        "icon": "trophy"
+      }
+    ],
+    "frc": [
+      {
+        "name": "FRC District Event Finalist",
+        "description": "Awarded at the FIT District Channelview Event",
+        "icon": "trophy"
+      },
+      {
+        "name": "FRC Rookie Inspiration Award",
+        "description": "(Sponsored by National Instruments) \n\nAwarded at the FIT District Channelview Event",
+        "icon": "thumbs-up"
+      },
+      {
+        "name": "FRC Rookie All Star Award",
+        "description": "Awarded at the FiT District Pasadena Event",
+        "icon": "star"
+      },
+      {
+        "name": "FRC Safety Award",
+        "description": "(Sponsored by Underwriters Laboratories) \n\nAwarded at the FiT District Pasadena Event​",
+        "icon": "clipboard-check"
+      },
+      {
+        "name": "FRC District Championship Rookie All Star Award",
+        "description": "Awarded at the FIRST In Texas District Championship",
+        "icon": "star"
+      }
+    ]
+  },
+  {
+    "earlyYear": 2017,
+    "year": 2018,
+    "ftc": [
+      {
+        "name": "FTC Design Award",
+        "description": "Awarded at the Reinbot Rodeo Competition",
+        "icon": "palette"
+      },
+      {
+        "name": "FTC Innovate Award",
+        "description": "Awarded at the Southwest Houston League Championship",
+        "icon": "arrow-alt-circle-up"
+      },
+      {
+        "name": "FTC Connect Award",
+        "description": "Awarded at the Southwest Houston League Championship",
+        "icon": "handshake"
+      },
+      {
+        "name": "FTC Finalist Alliance",
+        "description": "Awarded at the Southwest Houston League Championship",
+        "icon": "trophy"
+      },
+      {
+        "name": "FTC Inspire Award",
+        "description": "Awarded at the Southwest Houston League Championship",
+        "icon": "thumbs-up"
+      },
+      {
+        "name": "FTC Winning Alliance",
+        "description": "Awarded at the Southwest Houston League Championship",
+        "icon": "trophy"
+      },
+      {
+        "name": "FTC Design Award",
+        "description": "Awarded at the Texas Regional Championship",
+        "icon": "palette"
+      },
+      {
+        "name": "FTC Connect Award",
+        "description": "Awarded at the Reinbot Rodeo Competition",
+        "icon": "handshake"
+      }
+    ]
+  },
+  {
+    "earlyYear": 2016,
+    "year": 2017,
+    "ftc": [
+      {
+        "name": "Texas UIL Team Spirit Award",
+        "description": "**Awarded for outstanding demonstration of team enthusiasm and good sportsmanship.** Achieved at the UIL First Division State Championships.",
+        "icon": "medal",
+        "important": true
+      },
+      {
+        "name": "FTC Think Award",
+        "description": "Awarded at the West Houston League Championship",
+        "icon": "lightbulb"
+      },
+      {
+        "name": "FTC Finalist Alliance",
+        "description": "Awarded at the San Jacinto College Qualifier",
+        "icon": "trophy"
+      }
+    ]
+  }
+]

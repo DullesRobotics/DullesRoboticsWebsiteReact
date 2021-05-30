@@ -1,0 +1,31 @@
+.card {
+  min-width: fit-content;
+  max-height: fit-content;
+  display: inline-block;
+}
+
+.feed::-webkit-scrollbar {
+  width: 12px; /* width of the entire scrollbar */
+}
+.feed::-webkit-scrollbar-track {
+  background: #7a7a7a; /* color of the tracking area */
+  border-radius: 20px; /* roundness of the scroll bar */
+}
+.feed::-webkit-scrollbar-thumb {
+  background-color: #424445; /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll bar */
+  border: 3px solid #7a7a7a; /* creates padding around scroll thumb */
+}
+
+.feed {
+  max-height: fit-content;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  display: flex;
+  padding-bottom: 5px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
