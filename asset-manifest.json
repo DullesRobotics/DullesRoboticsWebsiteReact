@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "https://dev.dullesrobotics.com/static/css/main.c3a3b68c.chunk.css",
+    "main.js": "https://dev.dullesrobotics.com/static/js/main.7146141f.chunk.js",
+    "main.js.map": "https://dev.dullesrobotics.com/static/js/main.7146141f.chunk.js.map",
+    "runtime-main.js": "https://dev.dullesrobotics.com/static/js/runtime-main.6790fea6.js",
+    "runtime-main.js.map": "https://dev.dullesrobotics.com/static/js/runtime-main.6790fea6.js.map",
+    "static/css/2.c69402d6.chunk.css": "https://dev.dullesrobotics.com/static/css/2.c69402d6.chunk.css",
+    "static/js/2.ff343b22.chunk.js": "https://dev.dullesrobotics.com/static/js/2.ff343b22.chunk.js",
+    "static/js/2.ff343b22.chunk.js.map": "https://dev.dullesrobotics.com/static/js/2.ff343b22.chunk.js.map",
+    "index.html": "https://dev.dullesrobotics.com/index.html",
+    "static/css/2.c69402d6.chunk.css.map": "https://dev.dullesrobotics.com/static/css/2.c69402d6.chunk.css.map",
+    "static/css/main.c3a3b68c.chunk.css.map": "https://dev.dullesrobotics.com/static/css/main.c3a3b68c.chunk.css.map",
+    "static/js/2.ff343b22.chunk.js.LICENSE.txt": "https://dev.dullesrobotics.com/static/js/2.ff343b22.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6790fea6.js",
+    "static/css/2.c69402d6.chunk.css",
+    "static/js/2.ff343b22.chunk.js",
+    "static/css/main.c3a3b68c.chunk.css",
+    "static/js/main.7146141f.chunk.js"
+  ]
+}
