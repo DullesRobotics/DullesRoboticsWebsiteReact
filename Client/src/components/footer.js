@@ -2,6 +2,8 @@ import styles from './layout.module.css'
 import React from 'react'
 import FollowTray from './followtray'
 import { Link } from 'react-router-dom'
+import Text from '../components/text'
+import lang from '../lang.json'
 
 class Footer extends React.Component {
 
@@ -30,11 +32,17 @@ class Footer extends React.Component {
             </div> : <></>
           }
           <div className="sm:col-span-1 md:ml-auto">
-            <p className="font-bold text-2xl sm:text-3xl">Dulles Robotics</p>
-            <a href="mailto:dullesrobotics@gmail.com" target="_blank" rel="noopener noreferrer" className="font-medium hover:underline"><p>dullesrobotics@gmail.com</p></a>
-            <Link to="/contact">550 Dulles Ave, Sugar Land, TX 77478</Link>
+            <Link to="/">
+              <p className="font-bold text-2xl sm:text-3xl">
+                <Text>{lang.footer.title}</Text>
+              </p>
+            </Link>
+            <a href="mailto:dullesrobotics@gmail.com" target="_blank" rel="noopener noreferrer" className="font-medium hover:underline"><p>{lang.footer.email}</p></a>
+            <Link to="/contact">
+              {lang.footer.address}
+            </Link>
             <br />
-            © {new Date().getFullYear()} Dulles Robotics
+            © {new Date().getFullYear()} {lang.footer.copyright_name}
           </div>
           {this.state.width >= 640 ?
             <div className="col-span-1 md:col-span-2 xl:col-span-3 pl-4 md:pl-12 lg:pl-20">

@@ -2,29 +2,29 @@ import React from 'react';
 import Button from './button'
 import { HashLink as Link } from 'react-router-hash-link'
 import NavCSS from './navbar.module.css'
-import Sponsors from '../pages/sponsors.json'
+import lang from '../lang.json'
 
 const topLevel = [
-    { key: 1, title: 'HOME', link: "/" },
-    { key: 2, title: 'ABOUT US', link: "/about-us" },
-    { key: 3, title: 'NEWS', link: "/news" },
-    { key: 4, title: 'ROBOTS', link: "/robots" },
-    { key: 5, title: 'OUTREACH', link: "/outreach" },
-    { key: 6, title: 'RESOURCES', link: "/documents" },
-    { key: 7, title: 'SUPPORT US', link: "/support-us" },
-    { key: 8, title: 'CONTACT US', link: "/contact" },
+    { key: 1, title: lang.header.nav.home, link: "/" },
+    { key: 2, title: lang.header.nav.about_us.title, link: "/about-us" },
+    { key: 3, title: lang.header.nav.news, link: "/news" },
+    { key: 4, title: lang.header.nav.robots, link: "/robots" },
+    { key: 5, title: lang.header.nav.outreach, link: "/outreach" },
+    { key: 6, title: lang.header.nav.resources, link: "/documents" },
+    { key: 7, title: lang.header.nav.support_us, link: "/support-us" },
+    { key: 8, title: lang.header.nav.contact, link: "/contact" },
     // { key: 9, title: 'USER', link: "#", right: true },
 ]
 
 const subMenus = {
     2: [
-        { key: 20, title: 'WHO WE ARE', link: "/about-us#who-we-are" },
-        { key: 21, title: 'ALUMNI', link: "/about-us/alumni" },
-        { key: 22, title: 'ABOUT FIRST', link: "/about-us/first" },
-        { key: 23, title: 'TEAMS', link: "/about-us#teams" },
-        { key: 24, title: 'DEPARTMENTS', link: "/about-us#departments" },
-        { key: 25, title: 'AWARDS', link: "/about-us#awards" },
-        { key: 26, title: 'MENTORS', link: "/about-us#mentors" },
+        { key: 20, title: lang.header.nav.about_us.who_we_are, link: "/about-us#who-we-are" },
+        { key: 21, title: lang.header.nav.about_us.alumni, link: "/about-us/alumni" },
+        { key: 22, title: lang.header.nav.about_us.about_first, link: "/about-us/first" },
+        { key: 23, title: lang.header.nav.about_us.teams, link: "/about-us#teams" },
+        { key: 24, title: lang.header.nav.about_us.departments, link: "/about-us#departments" },
+        { key: 25, title: lang.header.nav.about_us.awards, link: "/about-us#awards" },
+        { key: 26, title: lang.header.nav.about_us.mentors, link: "/about-us#mentors" },
     ],
     // 6: [
     //     { key: 60, title: 'DOCUMENTS', link: "/documents" },
@@ -33,12 +33,12 @@ const subMenus = {
     // 7: [
     //     { key: 70, title: 'OUR SPONSORS', link: "/sponsors" },
     // ],
-    9: [
-        { key: 90, title: 'MEMBER HOME', link: "#" },
-        { key: 91, title: 'VOLUNTEER HOME', link: "#" },
-        { key: 92, title: 'SETTINGS', link: "#" },
-        { key: 93, title: 'LOGOUT', link: "#" },
-    ],
+    // 9: [
+    //     { key: 90, title: 'MEMBER HOME', link: "#" },
+    //     { key: 91, title: 'VOLUNTEER HOME', link: "#" },
+    //     { key: 92, title: 'SETTINGS', link: "#" },
+    //     { key: 93, title: 'LOGOUT', link: "#" },
+    // ],
 }
 
 class NavBar extends React.Component {

@@ -7,6 +7,8 @@ import {
 import PropTypes from 'prop-types';
 import LoadingIcon from '../../components/lottiecomponents/loading';
 import BobbleCSS from './bobble.module.css'
+import Text from '../../components/text'
+import lang from '../../lang.json'
 
 const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
@@ -37,9 +39,11 @@ export default function TBAFeed(props) {
         );
     }
 
+    const title = lang.news.frc_competition_results.title.replace("%year%", competitionsData.season ? competitionsData.season : new Date().getFullYear())
+
     return (
         <div className="px-4">
-            <p className="text-3xl font-bold leading-8">{competitionsData.season ? competitionsData.season : new Date().getFullYear()} FRC Competition Results</p>
+            <p className="text-3xl font-bold leading-8">{title}</p>
             { !competitionsData.error ? competitionsData.loading ? <LoadingIcon /> :
                 <div className={props.className}>
                     <p className="text-md">{parseDescriptor(competitionsData.season, competitionsData.district_info, competitionsData.comps)}</p>
@@ -47,12 +51,28 @@ export default function TBAFeed(props) {
                         {bundle}
                     </section>
                 </div>
-                : <p className="text-md text-gray-300 mt-2">Sorry, an error has occurred. Try refreshing, however contact us if the error persists.</p>
+                :
+                <p className="text-md text-gray-300 mt-2">
+                    <Text>{lang.news.tba_error}</Text>
+                </p>
             }
             { props.courtesy ?
-                <p className="text-sm mt-2"> <a className="font-semibold text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer" href="https://www.thebluealliance.com/team/7494"> View Previous Years</a> <br /> Data courtesy of&nbsp;
-                    <a className="font-semibold text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer" href="https://www.thebluealliance.com/">
-                        The Blue Alliance
+                <p className="text-sm mt-2">
+                    <a
+                        className="font-semibold text-blue-400 hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://www.thebluealliance.com/team/7494">
+                        {lang.news.frc_competition_results.previous_years}
+                    </a>
+                    <br />
+                    {lang.news.frc_competition_results.courtesy}&nbsp;
+                    <a
+                        className="font-semibold text-blue-400 hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://www.thebluealliance.com/">
+                        {lang.news.frc_competition_results.tba}
                     </a>
                 </p> : <></>}
         </div>

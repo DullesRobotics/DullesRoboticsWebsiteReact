@@ -2,26 +2,29 @@ import React from 'react'
 import Spacer from '../components/spacer'
 import Button from '../components/button'
 import SectionDivider from '../components/sectiondivider'
-import postCSS from '../styles/posts.module.css'
 import hoverCSS from '../styles/hover.module.css'
 import Particles from "react-tsparticles";
 import mobile from "is-mobile"
+import Text from '../components/text'
+import lang from '../lang.json'
 
-class Support extends React.Component
-{
-  render()
-  {
+class Support extends React.Component {
+  render() {
     return (
       <div>
         <Spacer className="bg-gray-4" />
         <div className="pt-6 pb-5 bg-gray-4">
-          <p className="text-center text-white text-4xl md:text-5xl font-bold -mb-1 mx-3 md:mx-0">Support And Sponsor Us</p>
+          <p className="text-center text-white text-4xl md:text-5xl font-bold -mb-1 mx-3 md:mx-0">
+            <Text>{lang.support.title}</Text>
+          </p>
         </div>
         <SectionDivider divider="skew-tri" color1="4" color2="3" height="30px" />
         <div className="pt-8 pb-8 md:pb-6 md:grid md:grid-cols-6 lg:grid-cols-4 bg-gray-3 md:-mb-2">
           <div className="col-span-1" />
           <div className="col-span-4 lg:col-span-2 text-white mx-3 md:mx-0">
-            <p className="text-center font-semibold text-xl">Thanks to your support, Dulles Robotics continues to empower students with skills crucial for their tomorrow!</p>
+            <p className="text-center font-semibold text-xl">
+              <Text>{lang.support.description}</Text>
+            </p>
           </div>
           <div className="col-span-1" />
         </div>
@@ -29,7 +32,9 @@ class Support extends React.Component
         <div className="pt-6 pb-6 lg:grid lg:grid-cols-7 bg-gray-2">
           <div className="col-span-1" />
           <div className={`lg:col-span-5 text-white md:mx-5 lg:mx-0`}>
-            <p className="text-left text-white text-3xl md:text-4xl font-bold ml-10 md:ml-0">Sponsorship Tiers</p>
+            <p className="text-left text-white text-3xl md:text-4xl font-bold ml-10 md:ml-0">
+              <Text>{lang.support.sponsorship_tiers_header}</Text>
+            </p>
             <hr className="border-gray-400 hidden md:block" />
             <div className="md:grid md:grid-cols-5 mt-3 min-h-0">
               <div className="col-span-1 my-5 md:my-0 mx-10 md:mx-0 md:mr-3"><SponsorBobble tier={0} /></div>
@@ -42,14 +47,19 @@ class Support extends React.Component
               <div className="flex">
                 <a className="mx-auto" href={process.env.PUBLIC_URL + "/documents/sponsorship_packet.pdf"} target="_blank" rel="noopener noreferrer">
                   <Button className="shadow-md border-2 hover:border-green-500" bstyle="primaryGreen" animate={1}>
-                    <div className="my-1">Get A Sponsorship Packet <i class="fas fa-file-pdf ml-2 mt-1" /></div>
+                    <div className="my-1">
+                      {lang.support.packet_button}
+                      <i class="fas fa-file-pdf ml-2 mt-1" />
+                    </div>
                   </Button>
                 </a>
               </div>
               <div className="mt-4 flex">
                 <a className="mx-auto" href="mailto:brian.sonnier@fortbendisd.com" target="_blank" rel="noopener noreferrer">
                   <Button className="shadow-lg border-4 hover:border-green-500" bstyle="primaryGreen" animate={1}>
-                    <div className="mx-6 my-3 font-bold text-2xl">Sponsor / Donate To Us <i class="fas fa-envelope ml-2 mt-1" /></div>
+                    <div className="mx-6 my-3 font-bold text-2xl">
+                      {lang.support.sponsor_button}
+                      <i class="fas fa-envelope ml-2 mt-1" /></div>
                   </Button>
                 </a>
               </div>
@@ -62,12 +72,12 @@ class Support extends React.Component
         <div className="pt-6 pb-8 md:grid md:grid-cols-6 lg:grid-cols-4 bg-gray-3">
           <div className="col-span-1" />
           <div className="col-span-4 lg:col-span-2 text-white mx-3 md:mx-0">
-            <p className="text-center font-bold text-4xl">Is It Tax Deductible?</p>
+            <p className="text-center font-bold text-4xl">
+              <Text>{lang.support.legal.title}</Text>
+            </p>
             <p className="text-center text-lg mt-3">
-              Dulles Robotics is a 501(c)3 tax-exempt organization and your donation is tax-deductible within the guidelines of U.S. law.
-              To claim a donation as a deduction on your U.S. taxes, please keep your email donation receipt as your official record.
-              We’ll send it to you upon successful completion of your donation. Donations are also eligible for employer matching.
-            Please contact your employer for more information.</p>
+              <Text>{lang.support.legal.content}</Text>
+            </p>
           </div>
           <div className="col-span-1" />
         </div>
@@ -76,37 +86,30 @@ class Support extends React.Component
   }
 }
 
-class SponsorBobble extends React.Component
-{
+class SponsorBobble extends React.Component {
 
-  constructor(props)
-  {
+  constructor(props) {
     super(props);
     this.state = {
       width: window.innerWidth
     }
   }
 
-  updateDimensions = () =>
-  {
+  updateDimensions = () => {
     this.setState({ width: window.innerWidth });
   };
-  componentDidMount()
-  {
+  componentDidMount() {
     window.addEventListener('resize', this.updateDimensions);
   }
-  componentWillUnmount()
-  {
+  componentWillUnmount() {
     window.removeEventListener('resize', this.updateDimensions);
   }
 
-  render()
-  {
+  render() {
     const tier = this.props.tier;
     let name, price, details, list = [], img, particleColor, particleRate = 1, particleOpacity = 0.6;
 
-    switch (tier)
-    {
+    switch (tier) {
       case 0:
         name = "Primary";
         price = "$1000+";
@@ -155,8 +158,7 @@ class SponsorBobble extends React.Component
       default: return (<></>);
     }
 
-    for (let i in details)
-    {
+    for (let i in details) {
       list.push(<li key={i}>{details[i]}</li>)
     }
 

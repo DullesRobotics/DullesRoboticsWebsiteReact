@@ -9,6 +9,8 @@ import mobile from 'is-mobile'
 import ReactMarkdown from 'react-markdown/with-html'
 import gfm from 'remark-gfm'
 import '../../styles/posts.module.css'
+import Text from '../../components/text'
+import lang from '../../lang.json'
 
 class Robots extends React.Component {
 
@@ -32,7 +34,9 @@ class Robots extends React.Component {
       <div>
         <div className="z-20">
           <div className="pt-20 sm:pt-32 lg:pt-48 xl:pt-64" style={{ "text-shadow": "4px 4px 0px rgba(0,0,0,0.4)" }}>
-            <p className="pt-5 text-white font-bold mx-auto text-center text-5xl md:text-6xl lg:text-7xl">Our Robots</p>
+            <p className="pt-5 text-white font-bold mx-auto text-center text-5xl md:text-6xl lg:text-7xl">
+              <Text>{lang.robots.title}</Text>
+            </p>
           </div>
           <div>
             <div className="bg-gray-4 pt-5 mt-20 lg:mt-32 xl:mt-64">
@@ -114,7 +118,14 @@ export function RoboBlock(props) {
               className="text-3xl text-gray-200 -m-3 font-semibold"
               style={{ "text-shadow": "3px 3px 0px rgba(0,0,0,0.3)" }}>{`${props.json["team-name"]} - ${props.json.year}`}</p>
             <span className="flex justify-center mt-48 md:mt-64 mb-8">
-              <Popup trigger={<button className="button"><Button bstyle="primaryGreen">More Information</Button></button>} modal>
+              <Popup
+                trigger={
+                  <button className="button">
+                    <Button bstyle="primaryGreen">
+                      <Text>{lang.robots.more_info}</Text>
+                    </Button>
+                  </button>}
+                modal>
                 {close => (
                   <div className={`modal ${mobile() ? `` : `animate-modal`}`}>
                     <button className="close bg-gray-200 hover:bg-gray-500" onClick={close}>
@@ -131,21 +142,27 @@ export function RoboBlock(props) {
                                 \n - **Game**: ${props.json.game}`}
                           </ReactMarkdown>
                           <hr className="my-4 border-gray-3 border-2" />
-                          <p className="text-xl md:text-2xl font-bold">Specs</p>
+                          <p className="text-xl md:text-2xl font-bold">
+                            <Text>{lang.robots.robot_descriptor_headings.specs}</Text>
+                          </p>
                           <div className="max-w-screen-sm">
                             <ReactMarkdown allowDangerousHtml plugins={[gfm]}>
                               {modalSpecs}
                             </ReactMarkdown>
                           </div>
                           <hr className="mt-6 mb-4 border-gray-3 border-2" />
-                          <p className="text-xl md:text-2xl font-bold">Competitions</p>
+                          <p className="text-xl md:text-2xl font-bold">
+                            <Text>{lang.robots.robot_descriptor_headings.competitions}</Text>
+                          </p>
                           <div className="max-w-screen-sm">
                             <ReactMarkdown allowDangerousHtml plugins={[gfm]}>
                               {modalComps}
                             </ReactMarkdown>
                           </div>
                           <hr className="mt-6 mb-4 border-gray-3 border-2" />
-                          <p className="text-xl md:text-2xl font-bold">Features</p>
+                          <p className="text-xl md:text-2xl font-bold">
+                            <Text>{lang.robots.robot_descriptor_headings.features}</Text>
+                          </p>
                           <div className="max-w-screen-sm">
                             <ReactMarkdown allowDangerousHtml plugins={[gfm]}>
                               {modalFeatures}

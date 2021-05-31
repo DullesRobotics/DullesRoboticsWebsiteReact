@@ -12,6 +12,8 @@ import ReactMarkdown from 'react-markdown/with-html'
 import gfm from 'remark-gfm'
 import { Redirect, useParams, Link } from "react-router-dom";
 import '../styles/posts.module.css'
+import Text from '../components/text'
+import lang from '../lang.json'
 
 const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -53,8 +55,12 @@ export default function PostPage() {
     ds = monthNames[d.getMonth()] + " " + d.getDay() + ", " + d.getFullYear();
   }
 
-  const prevButton = <Button bstyle={!isLoading && !postsData.loading && post.prevID ? "secondary" : "secondaryDisabled"} >Previous Post</Button>,
-    nextButton = <Button bstyle={!isLoading && !postsData.loading && post.nextID ? "secondary" : "secondaryDisabled"} >Next Post</Button>;
+  const prevButton = <Button bstyle={!isLoading && !postsData.loading && post.prevID ? "secondary" : "secondaryDisabled"} >
+    <Text>{lang.news.post_navigation.prev}</Text>
+  </Button>,
+    nextButton = <Button bstyle={!isLoading && !postsData.loading && post.nextID ? "secondary" : "secondaryDisabled"} >
+      <Text>{lang.news.post_navigation.next}</Text>
+    </Button>;
 
   return (
     <div><Spacer className="bg-gray-5" />
@@ -92,7 +98,13 @@ export default function PostPage() {
           <div className="mt-20 flex">
             <span className="mx-auto">
               <span>{!isLoading && !postsData.loading && post.prevID ? <Link to={`/news/post/${post.prevID}`}>{prevButton}</Link> : prevButton}</span>
-              <span className="mx-2"><Link to="/news"><Button bstyle="secondary" >Back to All News</Button></Link></span>
+              <span className="mx-2">
+                <Link to="/news">
+                  <Button bstyle="secondary" >
+                    <Text>{lang.news.post_navigation.back}</Text>
+                  </Button>
+                </Link>
+              </span>
               <span>{!isLoading && !postsData.loading && post.nextID ? <Link to={`/news/post/${post.nextID}`}>{nextButton}</Link> : nextButton}</span>
             </span>
           </div>

@@ -1,16 +1,12 @@
 import React from 'react'
-import Spacer from '../components/spacer'
 import Button from '../components/button'
 import SectionDivider from '../components/sectiondivider'
-import Typewriter from 'typewriter-effect'
 import { Link } from 'react-router-dom'
-import PropTypes from 'prop-types'
-import Awards from './awards.json'
 import ReactMarkdown from 'react-markdown/with-html'
 import gfm from 'remark-gfm'
-import postCSS from '../styles/posts.module.css'
-import hoverCSS from '../styles/hover.module.css'
 import OutreachJSON from './outreach.json'
+import Text from '../components/text'
+import lang from '../lang.json'
 
 class Outreach extends React.Component {
 
@@ -61,7 +57,7 @@ class Outreach extends React.Component {
           <div className="pt-32 md:pt-48 lg:pt-64 pb-24 md:pb-32 lg:pb-48">
             <div className="lg:my-24 md:col-span-3 lg:col-span-2">
               <p className="text-center text-white text-5xl lg:text-6xl font-bold">
-                Our Community Outreach
+                <Text>{lang.outreach.title}</Text>
               </p>
             </div>
           </div>

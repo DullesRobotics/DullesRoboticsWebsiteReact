@@ -13,6 +13,8 @@ import {
   loadInstagramPosts,
   selectSocialFeed
 } from '../slices/socialSlice'
+import Text from '../components/text'
+import lang from '../lang.json'
 
 class Announcements extends React.Component {
 
@@ -32,7 +34,9 @@ class Announcements extends React.Component {
         <Spacer className="bg-gray-1" />
         <div className="pt-6 md:pt-10 pb-5 md:grid md:grid-cols-6 xl:grid-cols-5 bg-gray-1">
           <div className="col-span-1" />
-          <p className="md:col-span-4 xl:col-span-3 text-center md:text-left text-white text-5xl font-bold mx-5 leading-10">News &amp; Announcements</p>
+          <p className="md:col-span-4 xl:col-span-3 text-center md:text-left text-white text-5xl font-bold mx-5 leading-10">
+            <Text>{lang.news.title}</Text>
+          </p>
           <div className="col-span-1" />
         </div>
         <SectionDivider className="h-2 md:h-5 lg:h-8" divider="skew-cc" color1={1} color2={5} />
@@ -47,11 +51,14 @@ class Announcements extends React.Component {
         <div className="pt-4 pb-5 md:grid md:grid-cols-12 xl:grid-cols-6 bg-gray-3">
           <div className="col-span-1" />
           <div className="md:col-span-6 xl:col-span-3 text-white pr-2 md:pr-4 md:pl-0">
-            <p className="md:hidden text-white text-4xl font-bold text-center">Recent News</p>
+            <p className="md:hidden text-white text-4xl font-bold text-center">
+              <Text>{lang.news.recent_news}</Text></p>
             <NewsFeed allowMore={true} />
           </div>
           <div className="mx-5 md:mx-0 pt-2 col-span-4 xl:col-span-1 text-white">
-            <p className="text-2xl font-semibold">Social Feed</p>
+            <p className="text-2xl font-semibold">
+              <Text>{lang.news.social_feed}</Text>
+            </p>
             <div className="grid grid-cols-3 mb-4 text-center text-xl">
               <button onClick={() => this.setFeed(0)} className="focus:outline-none">
                 <div className={`rounded-l-lg col-span-1 border-2 border-white transition-colors duration-100 hover:bg-blue-2 py-1 border-opacity-${this.state.feed === 0 ? "100 bg-blue-2" : "0 bg-blue-3"}`}>
@@ -70,25 +77,28 @@ class Announcements extends React.Component {
               </button>
             </div>
             <div className="flex md:block justify-center">
-              {this.state.feed === 0 ? <Timeline
-                dataSource={{
-                  sourceType: 'profile',
-                  screenName: 'dulles_robotics'
-                }}
-                options={{
-                  height: '800',
-                  theme: 'dark',
-                  dnt: true,
-                  chrome: "nofooter",
-                }}
-                renderError={_err =>
-                  <div>
-                    <LoadingIcon />
-                    <p className="text-gray-300 text-center">Sorry, our Twitter timeline can't be loaded. Try refreshing.</p>
-                    <div className="mb-48"></div>
-                  </div>
-                }
-              /> : <></>}
+              {this.state.feed === 0 ?
+                <Timeline
+                  dataSource={{
+                    sourceType: 'profile',
+                    screenName: 'dulles_robotics'
+                  }}
+                  options={{
+                    height: '800',
+                    theme: 'dark',
+                    dnt: true,
+                    chrome: "nofooter",
+                  }}
+                  renderError={_err =>
+                    <div>
+                      <LoadingIcon />
+                      <p className="text-gray-300 text-center">
+                        <Text>{lang.news.cant_load_twitter}</Text>
+                      </p>
+                      <div className="mb-48"></div>
+                    </div>
+                  }
+                /> : <></>}
               {this.state.feed === 1 ?
                 <InstagramFeed /> : <></>}
               {this.state.feed === 2 ?
@@ -126,10 +136,10 @@ function InstagramFeed() {
     return (
       <div>
         <LoadingIcon />
-        { postsData.error || (postsData.finished && postsData.instagram.length === 0) ? <p className="text-gray-300 text-center">
-          Sorry, we couldn't retrieve our instagram posts. You can always view them
-        <a className="text-blue-3" target="_blank" rel="noopener noreferrer" href={"https://instagram.com/dulles_robotics"}> on Instagram.</a>
-        </p>
+        { postsData.error || (postsData.finished && postsData.instagram.length === 0) ?
+          <p className="text-gray-300 text-center">
+            <Text>{lang.news.cant_load_instagram}</Text>
+          </p>
           : <></>}
       </div>
     )
@@ -155,7 +165,7 @@ function InstagramFeed() {
         media =
           <video controls crossorigin="anonymous">
             <source src={photos[p].media_url} type={`video/${fileType}`} />
-            Sorry, your browser doesn't support this video.
+            <Text>{lang.news.browser_cant_play_video}</Text>
           </video>
         break;
       default: media = <></>; break;
@@ -177,7 +187,16 @@ function InstagramFeed() {
         {list}
       </div>
       <div className="flex justify-center">
-        <a className="text-blue-3" target="_blank" rel="noopener noreferrer" href={"https://instagram.com/dulles_robotics"}><Button bstyle="primary" >View More <i class="ml-2 mt-1 fas fa-external-link-square-alt" /></Button></a>
+        <a
+          className="text-blue-3"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://instagram.com/dulles_robotics"
+        >
+          <Button bstyle="primary" >
+            {lang.news.view_more_instagram} <i class="ml-2 mt-1 fas fa-external-link-square-alt" />
+          </Button>
+        </a>
       </div>
     </div>
   );

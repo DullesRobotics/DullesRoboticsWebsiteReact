@@ -11,7 +11,8 @@ import LoadingIcon from '../components/lottiecomponents/loading';
 import ReactMarkdown from 'react-markdown/with-html'
 import gfm from 'remark-gfm'
 import PropTypes from 'prop-types'
-import postCSS from '../styles/posts.module.css'
+import Text from '../components/text'
+import lang from '../lang.json'
 
 const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -39,7 +40,9 @@ export function NewsFeed(props) {
           content={postsData.posts[n].content} />);
 
   if (postsData.error)
-    extraFob = <p className="text-center text-gray-300">Sorry, an error has occurred. Try refreshing, however contact us if the error persists.</p>
+    extraFob = <p className="text-center text-gray-300">
+      <Text>{lang.news.post_loading_error}</Text>
+    </p>
   else
     if (!postsData.finished) {
       if (postsData.loading)
@@ -47,14 +50,19 @@ export function NewsFeed(props) {
       else if (props.allowMore)
         extraFob =
           <span className="flex">
-            <button onClick={() => { if (!postsData.finished && !postsData.loading && !postsData.error) dispatch(getMorePosts()); }} className="mx-auto">
+            <button
+              onClick={() => {
+                if (!postsData.finished && !postsData.loading && !postsData.error)
+                  dispatch(getMorePosts());
+              }}
+              className="mx-auto">
               <Button animate={true} bstyle="primaryGray">
-                Load More
+                <Text>{lang.news.load_more_posts}</Text>
               </Button>
             </button>
           </span>
     } else if (props.allowMore)
-      extraFob = <p className="text-center text-gray-300">You have reached the end.</p>
+      extraFob = <p className="text-center text-gray-300"><Text>{lang.news.end}</Text></p>
 
   return (
     <div className={props.className}>
@@ -79,10 +87,24 @@ class PostBubble extends React.Component {
 
     return (
       <div id={this.props.id} className="bg-gray-2 my-4 p-4 rounded shadow-lg">
-        <Link to={"/news/post/" + this.props.id}><h2 className="font-bold text-3xl">{this.props.title}</h2></Link>
+        <Link to={"/news/post/" + this.props.id}><h2 className="font-bold text-3xl">
+          {this.props.title}
+        </h2>
+        </Link>
         <p className="mb-2">{this.props.category + " ● " + ds}</p>
-        <p><postdisplay><ReactMarkdown plugins={[gfm]} allowDangerousHtml>{cf}</ReactMarkdown></postdisplay></p>
-        <Link to={"/news/post/" + this.props.id}><Button bstyle="tertiary" className="mt-2"><span className="text-sm">Read More</span></Button></Link>
+        <p>
+          <postdisplay>
+            <ReactMarkdown plugins={[gfm]} allowDangerousHtml>
+              {cf}
+            </ReactMarkdown>
+          </postdisplay>
+        </p>
+        <Link to={"/news/post/" + this.props.id}><Button bstyle="tertiary" className="mt-2">
+          <span className="text-sm">
+            <Text>{lang.news.read_more_of_post}</Text>
+          </span>
+        </Button>
+        </Link>
       </div>
     )
   }

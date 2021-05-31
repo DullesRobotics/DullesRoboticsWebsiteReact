@@ -1,0 +1,258 @@
+{
+  "home": {
+    "title": "Dulles Robotics",
+    "subtitle": "Preparing Our Members For The Future",
+    "about_us": {
+      "title": "About Us",
+      "content": "We are a robotics club based out of Dulles High School in Sugar Land, Texas. Dulles Robotics is home to the FTC Teams 12456 and 13822 as well as FRC team 7494. These teams participate in the *FIRST* Robotics programs.",
+      "buttons": {
+        "more": "More About Us",
+        "about": "About"
+      }
+    },
+    "image_box": "Fostering An Interest In STEM To Allow Our Students To Become The Leaders Of Tomorrow.​",
+    "news": {
+      "title": "Recent News and Announcements",
+      "more_button": "More News"
+    },
+    "support_box": {
+      "title": "We Need Support!",
+      "content": "Sponsors and supporters allow us to afford registration, travel, and robot part costs.<br/>Consider supporting our excellent teams and get sweet perks:",
+      "button": "Support Us"
+    }
+  },
+  "header": {
+    "title": "Dulles Robotics",
+    "menu_button": "Menu",
+    "nav": {
+      "home": "HOME",
+      "about_us": {
+        "title": "ABOUT US",
+        "who_we_are": "WHO WE ARE",
+        "alumni": "ALUMNI",
+        "about_first": "ABOUT FIRST",
+        "teams": "TEAMS",
+        "departments": "DEPARTMENTS",
+        "awards": "AWARDS",
+        "mentors": "MENTORS"
+      },
+      "news": "NEWS",
+      "robots": "ROBOTS",
+      "outreach": "OUTREACH",
+      "resources": "RESOURCES",
+      "support_us": "SUPPORT US",
+      "contact": "CONTACT US"
+    }
+  },
+  "footer": {
+    "title": "Dulles Robotics",
+    "email": "dullesrobotics@gmail.com",
+    "address": "550 Dulles Ave, Sugar Land, TX 77478",
+    "copyright_name": "Dulles Robotics",
+    "follow_us": "Follow Us!"
+  },
+  "about_us": {
+    "header_ticker": [
+      "We are Innovators",
+      "We are Problem Solvers",
+      "We are Learning",
+      "We are Tomorrow",
+      "We are Growing",
+      "We are Preparing for Tomorrow"
+    ],
+    "title": "About Us",
+    "mission_statement": {
+      "title": "Our Mission Statement",
+      "statement": "\"To encourage the next generation of aspiring engineers to pursue a career in STEM, as well as build their technical expertise, leadership, teamwork, communication, and accountability by providing them with hands on experience in real-world applications\"",
+      "credit": "-Circuit Bizurkers"
+    },
+    "about_the_club": {
+      "title": "About The Club",
+      "content": "Dulles Robotics was founded in August 2016 by three Dulles HS students with a passion for STEM and teaching. Since then, the club has had a tremendous impact on its students, the school and the community. Composed of a group of diverse, focused, and fun-loving individuals, Dulles Robotics has become more than a club, but a family.<br/><br/>Every year, our club continues to grow. What started as 15 students has grown to over over 50 today. Our club consists of students from all backgrounds all joined under similar interests."
+    },
+    "community_impact": {
+      "title": "Community Impact",
+      "content": "A huge part of FIRST is the impact a team makes on their community. We have reached out in several ways hosting library camps, demoing our robots at large STEM events, and teaching at orphanages. Beyond that, we host the FTC matches for our league and mentor other teams. We continue to promote FIRST in our school and have been featured on local television channels."
+    },
+    "core_values": {
+      "title": "Core Values",
+      "gracious_professionalism": {
+        "title": "Gracious Professionalism",
+        "content": "The notion of gracious professionalism entails kindness, integrity, and respect. We expect our members to display gracious professionalism through their actions. By helping others in need, initiating communication with other teams, and engaging ourselves within our community, we are able to uphold the virtues of gracious professionalism."
+      },
+      "learning": {
+        "title": "Learning",
+        "content": "Dulles High School Robotics was initially created with the intent to teach students only the principles of technology and programming. Due to the nature of FTC and FRC, our focus has shifted to encompass more fields of study such as business and public outreach. Although our organization has broadened its focus, we still encourage members to engage themselves with technology and programming."
+      },
+      "having_fun": {
+        "title": "Having Fun",
+        "content": "While Circuit Bizurkers and our FTC Teams value the competitive nature of robotics competitions, we want our members to enjoy their learning experience, therefore, we open socials to every member of the organization. Hosting socials allows us to bond over the thing we love: robotics."
+      }
+    },
+    "buttons": {
+      "about_first": "About *FIRST*",
+      "alumni": "Our Alumni"
+    },
+    "our_teams": {
+      "title": "Our Teams",
+      "big_red": {
+        "title": "Big Red - FTC Team 12456",
+        "content": "Founded in 2016, Big Red was Dulles Robotics’ first FTC team. Big Red has made it to the League Championship and UIL State Championship every year."
+      },
+      "robovikes": {
+        "title": "RoboVikes - FTC Team 13822",
+        "content": "Founded in 2017, RoboVikings was added to Dulles Robotics as our second FTC team. Like Big Red, RoboVikings has successfully advanced to the League Championship and UIL State since it was founded."
+      },
+      "circuit_bizurkers": {
+        "title": "Circuit Bizurkers - FRC Team 7494",
+        "content": "Founded in 2018, Circuit Bizurkers was the last addition to Dulles Robotics. This team competes in the next level of FIRST, FRC. In its rookie year, the team advanced past Districts, past State, and competed at the international level, Worlds. This was a huge success for Dulles Robotics and gained the club a lot of attention."
+      }
+    },
+    "departments": {
+      "title": "Departments",
+      "build": {
+        "title": "Build 🔨",
+        "content": "The build team is charge of the building of our robots, both for FTC and FRC. They work against deadlines to ensure that the robot is ready for debugging, while also remaining in close communication with the Programming and Design teams to ensure the robot functions correctly and meets the original concept."
+      },
+      "programming": {
+        "title": "Programming 💻",
+        "content": "The programming team is in charge of programming the instructions for what the robot is supposed to do. This includes programming the robot to respond with the intended results using a controller, as well as writing code for the robot to perform autonomously. The programmers at Dulles Robotics use Java."
+      },
+      "design": {
+        "title": "Design 📏",
+        "content": "The Design team is responsible for designing the robot. They produce sketches and CAD renderings of the robot prototype."
+      },
+      "presentation": {
+        "title": "Presentation 🎁",
+        "content": "Presentation is responsible for the image of Dulles Robotics. They make the pit displays and other brand related content including graphic design and website maintenance."
+      },
+      "marketing": {
+        "title": "Marketing 💬",
+        "content": "The marketing team handles the team's finances and sponsorship. Their focus is to raise money for the operations and competitions.            "
+      }
+    },
+    "awards": {
+      "title": "Awards",
+      "advanced_message": "Advanced To The 2019 FRC World Championships In Houston, TX"
+    },
+    "mentors": {
+      "title": "Mentors"
+    }
+  },
+  "alumni": {
+    "title": "Alumni"
+  },
+  "about_first": {
+    "title_before_first": "About",
+    "introduction": {
+      "title": "Introduction",
+      "content": "*FIRST* (For Inspiration and Recognition of Science and Technology) was founded in 1989 to inspire young people’s interest and participation in science and technology. Based in Manchester, NH, the 501(c)(3) not-for-profit public charity designs accessible, innovative programs that motivate young people to pursue education and career opportunities in science, technology, engineering, and math, while building self-confidence, knowledge, and life skills."
+    },
+    "mission": {
+      "title": "Mission",
+      "content": "The mission of FIRST® is to inspire young people to be science and technology leaders and innovators, by engaging them in exciting mentor-based programs that build science, engineering, and technology skills, that inspire innovation, and that foster well-rounded life capabilities including self-confidence, communication, and leadership."
+    },
+    "learn_more_button": "Learn More About",
+    "ftc": {
+      "title": "*FIRST* Tech Challenge",
+      "content": "Teams of middle and high school-aged students are challenged to design, build, and program a robot to play a floor game against other teams’ creations. Team 12456 and Team 13822 have been competing in the FIRST Tech Challenge since 2016 and 2017 respectively.",
+      "learn_more": "Learn More About FTC",
+      "this_year": "This Year's FTC Game"
+    },
+    "frc": {
+      "title": "*FIRST* Robotics Challenge",
+      "content": "High school-aged teams compete head to head on a special playing field with robots they have designed, built, and programmed. Students learn about pneumatics and other technologies. Team 7494 has been competing in the First Robotics Competition since its rookie year in 2019.",
+      "learn_more": "Learn More About FRC",
+      "this_year": "This Year's FRC Game"
+    },
+    "firsts_values": {
+      "title": "FIRST's Values",
+      "gracious_professionalism": {
+        "title": "Gracious Professionalism®",
+        "content": "Gracious Professionalism is part of the ethos of FIRST. It’s a way of doing things that encourages high-quality work, emphasizes the value of others, and respects individuals and the community. With Gracious Professionalism, fierce competition and mutual gain are not separate notions. Gracious professionals learn and compete like crazy, but treat one another with respect and kindness in the process. They avoid treating anyone like losers. No chest thumping tough talk, but no sticky-sweet platitudes either."
+      },
+      "coopertition": {
+        "title": "Coopertition®",
+        "content": "At FIRST, Coopertition is displaying unqualified kindness and respect in the face of fierce competition. Coopertition is founded on the concept and a philosophy that teams can and should help and cooperate with each other even as they compete. Coopertition involves learning from teammates. It is teaching teammates. It is learning from Mentors. And it is managing and being managed. Coopertition means competing always, but assisting and enabling others when you can."
+      }
+    }
+  },
+  "news": {
+    "title": "News &amp; Announcements",
+    "frc_competition_results": {
+      "title": "%year% FRC Competition Results",
+      "previous_years": "View Previous Years",
+      "courtesy": "Data courtesy of",
+      "tba": "The Blue Alliance"
+    },
+    "load_more_posts": "Load More",
+    "read_more_of_post": "Read More",
+    "social_feed": "Social Feed",
+    "view_more_instagram": "View More",
+    "end": "You have reached the end.",
+    "post_loading_error": "Sorry, an error has occurred. Try refreshing, however contact us if the error persists.",
+    "browser_cant_play_video": "Sorry, your browser doesn't support this video.",
+    "tba_error": "Sorry, an error has occurred. Try refreshing, however contact us if the error persists.",
+    "post_navigation": {
+      "prev": "Previous Post",
+      "back": "Back to All News",
+      "next": "Next Post"
+    },
+    "recent_news": "Recent News",
+    "cant_load_instagram": "Sorry, we couldn't retrieve our instagram posts. You can always view them <a className=\"text-blue-1\" target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://instagram.com/dulles_robotics\"> on Instagram.</a>",
+    "cant_load_twitter": "Sorry, our Twitter timeline can't be loaded. Try refreshing."
+  },
+  "robots": {
+    "title": "Our Robots",
+    "more_info": "More Information",
+    "robot_descriptor_headings": {
+      "specs": "Specs",
+      "competitions": "Competitions",
+      "features": "Features"
+    }
+  },
+  "outreach": {
+    "title": "Our Community Outreach"
+  },
+  "documents": {
+    "title": "Documents",
+    "view": "View",
+    "download": "Download"
+  },
+  "support": {
+    "title": "Support And Sponsor Us",
+    "description": "Thanks to your support, Dulles Robotics continues to empower students with skills crucial for their tomorrow!",
+    "sponsorship_tiers_header": "Sponsorship Tiers",
+    "packet_button": "Get A Sponsorship Packet",
+    "sponsor_button": "Sponsor / Donate To Us",
+    "legal": {
+      "title": "Is It Tax Deductible?",
+      "content": "Dulles Robotics is a 501(c)3 tax-exempt organization and your donation is tax-deductible within the guidelines of U.S. law. To claim a donation as a deduction on your U.S. taxes, please keep your email donation receipt as your official record. We’ll send it to you upon successful completion of your donation. Donations are also eligible for employer matching. Please contact your employer for more information."
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "social": "We're Social",
+    "loading_map": "Loading Map",
+    "email_us": {
+      "title": "Email Us!",
+      "content": "Use the form below or email",
+      "email": "dullesrobotics@gmail.com",
+      "warning": "Fields marked with an <span className=\"text-red-500 font-bold\">*</span> are required.",
+      "fields": {
+        "name": "Name",
+        "email": "Email",
+        "phone": "Phone Number",
+        "subject": "Subject",
+        "message": "Message",
+        "send_button": "Send",
+        "required_field": "This field is required",
+        "invalid_email": "This is not a valid email",
+        "json_error": "Sorry, an error occurred. Try emailing us instead at dullesrobotics@gmail.com. (3)",
+        "fetch_error": "Sorry, an error occurred. Try emailing us instead at dullesrobotics@gmail.com. (2)",
+        "global_error": "Sorry, an error occurred. Try emailing us instead at dullesrobotics@gmail.com. (4)",
+        "success": "Message sent!"
+      }
+    }
+  }
+}

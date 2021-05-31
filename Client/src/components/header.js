@@ -4,6 +4,8 @@ import Button from './button'
 import { slide as Menu } from 'react-burger-menu'
 import { Link } from 'react-router-dom'
 import { NavBar, MobileMenu } from './navbar'
+import Text from '../components/text'
+import lang from '../lang.json'
 
 const topSpacing = '100px';
 
@@ -101,7 +103,9 @@ class Header extends React.Component {
               <Link to={this.props.dir === "/" ? "#" : "/"}>
                 <div className="mr-2 md:mr-4 flex items-center flex-shrink-0 text-white">
                   {this.state.width >= 328 ? <img className={(this.state.height >= 496 ? "h-10 w-10 sm:h-16 sm:w-16" : "h-10 w-10") + " rounded-full p-0 sm:p-1"} alt="Dulles Robotics's Logo" src={process.env.PUBLIC_URL + "/media/profilerounded.png"}></img> : <></>}
-                  <span className={"pl-2 font-bold " + (this.state.height >= 496 ? "text-2xl sm:text-4xl text-center" : "text-xl")}>Dulles Robotics</span>
+                  <span className={"pl-2 font-bold " + (this.state.height >= 496 ? "text-2xl sm:text-4xl text-center" : "text-xl")}>
+                    <Text>{lang.header.title}</Text>
+                  </span>
                 </div>
               </Link>
             </div>
@@ -113,7 +117,10 @@ class Header extends React.Component {
                     <button onClick={() => { this.toggleMenu() }}>
                       <Button bstyle="primary">
                         <div className="p-1 flex items-center gap-3 flex-shrink-0 text-white">
-                          <svg class={"fill-current " + (this.state.width > 290 ? "h-5" : "h-4") + " sm:h-6 w-auto"} viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" /></svg>
+                          <svg class={"fill-current " + (this.state.width > 290 ? "h-5" : "h-4") + " sm:h-6 w-auto"}
+                            viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <title>{lang.header.menu_button}</title>
+                            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" /></svg>
                         </div>
                       </Button>
                     </button>

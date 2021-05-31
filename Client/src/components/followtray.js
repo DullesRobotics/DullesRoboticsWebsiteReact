@@ -1,12 +1,14 @@
 import React from 'react';
 import Button from './button'
 import PropTypes from 'prop-types'
+import lang from '../lang.json'
+
 
 class FollowTray extends React.Component {
     render() {
         return (
             <div>
-                <p className="font-bold text-2xl sm:text-3xl">{this.props.heading ? "Follow Us!" : ""}</p>
+                <p className="font-bold text-2xl sm:text-3xl">{this.props.heading ? lang.footer.follow_us : ""}</p>
                 <a href="https://www.facebook.com/dullesrobotics/" target="_blank" rel="noopener noreferrer">
                     <Button bstyle={this.props.colorful ? "custom" : "primary"} className={this.props.colorful ? "bg-blue-700 py-2 px-4 text-white mb-1" : "mb-1"} animate>
                         <span className="text-xl">
