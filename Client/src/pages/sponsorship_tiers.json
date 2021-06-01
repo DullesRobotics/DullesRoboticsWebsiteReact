@@ -1,0 +1,116 @@
+[
+  {
+    "name": "Primary",
+    "min_cost": "1000",
+    "benefits": [
+      "Thank You Card",
+      "Mention on Team Website",
+      "Signed Team Photo"
+    ],
+    "img": "/primarytier.png",
+    "color": "#a08872",
+    "opacity_percent": 0.3,
+    "particle_delay_period": 0.5,
+    "hidden": false,
+    "icon": "star",
+    "sponsors": [
+      {
+        "name": "TMiller Financial",
+        "description": "TMiller Financial engages with Business Owners, Professionals, Retirees and Pre-Retirees, and their families to help provide positive financial outcomes. We are thankful for their gracious support.",
+        "image_url": "%public%/media/tmiller.png",
+        "image_width": "20rem",
+        "website": "https://www.tmillerfinancial.com/"
+      }
+    ]
+  },
+  {
+    "name": "Bronze",
+    "min_cost": "3000",
+    "benefits": [
+      "Primary Benefits",
+      "Logo on Shirts",
+      "\"Proud Sponsor\" Poster"
+    ],
+    "img": "/bronzetier.png",
+    "color": "#cc6e16",
+    "opacity_percent": 0.4,
+    "particle_delay_period": 0.4,
+    "hidden": false,
+    "icon": "sun",
+    "sponsors": []
+  },
+  {
+    "name": "Grants",
+    "min_cost": null,
+    "benefits": null,
+    "img": null,
+    "color": "#fc20f5",
+    "opacity_percent": 0.8,
+    "particle_delay_period": 0.3,
+    "hidden": true,
+    "icon": "thumbs-up",
+    "sponsors": [
+      {
+        "name": "NASA",
+        "description": "NASA and their yearly grants have allowed us to continue to pay for registration and participate in FRC. Their continued support through grants is greatly appreciated.",
+        "image_url": "%public%/media/nasa.png",
+        "image_width": "18rem",
+        "website": "https://www.nasa.gov"
+      }
+    ]
+  },
+  {
+    "name": "Silver",
+    "min_cost": "5000",
+    "benefits": ["Bronze Benefits", "Gift Basket"],
+    "img": "/silvertier.png",
+    "color": "#9aa4a5",
+    "opacity_percent": 0.5,
+    "particle_delay_period": 0.3,
+    "hidden": false,
+    "icon": "heart",
+    "sponsors": []
+  },
+  {
+    "name": "Gold",
+    "min_cost": "10,000",
+    "benefits": [
+      "Silver Benefits",
+      "Logo On Robot",
+      "Logo On Banner",
+      "Plaque"
+    ],
+    "img": "/goldtier.png",
+    "color": "#eadb04",
+    "opacity_percent": 0.6,
+    "particle_delay_period": 0.2,
+    "hidden": false,
+    "icon": "medal",
+    "sponsors": []
+  },
+  {
+    "name": "Diamond",
+    "min_cost": "15,000",
+    "benefits": [
+      "Gold Benefits",
+      "Prominent Logo",
+      "Robot Demo",
+      "Robotics Camp"
+    ],
+    "icon": "gem",
+    "img": "/diamondtier.png",
+    "color": "#0ed8ea",
+    "opacity_percent": 0.7,
+    "particle_delay_period": 0.08,
+    "hidden": false,
+    "sponsors": [
+      {
+        "name": "Waste Management",
+        "description": "Our title sponsor, WM, is our biggest supporter and strives to make us the best we could possibly be by providing mentors and financial assistance. WM works supports younger generations and helps our team members get the education needed beyond school life. With the gracious support of WM, Team 7494 has been and will be able to reach new heights and continue to succeed.",
+        "image_url": "%public%/media/wm.png",
+        "image_width": "25rem",
+        "website": "https://www.wm.com"
+      }
+    ]
+  }
+]

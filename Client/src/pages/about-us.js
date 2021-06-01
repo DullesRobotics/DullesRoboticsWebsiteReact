@@ -11,6 +11,7 @@ import gfm from 'remark-gfm'
 import hoverCSS from '../styles/hover.module.css'
 import Text from '../components/text'
 import lang from '../lang.json'
+import MentorJSON from './mentors.json'
 
 class AboutUs extends React.Component {
 
@@ -30,6 +31,24 @@ class AboutUs extends React.Component {
   }
 
   render() {
+
+    const mentorDivList = []
+
+    for (let m in MentorJSON) {
+      const mentor = MentorJSON[m]
+      mentorDivList.push(
+        <div
+          className="col-span-1 mx-5 md:mx-2 bg-gray-4 transition duration-200 hover:bg-gray-5"
+          style={{ boxShadow: "3px 3px rgba(66, 68, 69, 1)" }}>
+          <div className="p-5 m-5 md:m-0">
+            <p className="text-6xl"><i className="fas fa-user-circle" /></p>
+            <p className="text-3xl font-bold -mt-2 tracking leading-8">{mentor.name}</p>
+            <p className="uppercase text-md font-bold text-blue-3 -mt-1 md:mt-1">{mentor.designation.toUpperCase()}</p>
+            <p className="text-sm mt-2">{mentor.description}</p>
+          </div>
+        </div>)
+    }
+
     return (
       <div>
         <div className="z-10">
@@ -286,50 +305,7 @@ class AboutUs extends React.Component {
                 <Text>{lang.about_us.mentors.title}</Text>
               </p>
               <div className="md:grid grid-cols-4 text-center">
-                <div
-                  className="col-span-1 mx-5 md:mx-2 bg-gray-4 transition duration-200 hover:bg-gray-5"
-                  style={{ boxShadow: "3px 3px rgba(66, 68, 69, 1)" }}>
-                  <div className="p-5 m-5 md:m-0">
-                    <p className="text-6xl"><i className="fas fa-user-circle" /></p>
-                    <p className="text-3xl font-bold -mt-2 tracking leading-8">Brian Sonnier</p>
-                    <p className="uppercase text-md font-bold text-blue-3 -mt-1 md:mt-1">Lead Mentor</p>
-                    <p className="text-sm mt-2">{"Sonnier has been the club sponsor and lead mentor since the club was founded. " +
-                      "His engineering and organizational skills help our club grow and develop member's futures around STEM."}</p>
-                  </div>
-                </div>
-                <div
-                  className="col-span-1 mx-5 md:mx-2 bg-gray-4 transition duration-200 hover:bg-gray-5"
-                  style={{ boxShadow: "3px 3px rgba(66, 68, 69, 1)" }}>
-                  <div className="p-5 m-5 md:m-0">
-                    <p className="text-6xl"><i className="fas fa-user-circle" /></p>
-                    <p className="text-3xl font-bold -mt-2 tracking leading-8">Justin Maham</p>
-                    <p className="uppercase text-md font-bold text-blue-3 -mt-1 md:mt-1">Technical Mentor</p>
-                    <p className="text-sm mt-2">{"Since Fall 2019, he has brought his Mechanical Engineering skills " +
-                      "and FIRST robotics experience to help us design and build our robot."}</p>
-                  </div>
-                </div>
-                <div
-                  className="col-span-1 mx-5 md:mx-2 bg-gray-4 transition duration-200 hover:bg-gray-5"
-                  style={{ boxShadow: "3px 3px rgba(66, 68, 69, 1)" }}>
-                  <div className="p-5 m-5 md:m-0">
-                    <p className="text-6xl"><i className="fas fa-user-circle" /></p>
-                    <p className="text-3xl font-bold -mt-2 tracking leading-8">Shagun Ahluwalia</p>
-                    <p className="uppercase text-md font-bold text-blue-3 -mt-1 md:mt-1">Non-Technical Mentor</p>
-                    <p className="text-sm mt-2">{"She has been volunteering since Fall 2019 and brings her business knowledge " +
-                      "and management consulting skills to help members enhance their organizational strategy."}</p>
-                  </div>
-                </div>
-                <div
-                  className="col-span-1 mx-5 md:mx-2 bg-gray-4 transition duration-200 hover:bg-gray-5"
-                  style={{ boxShadow: "3px 3px rgba(66, 68, 69, 1)" }}>
-                  <div className="p-5 m-5 md:m-0">
-                    <p className="text-6xl"><i className="fas fa-user-circle" /></p>
-                    <p className="text-3xl font-bold -mt-2 tracking leading-8">Mikala Garcia</p>
-                    <p className="uppercase text-md font-bold text-blue-3 -mt-1 md:mt-1">WM Mentor</p>
-                    <p className="text-sm mt-2">{"As the Talent Branding Coordinator at Waste Management, " +
-                      "Ms. Garcia helps our club have the resources we need to develop and build our robots."}</p>
-                  </div>
-                </div>
+                {mentorDivList}
               </div>
             </div>
             <div className="col-span-1" />

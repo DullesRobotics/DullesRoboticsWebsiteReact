@@ -7,6 +7,7 @@ import Particles from "react-tsparticles";
 import mobile from "is-mobile"
 import Text from '../components/text'
 import lang from '../lang.json'
+import SponsorshipTiersJSON from './sponsorship_tiers.json'
 
 class Support extends React.Component {
   render() {
@@ -107,60 +108,18 @@ class SponsorBobble extends React.Component {
 
   render() {
     const tier = this.props.tier;
-    let name, price, details, list = [], img, particleColor, particleRate = 1, particleOpacity = 0.6;
+    const validTiers = SponsorshipTiersJSON.filter((m) => !m.hidden)
+    let name = validTiers[tier].name,
+      price = "$" + validTiers[tier].min_cost + "+",
+      details = validTiers[tier].benefits,
+      list = [],
+      img = validTiers[tier].img,
+      particleColor = validTiers[tier].color,
+      particleRate = validTiers[tier].particle_delay_period,
+      particleOpacity = validTiers[tier].opacity_percent;
 
-    switch (tier) {
-      case 0:
-        name = "Primary";
-        price = "$1000+";
-        img = "/primarytier.png";
-        details = ["Thank You Card", "Mention on Team Website", "Signed Team Photo"];
-        particleColor = "#a08872";
-        particleOpacity = "0.3";
-        particleRate = 0.5;
-        break;
-      case 1:
-        name = "Bronze";
-        price = "$3000+";
-        img = "/bronzetier.png";
-        details = ["Primary Benefits", "Logo on Shirts", "\"Proud Sponsor\" Poster"];
-        particleColor = "#cc6e16";
-        particleOpacity = "0.4";
-        particleRate = 0.4;
-        break;
-      case 2:
-        name = "Silver";
-        price = "$5000+";
-        img = "/silvertier.png";
-        details = ["Bronze Benefits", "Gift Basket"];
-        particleColor = "#9aa4a5";
-        particleOpacity = "0.5";
-        particleRate = 0.3;
-        break;
-      case 3:
-        name = "Gold";
-        price = "$10,000+";
-        img = "/goldtier.png";
-        details = ["Silver Benefits", "Logo On Robot", "Logo On Banner", "Plaque"];
-        particleColor = "#eadb04";
-        particleOpacity = "0.6";
-        particleRate = 0.2;
-        break;
-      case 4:
-        name = "Diamond";
-        price = "$15,000+";
-        img = "/diamondtier.png";
-        details = ["Gold Benefits", "Prominent Logo", "Robot Demo", "Robotics Camp"];
-        particleColor = "#0ed8ea";
-        particleOpacity = "0.7";
-        particleRate = 0.08;
-        break;
-      default: return (<></>);
-    }
-
-    for (let i in details) {
+    for (let i in details)
       list.push(<li key={i}>{details[i]}</li>)
-    }
 
     return (
       <div className={"bg-gray-5 shadow-xl rounded-md " + hoverCSS.hvrfloat} style={{ height: "118%" }}>

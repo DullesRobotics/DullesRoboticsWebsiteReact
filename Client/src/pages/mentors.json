@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Brian Sonnier",
+    "designation": "Lead Mentor",
+    "description": "Sonnier has been the club sponsor and lead mentor since the club was founded. His engineering and organizational skills help our club grow and develop member's futures around STEM."
+  },
+  {
+    "name": "Justin Maham",
+    "designation": "Technical Mentor",
+    "description": "Since Fall 2019, he has brought his Mechanical Engineering skills and FIRST robotics experience to help us design and build our robot."
+  },
+  {
+    "name": "Shagun Ahluwalia",
+    "designation": "Non-Technical Mentor",
+    "description": "She has been volunteering since Fall 2019 and brings her business knowledge and management consulting skills to help members enhance their organizational strategy."
+  },
+  {
+    "name": "Mikala Garcia",
+    "designation": "WM Mentor",
+    "description": "As the Talent Branding Coordinator at Waste Management, Ms. Garcia helps our club have the resources we need to develop and build our robots."
+  }
+]

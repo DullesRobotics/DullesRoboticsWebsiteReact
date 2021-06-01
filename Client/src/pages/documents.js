@@ -3,17 +3,7 @@ import Spacer from '../components/spacer'
 import Button from '../components/button'
 import Text from '../components/text'
 import lang from '../lang.json'
-
-const documentList = [
-  {
-    "name": "Safety Manual",
-    "description": "The safety manual outlines the rules and expectations for all team members of 7494 and includes all measures taken by the team to ensure safety.",
-    "file_size": "1.75 MB",
-    "output_file_name": "safety_manual.pdf",
-    "url": "%public%/documents/safety_manual.pdf",
-    "is_local": true
-  }
-]
+import documentList from './documents.json'
 
 function Documents(props) {
   const bundle = [];
