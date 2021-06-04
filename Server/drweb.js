@@ -85,7 +85,7 @@ app.post(uriPrefix + "/resource/add", (req, res) => {
         if (err)
           return res.status(400).send({ error: "An error occurred updating the database: " + err })
         else {
-          return res.status(200).send(({ success: true, response: "Viola, it's been uploaded.", file: { name: fileName, size: fileSizeKB } }))
+          return res.status(200).send(({ success: true, response: "Voila, it's been uploaded.", file: { name: fileName, size: fileSizeKB } }))
         }
       })
   }).catch((err) => {
