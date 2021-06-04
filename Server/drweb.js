@@ -9,6 +9,7 @@ const fs = require("fs");
 const mysql = require('mysql2');
 var http = require('http');
 var url = require('url');
+var remote = require('remote-file-size')
 
 const app = express();
 const port = process.env.PORT || 6937;
@@ -71,25 +72,34 @@ app.post(uriPrefix + "/resource/add", (req, res) => {
   if (req.body.description && req.body.description.length > 256)
     return res.status(400).send({ error: "Description size is too large. Max characters is 256" })
 
-  if (isNaN(req.body.date))
+  if (req.body.date && isNaN(req.body.date))
     return res.status(400).send({ error: "Invalid parameters" })
 
   if (req.body.title.length > 64)
     return res.status(400).send({ error: "Title size is too large. Max characters is 64" })
 
-  const title = req.body.title, url = req.body.url, type = req.body.is_media, date = req.body.date, desc = req.body.description, prot = req.body.protected
-  download_file_httpget(url).then((fileInfo) => {
-    const fileSizeKB = fileInfo.size / 1000, fileName = fileInfo.name
-    pool.query("INSERT INTO `dullesrobo`.`resources` (`is_media`, `file`, `title`, `description`, `date`, `timestamp`, `protected`, `file_size_kb`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
-      [type, fileName, title, desc, date, new Date().getTime(), prot, fileSizeKB], (err, rows) => {
-        if (err)
-          return res.status(400).send({ error: "An error occurred updating the database: " + err })
-        else {
-          return res.status(200).send(({ success: true, response: "Voila, it's been uploaded.", file: { name: fileName, size: fileSizeKB } }))
-        }
-      })
-  }).catch((err) => {
-    res.status(500).send({ error: err })
+  const title = req.body.title, url = req.body.url, type = Number(req.body.is_media), date = req.body.date, desc = req.body.description, prot = req.body.protected
+  remote(url, function (err, o) {
+    if (err) return res.status(500).send({ error: err })
+
+    o /= 1000 //convert to kb
+
+    if ((type === 1 && Number(o) > 10000) || (type === 0 && Number(o) > 20000))
+      return res.status(400).send({ error: "Those files are too large. 20 MB max for documents and 10 MB max for media. Any larger requires a discussion." })
+
+    download_file_httpget(url).then((fileInfo) => {
+      const fileName = fileInfo.name
+      pool.query("INSERT INTO `dullesrobo`.`resources` (`is_media`, `file`, `title`, `description`, `date`, `timestamp`, `protected`, `file_size_kb`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+        [type, fileName, title, desc, date, new Date().getTime(), prot, o], (err, rows) => {
+          if (err)
+            return res.status(400).send({ error: "An error occurred updating the database: " + err })
+          else {
+            return res.status(200).send(({ success: true, response: "Voila, it's been uploaded.", file: { name: fileName, size: o } }))
+          }
+        })
+    }).catch((err) => {
+      res.status(500).send({ error: err })
+    })
   })
 })
 
@@ -682,12 +692,7 @@ async function download_file_httpget(file_url) {
       }).on('end', function () {
         file.end();
         console.log(file_name + ' downloaded to ' + token.fileLocations.storage);
-        fs.stat(`${token.fileLocations.storage}${file_name}`, (err, stats) => {
-          if (!err)
-            resolve({ size: stats.size, name: file_name })
-          else
-            reject(err)
-        });
+        resolve({ name: file_name })
       });
     });
   })
