@@ -7,7 +7,7 @@ const nodemailer = require("nodemailer");
 const token = require("./token.json")
 const fs = require("fs");
 const mysql = require('mysql2');
-var http = require('http');
+var http = require('https');
 var url = require('url');
 var remote = require('remote-file-size')
 
@@ -687,9 +687,15 @@ async function download_file_httpget(file_url) {
     let file = fs.createWriteStream(token.fileLocations.storage + file_name);
 
     http.get(options, function (res) {
+      res.on('error', function (data) {
+        reject("error: " + data)
+      })
+
       res.on('data', function (data) {
         file.write(data);
-      }).on('end', function () {
+      })
+
+      res.on('end', function () {
         file.end();
         console.log(file_name + ' downloaded to ' + token.fileLocations.storage);
         resolve({ name: file_name })
