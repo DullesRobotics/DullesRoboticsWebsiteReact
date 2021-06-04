@@ -72,7 +72,7 @@ app.post(uriPrefix + "/resource/add", (req, res) => {
   if (req.body.description && req.body.description.length > 256)
     return res.status(400).send({ error: "Description size is too large. Max characters is 256" })
 
-  if (req.body.date && isNaN(req.body.date))
+  if (req.body.date && req.body.date.length > 32)
     return res.status(400).send({ error: "Invalid parameters" })
 
   if (req.body.title.length > 64)
@@ -157,7 +157,7 @@ app.post(uriPrefix + "/resource/edit", (req, res) => {
   if (req.body.description && req.body.description.length > 256)
     return res.status(400).send({ error: "Description size is too large. Max characters is 256" })
 
-  if (isNaN(req.body.date))
+  if (req.body.date && req.body.date.length > 32)
     return res.status(400).send({ error: "Invalid parameters" })
 
   if (req.body.title.length > 64)
