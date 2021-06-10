@@ -10,7 +10,7 @@ import NewsFeed from "../components/newsfeed"
 import { Link } from 'react-router-dom'
 
 import Text from '../components/text'
-import lang from '../lang.json'
+import lang from '../lang/lang.json'
 
 const slides = [
   (<img alt="Waste Management Logo" className="h-24 w-auto mx-auto" src={process.env.PUBLIC_URL + "/media/wm.png"} />),

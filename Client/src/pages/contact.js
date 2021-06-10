@@ -7,7 +7,7 @@ import Input, { TextArea } from '../components/input'
 import mobile from "is-mobile"
 import dataJson from "../data.json"
 import Text from '../components/text'
-import lang from '../lang.json'
+import lang from '../lang/lang.json'
 
 
 const gMapsHeight = 300;

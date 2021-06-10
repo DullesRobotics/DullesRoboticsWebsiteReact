@@ -3,7 +3,7 @@ import React from 'react'
 import FollowTray from './followtray'
 import { Link } from 'react-router-dom'
 import Text from '../components/text'
-import lang from '../lang.json'
+import lang from '../lang/lang.json'
 
 class Footer extends React.Component {
 

@@ -13,7 +13,7 @@ import gfm from 'remark-gfm'
 import { Redirect, useParams, Link } from "react-router-dom";
 import '../styles/posts.module.css'
 import Text from '../components/text'
-import lang from '../lang.json'
+import lang from '../lang/lang.json'
 
 const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 

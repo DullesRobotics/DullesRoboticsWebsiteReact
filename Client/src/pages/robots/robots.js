@@ -2,7 +2,7 @@ import React from 'react'
 import SectionDivider from '../../components/sectiondivider'
 import Button from '../../components/button'
 import RoboBlockCSS from './robots.module.css'
-import RobotsJSON from './robots.json'
+import RobotsJSON from '../../lang/robots.json'
 import Popup from 'reactjs-popup'
 import './modal.css'
 import mobile from 'is-mobile'
@@ -10,7 +10,7 @@ import ReactMarkdown from 'react-markdown/with-html'
 import gfm from 'remark-gfm'
 import '../../styles/posts.module.css'
 import Text from '../../components/text'
-import lang from '../../lang.json'
+import lang from '../../lang/lang.json'
 
 class Robots extends React.Component {
 

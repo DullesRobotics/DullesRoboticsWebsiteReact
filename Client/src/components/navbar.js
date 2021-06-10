@@ -2,7 +2,7 @@ import React from 'react';
 import Button from './button'
 import { HashLink as Link } from 'react-router-hash-link'
 import NavCSS from './navbar.module.css'
-import lang from '../lang.json'
+import lang from '../lang/lang.json'
 
 const topLevel = [
     { key: 1, title: lang.header.nav.home, link: "/" },

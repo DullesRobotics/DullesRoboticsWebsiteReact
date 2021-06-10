@@ -3,7 +3,7 @@ import Spacer from '../components/spacer'
 import Button from '../components/button'
 import SectionDivider from '../components/sectiondivider'
 import Text from '../components/text'
-import lang from '../lang.json'
+import lang from '../lang/lang.json'
 
 class AboutFirst extends React.Component {
 

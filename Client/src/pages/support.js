@@ -6,8 +6,8 @@ import hoverCSS from '../styles/hover.module.css'
 import Particles from "react-tsparticles";
 import mobile from "is-mobile"
 import Text from '../components/text'
-import lang from '../lang.json'
-import SponsorshipTiersJSON from './sponsorship_tiers.json'
+import lang from '../lang/lang.json'
+import SponsorshipTiersJSON from '../lang/sponsorship_tiers.json'
 
 class Support extends React.Component {
   render() {

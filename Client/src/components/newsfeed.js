@@ -12,7 +12,7 @@ import ReactMarkdown from 'react-markdown/with-html'
 import gfm from 'remark-gfm'
 import PropTypes from 'prop-types'
 import Text from '../components/text'
-import lang from '../lang.json'
+import lang from '../lang/lang.json'
 
 const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 

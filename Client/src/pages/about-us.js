@@ -5,13 +5,13 @@ import SectionDivider from '../components/sectiondivider'
 import Typewriter from 'typewriter-effect'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
-import Awards from './awards.json'
+import Awards from '../lang/awards.json'
 import ReactMarkdown from 'react-markdown/with-html'
 import gfm from 'remark-gfm'
 import hoverCSS from '../styles/hover.module.css'
 import Text from '../components/text'
-import lang from '../lang.json'
-import MentorJSON from './mentors.json'
+import lang from '../lang/lang.json'
+import MentorJSON from '../lang/mentors.json'
 
 class AboutUs extends React.Component {
 

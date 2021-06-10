@@ -14,7 +14,7 @@ import {
   selectSocialFeed
 } from '../slices/socialSlice'
 import Text from '../components/text'
-import lang from '../lang.json'
+import lang from '../lang/lang.json'
 
 class Announcements extends React.Component {
 

@@ -60,20 +60,20 @@ app.post(uriPrefix + "/resource/add", (req, res) => {
   if (!req.body.token || req.body.token !== token.editToken)
     return res.status(400).send({ error: "Missing token" })
 
-  if (!req.body.is_media || !req.body.url || !req.body.title || !req.body.protected)
-    return res.status(400).send({ error: "Missing parameters" })
+  if (req.body.is_media === null || !req.body.url || !req.body.title || req.body.protected === null)
+    return res.status(400).send({ error: "Missing parameters (1)" })
 
   if ((isNaN(req.body.is_media) || req.body.is_media > 1 || req.body.is_media < 0))
-    return res.status(400).send({ error: "Invalid parameters" })
+    return res.status(400).send({ error: "Invalid parameters (2)" })
 
   if ((isNaN(req.body.protected) || req.body.protected > 1 || req.body.protected < 0))
-    return res.status(400).send({ error: "Invalid parameters" })
+    return res.status(400).send({ error: "Invalid parameters (3)" })
 
   if (req.body.description && req.body.description.length > 256)
     return res.status(400).send({ error: "Description size is too large. Max characters is 256" })
 
   if (req.body.date && req.body.date.length > 32)
-    return res.status(400).send({ error: "Invalid parameters" })
+    return res.status(400).send({ error: "Invalid parameters (4)" })
 
   if (req.body.title.length > 64)
     return res.status(400).send({ error: "Title size is too large. Max characters is 64" })
@@ -142,7 +142,7 @@ app.post(uriPrefix + "/resource/edit", (req, res) => {
   if (!req.body.token || req.body.token !== token.editToken)
     return res.status(400).send({ error: "Missing token" })
 
-  if (!req.body.file && !req.body.is_media || !req.body.title || !req.body.protected)
+  if (!req.body.file || req.body.is_media === null || !req.body.protected === null)
     return res.status(400).send({ error: "Missing parameters" })
 
   if (req.body.file.length > 64)
@@ -160,12 +160,17 @@ app.post(uriPrefix + "/resource/edit", (req, res) => {
   if (req.body.date && req.body.date.length > 32)
     return res.status(400).send({ error: "Invalid parameters" })
 
-  if (req.body.title.length > 64)
+  if (req.body.title && req.body.title.length > 64)
     return res.status(400).send({ error: "Title size is too large. Max characters is 64" })
 
   const title = req.body.title, type = req.body.is_media, date = req.body.date, desc = req.body.description, prot = req.body.protected
+  const args = [type, prot]
+  if (desc) args.push(desc)
+  if (date) args.push(date)
+  if (title) args.push(title)
+  args.push(req.body.file)
 
-  pool.query("UPDATE `dullesrobo`.`resources` SET `is_media` = ?, `title` = ?, `description` = ?, `date` = ?, `protected` = ? WHERE (`file` = ?)", [type, title, desc, date, prot, req.body.file], (err, rows) => {
+  pool.query(`UPDATE \`dullesrobo\`.\`resources\` SET \`is_media\` = ?, \`protected\` = ?${desc !== "keep" ? `, \`description\` = ?` : ``}${date !== "keep" ? `, \`date\` = ?` : ``}${title !== "keep" ? `, \`title\` = ?` : ``} WHERE (\`file\` = ?)`, args, (err, rows) => {
     if (err)
       return res.status(400).send({ error: "An error occurred updating the database: " + err })
     else {

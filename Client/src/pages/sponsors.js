@@ -3,7 +3,7 @@ import Spacer from '../components/spacer'
 import SectionDivider from '../components/sectiondivider'
 import Particles from "react-tsparticles";
 import mobile from "is-mobile"
-import SponsorTiersJSON from './sponsorship_tiers.json'
+import SponsorTiersJSON from '../lang/sponsorship_tiers.json'
 
 function Sponsors(props) {
   const bundle = [];

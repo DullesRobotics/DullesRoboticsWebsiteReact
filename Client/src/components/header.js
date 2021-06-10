@@ -5,7 +5,7 @@ import { slide as Menu } from 'react-burger-menu'
 import { Link } from 'react-router-dom'
 import { NavBar, MobileMenu } from './navbar'
 import Text from '../components/text'
-import lang from '../lang.json'
+import lang from '../lang/lang.json'
 
 const topSpacing = '100px';
 

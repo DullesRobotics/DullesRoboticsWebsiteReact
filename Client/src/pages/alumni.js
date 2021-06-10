@@ -1,10 +1,10 @@
 import React from 'react'
 import Spacer from '../components/spacer'
 import SectionDivider from '../components/sectiondivider'
-import AlumniList from './alumni.json'
+import AlumniList from '../lang/alumni.json'
 import PropTypes from 'prop-types';
 import Text from '../components/text'
-import lang from '../lang.json'
+import lang from '../lang/lang.json'
 
 const alumCol = "col-span-1 mx-6 sm:mx-16 md:mx-2 mb-6 md:mb-0 rounded-lg",
   existStyle = "bg-gray-4 hover:bg-gray-5",

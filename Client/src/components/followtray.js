@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from './button'
 import PropTypes from 'prop-types'
-import lang from '../lang.json'
+import lang from '../lang/lang.json'
 
 
 class FollowTray extends React.Component {

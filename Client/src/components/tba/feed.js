@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 import LoadingIcon from '../../components/lottiecomponents/loading';
 import BobbleCSS from './bobble.module.css'
 import Text from '../../components/text'
-import lang from '../../lang.json'
+import lang from '../../lang/lang.json'
 
 const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 

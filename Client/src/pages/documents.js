@@ -2,7 +2,7 @@ import React from 'react'
 import Spacer from '../components/spacer'
 import Button from '../components/button'
 import Text from '../components/text'
-import lang from '../lang.json'
+import lang from '../lang/lang.json'
 import documentList from './documents.json'
 
 function Documents(props) {

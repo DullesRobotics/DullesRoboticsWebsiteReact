@@ -4,9 +4,9 @@ import SectionDivider from '../components/sectiondivider'
 import { Link } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown/with-html'
 import gfm from 'remark-gfm'
-import OutreachJSON from './outreach.json'
+import OutreachJSON from '../lang/outreach.json'
 import Text from '../components/text'
-import lang from '../lang.json'
+import lang from '../lang/lang.json'
 
 class Outreach extends React.Component {
 
