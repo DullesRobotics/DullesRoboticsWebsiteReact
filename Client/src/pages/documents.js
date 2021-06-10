@@ -4,20 +4,36 @@ import Button from '../components/button'
 import Text from '../components/text'
 import lang from '../lang/lang.json'
 import documentList from './documents.json'
+import { useSelector, useDispatch } from 'react-redux'
+import {
+  selectDocuments,
+  loadDocuments
+} from '../slices/documentSlice'
+import LoadingIcon from '../components/lottiecomponents/loading';
 
 function Documents(props) {
   const bundle = [];
 
-  for (let i in documentList) {
-    let url = documentList[i].url.replace("%public%", process.env.PUBLIC_URL);
+  const docData = useSelector(selectDocuments);
+  const dispatch = useDispatch();
+
+  if (docData.documents.length === 0 && !docData.finished && !docData.loading && !docData.error)
+    dispatch(loadDocuments());
+
+  for (let i in docData.documents) {
+    const doc = docData.documents[i]
+    let url = lang.documents.url + doc.file
     bundle.push(
       <div className="py-6 px-3">
         <p className="text-left text-white text-3xl font-bold">
-          {documentList[i].name}
+          {doc.title}
         </p>
         <p className="pt-1 text-left text-white text-base font-normal">
-          {documentList[i].description} ({documentList[i].file_size})
-          </p>
+          {doc.description} ({doc.file_size_kb + " KB"})
+        </p>
+        {doc.date ? <p className="text-left italic text-gray-300 text-base font-normal">
+          {doc.date}
+        </p> : <></>}
         <a
           href={url}
           target="_blank"
@@ -29,24 +45,20 @@ function Documents(props) {
             <i class="pl-1 pr-2 fas fa-eye" />
           </Button>
         </a>
-        {
-          documentList[i].is_local ?
-            <a
-              className="px-2"
-              href={url}
-              target="_blank"
-              rel="noopener noreferrer"
-              download={documentList[i].output_file_name ? documentList[i].output_file_name : ""}
-            >
-              <Button bstyle="primary" className="text-lg" animate>
-                <span class="pl-2 pr-1">
-                  {lang.documents.download}
-                </span>
-                <i class="pl-1 pr-2 fas fa-cloud-download-alt" />
-              </Button>
-            </a>
-            : <></>
-        }
+        <a
+          className="px-2"
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          download={doc.output_file_name ? doc.output_file_name : ""}
+        >
+          <Button bstyle="primary" className="text-lg" animate>
+            <span class="pl-2 pr-1">
+              {lang.documents.download}
+            </span>
+            <i class="pl-1 pr-2 fas fa-cloud-download-alt" />
+          </Button>
+        </a>
       </div>
     );
   }
@@ -64,12 +76,12 @@ function Documents(props) {
       <div className="pt-4 pb-5 md:grid md:grid-cols-6 lg:grid-cols-4 bg-gray-3">
         <div className="col-span-1" />
         <div className={`mx-3 md:mx-0 col-span-4 lg:col-span-2 divide-y divide-white text-left text-white text-5xl font-bold`}>
-          {bundle}
+          {docData.loading && !docData.finished ? <LoadingIcon /> : docData.error ? <p>Sorry, there was an error loading documents. Try again or contact us.</p> : bundle}
           <div />
         </div>
         <div className="col-span-1" />
       </div>
-      <div className="bg-gray-3" style={{ 'min-height': '58vh' }}></div>
+      <div className="bg-gray-3" style={docData.loading && !docData.finished ? { 'min-height': '70vh' } : { 'min-height': '58vh' }}></div>
     </div>
   );
 }

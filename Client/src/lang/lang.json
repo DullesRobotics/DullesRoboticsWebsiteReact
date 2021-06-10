@@ -217,7 +217,8 @@
   "documents": {
     "title": "Documents",
     "view": "View",
-    "download": "Download"
+    "download": "Download",
+    "url": "https://api.xcal.dev/storage/dr/"
   },
   "support": {
     "title": "Support And Sponsor Us",
