@@ -1,17 +1,14 @@
 [
   {
-    "title": "About The Club",
-    "description": "Dulles Robotics was founded in August 2016 by three Dulles HS students with a passion for STEM and teaching. Since then, the club has had a tremendous impact on its students, the school and the community. Composed of a group of diverse, focused, and fun-loving individuals, Dulles Robotics has become more than a club, but a family. <br/> <br/> Every year, our club continues to grow. What started as 15 students has grown to over over 50 today. Our club consists of students from all backgrounds all joined under similar interests.",
-    "media_url": ""
+    "title": "Section 1",
+    "description": "Description 1"
   },
   {
-    "title": "Community Impact",
-    "description": "A huge part of FIRST is the impact a team makes on their community. We have reached out in several ways hosting library camps, demoing our robots at large STEM events, and teaching at orphanages. Beyond that, we host the FTC matches for our league and mentor other teams. We continue to promote FIRST in our school and have been featured on local television channels.",
-    "media_url": ""
+    "title": "Section 2",
+    "description": "Description 2"
   },
   {
-    "title": "Gracious Professionalism",
-    "description": "The notion of gracious professionalism entails kindness, integrity, and respect. We expect our members to display gracious professionalism through their actions. By helping others in need, initiating communication with other teams, and engaging ourselves within our community, we are able to uphold the virtues of gracious professionalism.",
-    "media_url": ""
+    "title": "Section 3",
+    "description": "Description 3"
   }
 ]
