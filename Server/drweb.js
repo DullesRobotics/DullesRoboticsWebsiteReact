@@ -110,6 +110,20 @@ app.get(uriPrefix + "/resource/list", (req, res) => {
   })
 })
 
+app.get(uriPrefix + "/resource/list/media", (req, res) => {
+  pool.query(`SELECT * FROM dullesrobo.resources WHERE is_media = 0 ORDER BY timestamp DESC`, [], (err, rows) => {
+    if (err) return res.status(500).send({ error: "Error retrieving media: " + err })
+    else return res.status(200).send({ resources: rows })
+  })
+})
+
+app.get(uriPrefix + "/resource/list/documents", (req, res) => {
+  pool.query(`SELECT * FROM dullesrobo.resources WHERE is_media = 0 ORDER BY timestamp DESC`, [], (err, rows) => {
+    if (err) return res.status(500).send({ error: "Error retrieving documents: " + err })
+    else return res.status(200).send({ resources: rows })
+  })
+})
+
 app.get(uriPrefix + "/resource/get", (req, res) => {
 
   if (!req.query.file && !req.query.id) return res.status(400).send({ error: "Missing or invalid file identifier parameter" })
