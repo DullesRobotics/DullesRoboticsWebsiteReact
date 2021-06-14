@@ -30,6 +30,12 @@
     "banner": "robots-header.jpg"
   },
   "outreach_page": {
-    "banner": "7494-scaled.jpg"
+    "banner": "outreach.jpg"
+  },
+  "about_first": {
+    "logo": "FIRST-small.png",
+    "ftc": "FTC.png",
+    "frc": "FRC.png",
+    "banner": "about_first_banner_small_ds.jpg"
   }
 }
