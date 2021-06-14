@@ -1,0 +1,35 @@
+{
+  "fourOfour": "robotnotfound.jpg",
+  "header_logo": "profilerounded.png",
+  "sponsors": {
+    "wm": "wm.png",
+    "nasa": "nasa.png",
+    "tmiller": "tmiller.png"
+  },
+  "home": {
+    "top_banner": "txpasteam.jpg",
+    "middle_banner": "groupphotohome.jpg",
+    "yt_video": "EXGHTNbBxB8"
+  },
+  "team_logos": {
+    "big_red": "bigred.png",
+    "robovikes": "viking.png",
+    "circuit_bizurkers": "cb.png"
+  },
+  "departments": {
+    "build": "build.jpg",
+    "programming": "programming.png",
+    "design": "design.png",
+    "presentation": "presentation.jpg",
+    "marketing": "marketing.png"
+  },
+  "about_us": {
+    "banner": "7494-scaled.jpg"
+  },
+  "robot_page": {
+    "banner": "robots-header.jpg"
+  },
+  "outreach_page": {
+    "banner": "7494-scaled.jpg"
+  }
+}

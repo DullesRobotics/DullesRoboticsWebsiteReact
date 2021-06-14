@@ -8,6 +8,7 @@ import mobile from "is-mobile"
 import Text from '../components/text'
 import lang from '../lang/lang.json'
 import SponsorshipTiersJSON from '../lang/sponsorship_tiers.json'
+import ServerImage from '../components/serverimage'
 
 class Support extends React.Component {
   render() {
@@ -124,7 +125,7 @@ class SponsorBobble extends React.Component {
     return (
       <div className={"bg-gray-5 shadow-xl rounded-md " + hoverCSS.hvrfloat} style={{ height: "118%" }}>
         <div className="pt-2 pr-2 pl-3">
-          <div className="flex my-4"><img className="mx-auto" src={process.env.PUBLIC_URL + "/media" + img} alt={name + " Tier Icon"} /></div>
+          <div className="flex my-4"><ServerImage className="mx-auto" file={img} alt={name + " Tier Icon"} /></div>
           <p className="text-2xl text-white text-left font-bold" >{name}</p>
           <p className="text-xl text-white text-left font-semibold" >{price}</p>
           <supportbobble>

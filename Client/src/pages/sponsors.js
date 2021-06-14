@@ -4,6 +4,8 @@ import SectionDivider from '../components/sectiondivider'
 import Particles from "react-tsparticles";
 import mobile from "is-mobile"
 import SponsorTiersJSON from '../lang/sponsorship_tiers.json'
+import ServerImage from '../components/serverimage'
+import images from '../lang/images.json'
 
 function Sponsors(props) {
   const bundle = [];
@@ -17,7 +19,7 @@ function Sponsors(props) {
           <div className="row-span-1 md:grid md:grid-cols-2 my-10">
             <div className="md:col-span-1">
               <a href={tLFinalized[i].sponsors[j].website} target="_blank" rel="noopener noreferrer">
-                <img className="mx-auto" style={{ width: tLFinalized[i].sponsors[j].image_width }} src={tLFinalized[i].sponsors[j].image_url.replace("%public%", process.env.PUBLIC_URL)} alt={tLFinalized[i].sponsors[j].name + " Logo"} />
+                <ServerImage className="mx-auto" style={{ width: tLFinalized[i].sponsors[j].image_width }} file={tLFinalized[i].sponsors[j].image_url} alt={tLFinalized[i].sponsors[j].name + " Logo"} />
               </a>
             </div>
             <div className="mt-10 md:mt-0 md:col-span-1 ml-4">

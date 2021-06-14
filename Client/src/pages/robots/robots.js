@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import SectionDivider from '../../components/sectiondivider'
 import Button from '../../components/button'
 import RoboBlockCSS from './robots.module.css'
@@ -11,60 +11,75 @@ import gfm from 'remark-gfm'
 import '../../styles/posts.module.css'
 import Text from '../../components/text'
 import lang from '../../lang/lang.json'
+import { useSelector, useDispatch } from 'react-redux'
+import {
+  loadMediaFile,
+  selectMedia
+} from '../../slices/mediaSlice'
+import images from '../../lang/images.json'
 
-class Robots extends React.Component {
+export default function Robots(props) {
 
-  constructor(props) {
-    super(props);
-    this.state = { width: window.innerWidth, height: window.innerHeight, slideValue: 0 };
-  }
+  const [dimensions, setDimensions] = useState({
+    height: window.innerHeight,
+    width: window.innerWidth
+  })
 
-  updateDimensions = () => {
-    this.setState({ width: window.innerWidth, height: window.innerHeight });
-  };
-  componentDidMount() {
-    window.addEventListener('resize', this.updateDimensions);
-  }
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.updateDimensions);
-  }
+  React.useEffect(() => {
+    function handleResize() {
+      setDimensions({
+        height: window.innerHeight,
+        width: window.innerWidth
+      })
+    }
+    window.addEventListener('resize', handleResize)
+    return _ => window.removeEventListener('resize', handleResize)
+  })
 
-  render() {
-    return (
-      <div>
-        <div className="z-20">
-          <div className="pt-20 sm:pt-32 lg:pt-48 xl:pt-64" style={{ "text-shadow": "4px 4px 0px rgba(0,0,0,0.4)" }}>
-            <p className="pt-5 text-white font-bold mx-auto text-center text-5xl md:text-6xl lg:text-7xl">
-              <Text>{lang.robots.title}</Text>
-            </p>
-          </div>
-          <div>
-            <div className="bg-gray-4 pt-5 mt-20 lg:mt-32 xl:mt-64">
-              <div className="text-center text-white -mb-4">
-                <BlockHandler />
-              </div>
+  const dispatch = useDispatch();
+  const blobs = useSelector(selectMedia);
+  let url
+
+  if (blobs.cached.has(images.robot_page.banner))
+    url = blobs.cached.get(images.robot_page.banner)
+  else
+    dispatch(loadMediaFile(images.robot_page.banner))
+
+  return (
+    <div>
+      <div className="z-20">
+        <div className="pt-20 sm:pt-32 lg:pt-48 xl:pt-64" style={{ "text-shadow": "4px 4px 0px rgba(0,0,0,0.4)" }}>
+          <p className="pt-5 text-white font-bold mx-auto text-center text-5xl md:text-6xl lg:text-7xl">
+            <Text>{lang.robots.title}</Text>
+          </p>
+        </div>
+        <div>
+          <div className="bg-gray-4 pt-5 mt-20 lg:mt-32 xl:mt-64">
+            <div className="text-center text-white -mb-4">
+              <BlockHandler />
             </div>
           </div>
         </div>
-        {/* Background elements, in order from front to back */}
-        <div className={"absolute"} style={{
-          "z-index": "-9", "top": "-100px",
-          "backgroundImage": "linear-gradient(to bottom, rgba(0, 203, 221, 0.6) 0%, rgba(165, 28, 28, 0.65) 90%)", "backgroundRepeat": "no-repeat", "backgroundSize": "cover"
-          , margin: '0 auto', width: '100%', height: (this.state.width >= 1280 ? "1200px" : (this.state.width >= 1024 ? "950px" : (this.state.width >= 768 ? "600px" : "510px"))), backgroundPosition: "center center"
-        }} />
+      </div>
+      {/* Background elements, in order from front to back */}
+      <div className={"absolute"} style={{
+        "z-index": "-9", "top": "-100px",
+        "backgroundImage": "linear-gradient(to bottom, rgba(0, 203, 221, 0.6) 0%, rgba(165, 28, 28, 0.65) 90%)", "backgroundRepeat": "no-repeat", "backgroundSize": "cover"
+        , margin: '0 auto', width: '100%', height: (dimensions.width >= 1280 ? "1200px" : (dimensions.width >= 1024 ? "950px" : (dimensions.width >= 768 ? "600px" : "510px"))), backgroundPosition: "center center"
+      }} />
 
-        {/* {!mobile() ? <div className="absolute top-0" style={{ "z-index": "-10" }}>
-          <iframe title="Youtube Video" width={this.state.width - 17} height={9 * (this.state.width / 16)} src="https://www.youtube-nocookie.com/embed/7w0nCwESmtc?autoplay=1&loop=1&playlist=7w0nCwESmtc&version=3&disablekb=1&mute=1&controls=0&start=21&end=197" frameborder="0"></iframe>
+      {/* {!mobile() ? <div className="absolute top-0" style={{ "z-index": "-10" }}>
+          <iframe title="Youtube Video" width={dimensions.width - 17} height={9 * (dimensions.width / 16)} src="https://www.youtube-nocookie.com/embed/7w0nCwESmtc?autoplay=1&loop=1&playlist=7w0nCwESmtc&version=3&disablekb=1&mute=1&controls=0&start=21&end=197" frameborder="0"></iframe>
         </div> : <></>} */}
 
-        <div className={"absolute"} style={{
-          "z-index": "-11", "top": "-100px",
-          "backgroundImage": "url(" + process.env.PUBLIC_URL + "/media/robots-header.jpg)", "backgroundRepeat": "no-repeat", "backgroundSize": "cover"
-          , margin: '0 auto', width: '100%', height: (this.state.width >= 1280 ? "1200px" : (this.state.width >= 1024 ? "950px" : (this.state.width >= 768 ? "600px" : "510px"))), backgroundPosition: "center center"
-        }} />
-      </div>
-    );
-  }
+      <div className={"absolute"} style={{
+        "z-index": "-11", "top": "-100px",
+        "backgroundImage": `url(${url})`, "backgroundRepeat": "no-repeat", "backgroundSize": "cover"
+        , margin: '0 auto', width: '100%', height: (dimensions.width >= 1280 ? "1200px" : (dimensions.width >= 1024 ? "950px" : (dimensions.width >= 768 ? "600px" : "510px"))), backgroundPosition: "center center"
+      }} />
+    </div>
+  );
+
 }
 
 /**
@@ -102,12 +117,21 @@ export function RoboBlock(props) {
   for (let i in props.json.features)
     modalFeatures += `\n - ${props.json.features[i]}`
 
+  const dispatch = useDispatch();
+  const blobs = useSelector(selectMedia);
+  let url
+
+  if (blobs.cached.has(props.json.image))
+    url = blobs.cached.get(props.json.image)
+  else
+    dispatch(loadMediaFile(props.json.image))
+
   return (
     <div className={RoboBlockCSS["container"]}>
       <section
         className="md:col-span-1"
         style={{
-          backgroundImage: `url(${process.env.PUBLIC_URL}/media/robots/${props.json.image})`
+          backgroundImage: `url(${url})`
         }}>
         <div style={{ "backgroundImage": props.json.gradient }}>
           <span className="p-8">
@@ -180,5 +204,3 @@ export function RoboBlock(props) {
       </section>
     </div>);
 }
-
-export default Robots;

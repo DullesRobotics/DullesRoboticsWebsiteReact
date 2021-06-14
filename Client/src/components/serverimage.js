@@ -19,6 +19,6 @@ export default function ServerImage(props) {
   else
     dispatch(loadMediaFile(props.file))
 
-  return url ? <img src={url} alt={props.alt} className={props.className}>{props.children}</img> : <LoadingIcon />;
+  return url ? <img src={url} style={props.style} alt={props.alt} className={props.className}>{props.children}</img> : <LoadingIcon />;
 
 }

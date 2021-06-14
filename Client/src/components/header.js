@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom'
 import { NavBar, MobileMenu } from './navbar'
 import Text from '../components/text'
 import lang from '../lang/lang.json'
+import ServerImage from '../components/serverimage'
+import images from '../lang/images.json'
 
 const topSpacing = '100px';
 
@@ -102,7 +104,12 @@ class Header extends React.Component {
             <div className="mx-auto">
               <Link to={this.props.dir === "/" ? "#" : "/"}>
                 <div className="mr-2 md:mr-4 flex items-center flex-shrink-0 text-white">
-                  {this.state.width >= 328 ? <img className={(this.state.height >= 496 ? "h-10 w-10 sm:h-16 sm:w-16" : "h-10 w-10") + " rounded-full p-0 sm:p-1"} alt="Dulles Robotics's Logo" src={process.env.PUBLIC_URL + "/media/profilerounded.png"}></img> : <></>}
+                  {this.state.width >= 328 ?
+                    <ServerImage
+                      file={images.header_logo}
+                      className={(this.state.height >= 496 ? "h-10 w-10 sm:h-16 sm:w-16" : "h-10 w-10") + " rounded-full p-0 sm:p-1"}
+                      alt="Dulles Robotics's Logo" />
+                    : <></>}
                   <span className={"pl-2 font-bold " + (this.state.height >= 496 ? "text-2xl sm:text-4xl text-center" : "text-xl")}>
                     <Text>{lang.header.title}</Text>
                   </span>
