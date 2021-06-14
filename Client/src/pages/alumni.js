@@ -5,6 +5,7 @@ import AlumniList from '../lang/alumni.json'
 import PropTypes from 'prop-types';
 import Text from '../components/text'
 import lang from '../lang/lang.json'
+import ServerImage from '../components/serverimage'
 
 const alumCol = "col-span-1 mx-6 sm:mx-16 md:mx-2 mb-6 md:mb-0 rounded-lg",
   existStyle = "bg-gray-4 hover:bg-gray-5",
@@ -25,7 +26,7 @@ function Alumni(props) {
       let alum = AlumniList[yr].alumni[i];
       currentRow.push(
         <AlumniBobble
-          imageURL={alum.imageURL}
+          imageURL={alum.image}
           name={alum.name}
           college={alum.college}
           major={alum.major}
@@ -103,9 +104,9 @@ function AlumniBobble(props) {
     <div >
       <div className="p-4">
         {props.imageURL ?
-          <img
+          <ServerImage
             className="rounded-lg mx-auto"
-            src={process.env.PUBLIC_URL + props.imageURL}
+            file={props.imageURL}
             alt={props.name} /> :
           <p className="text-center text-7xl mt-5">
             <i className="fas fa-user-circle" />

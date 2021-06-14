@@ -7,8 +7,10 @@ import documentList from './documents.json'
 import { useSelector, useDispatch } from 'react-redux'
 import {
   selectDocuments,
-  loadDocuments
+  loadDocuments,
+  setDownloading
 } from '../slices/documentSlice'
+
 import LoadingIcon from '../components/lottiecomponents/loading';
 
 function Documents(props) {
@@ -43,20 +45,6 @@ function Documents(props) {
               {lang.documents.view}
             </span>
             <i class="pl-1 pr-2 fas fa-eye" />
-          </Button>
-        </a>
-        <a
-          className="px-2"
-          href={url}
-          target="_blank"
-          rel="noopener noreferrer"
-          download={doc.output_file_name ? doc.output_file_name : ""}
-        >
-          <Button bstyle="primary" className="text-lg" animate>
-            <span class="pl-2 pr-1">
-              {lang.documents.download}
-            </span>
-            <i class="pl-1 pr-2 fas fa-cloud-download-alt" />
           </Button>
         </a>
       </div>

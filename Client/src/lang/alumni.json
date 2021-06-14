@@ -3,84 +3,84 @@
     "year": "2020",
     "alumni": [
       {
-        "imageURL": "/alumni/abby.jpg",
+        "image": "abby.jpg",
         "name": "Abigail Rajagopal",
         "college": "Texas A&M University",
-        "major": "Mechanical Engineering",
+        "major": "Aerospace Engineering",
         "message": "Abby was an active member on Big Red (FTC Team 12456) and Circuit Bizurkers (FRC Team 7494) over the 4 years she was on the Dulles Robotics team. She served in various roles from build and design to marketing and presentation. \"I would not have developed my passion for robotics without my involvement in FIRST or would have met some of my closest friends.\""
       },
       {
-        "imageURL": "/alumni/akshay.jpg",
+        "image": "akshay.jpg",
         "name": "Akshay Kokkula",
         "college": "Texas A&M University",
         "major": "Mechanical Engineering",
         "message": "Akshay was primarily on the build team throughout his 4 years in the club and was on the drive team for the first 2 years of the FRC team. He put countless hours into the club, even taking time out of his classes to do so. “Joining robotics and participating with FIRST was the best thing that ever happened to me. For the first time in my life, I know who I want to be in the future.”"
       },
       {
-        "imageURL": "/alumni/ella.jpg",
+        "image": "ella.jpg",
         "name": "Ella Quiambao",
         "college": "University Of Texas Dallas",
         "major": "Biochemistry",
         "message": "Joining the team during her freshman year, Ella has worked with the marketing and presentation departments and was also one of the non-technical coordinators during her senior year. “FIRST has really shown me that the possibilities are endless. Find something you like doing and run with it; don’t let other people decide the limits of your own capabilities.”"
       },
       {
-        "imageURL": "/alumni/christian.png",
+        "image": "christian.png",
         "name": "Christian Anhaiser",
         "college": "University Of Houston",
         "major": "Mechanical Engineering",
         "message": "Christian joined the Dulles Robotics club in the 2017-2018 season as a designer and builder, and he used his engineering experience to help the team stay organized and always ready. He used his volume and energy to cheer on the team at competitions."
       },
       {
-        "imageURL": "/alumni/jacob.jpg",
+        "image": "jacob.jpg",
         "name": "Jacob Enerio",
         "college": "Texas A&M University",
         "major": "Computer Science",
         "message": "Jacob worked in the programming, web development, and FRC data management parts of the club. “FIRST allowed me to meet all types of people and cemented my passion for Robotics. I had fun working with all of my team members, and I’m proud that I joined FIRST.”"
       },
       {
-        "imageURL": "/alumni/benjamin.jpg",
+        "image": "benjamin.jpg",
         "name": "Benjamin Sternberg",
         "college": "Texas A&M University",
         "major": "Mechanical Engineering",
         "message": "Benjamin worked on the design and mechanical teams of 7494, sharing his knowledge of CAD and learning a lot more in the process. “Even though I knew I wanted to go into the engineering field, I did not quite know why, and through FIRST I have learned to work with teams to overcome problems."
       },
       {
-        "imageURL": "/alumni/aman.jpg",
+        "image": "aman.jpg",
         "name": "Aman Baig",
         "college": "University Of Texas Dallas",
         "major": "Biochemistry",
         "message": "Aman joined the club in its very first year. He learned how to use 3-D modeling programs such as Inventor, which led him into design on team 12456. After this, he worked to become the safety co-captain for FRC team 7494. “FIRST has inspired me to continue striving to help the community and give back whenever I can. I have been able to volunteer for a cause greater than any one person, and I am glad to be a part of such a passionate team.”"
       },
       {
-        "imageURL": "/alumni/jaden.jpg",
+        "image": "jaden.jpg",
         "name": "Jaden Thompson​",
         "college": "University Of Illinois At Urbana Champaign",
         "major": "Mechanical Engineering",
         "message": "“FIRST gives students a unique opportunity to get hands-on experience and exposure to the STEM industry. In addition to this, it provides a sense of community and motivation for many students around the world. I will forever remember my years as a member of a FIRST robotics team.”"
       },
       {
-        "imageURL": "/alumni/abdullah.jpg",
+        "image": "abdullah.jpg",
         "name": "Abdullah Samma",
         "college": "University Of Houston",
         "major": "Computer Science",
         "message": "Abdullah helped design and construct pit displays and scouted during competitions. “I will never forget the experience of being in a FIRST club.”"
       },
       {
-        "imageURL": "/alumni/purva.jpg",
+        "image": "purva.jpg",
         "name": "Purva Pawar​",
         "college": "University Of Texas Dallas",
         "major": "Biomedical Engineering",
         "message": "Purva served as the wiring lead and the safety captain for team 7494. “FIRST allowed me to find a second family at my school where I was able to make many memories and gain some valuable skills.”"
       },
       {
-        "imageURL": "/alumni/faith.jpg",
+        "image": "faith.jpg",
         "name": "Faith Jamero",
         "college": "University Of Houston",
         "major": "Mechanical Engineering",
         "message": "Faith is instrumental in the scouting and design phase, specializing in Computer-Aided Design, or CAD. “FIRST provided me with experience working as a team in a STEM environment, and gave me lifelong friends along the way.”"
       },
       {
-        "imageURL": "/alumni/nida.png",
+        "image": "nida.png",
         "name": "Nida Virabalin​",
         "college": "University Of Texas Austin",
         "major": "Archaeometry",
@@ -92,47 +92,47 @@
     "year": "2019",
     "alumni": [
       {
-        "imageURL": "/alumni/karim.jpg",
+        "image": "karim.jpg",
         "name": "Karim Karim",
         "college": "University Of Texas Dallas",
         "major": "Computer Science",
         "message": "Karim Karim founded the club with Kenneth Mitra in 2015 and worked hard to grow the club to where it is today. While primarily a programmer, he helped with all sub-teams and contributed hundreds of hours to the club."
       },
       {
-        "imageURL": "/alumni/tommy.jpg",
+        "image": "tommy.jpg",
         "name": "Tommy Nguyen",
         "college": "University Of Houston",
         "major": "Mechanical Engineering",
         "message": "Tommy’s role on the team was to inspire and guide the build team, sharing his knowledge in hands on fabrication, CAD design, and problem solving. He also helped capture much of the team’s development as the media person. “FIRST has definitely inspired me to begin, and stay in the engineering/STEM path, showing me what engineering could be.”"
       },
       {
-        "imageURL": "/alumni/ryan.png",
+        "image": "ryan.png",
         "name": "Ryan Jochims",
         "college": "University Of Houston",
         "major": "Computer Engineering",
         "message": "Ryan’s role in the team was to bring his knowledge of manufacturing with metal and wood for the development of robots and other projects and teach members as much as he could. “FIRST has had one of the most influential impacts on my future, as it has led to me wanting to have a career in the STEM field”"
       },
       {
-        "imageURL": "/alumni/ali.jpg",
+        "image": "ali.jpg",
         "name": "Ali Oufi",
         "college": "University Of Houston",
         "major": "Chemical Engineering",
         "message": "Ali Oufi worked on pneumatics and was the safety captain for Team 7494. “Thanks to FIRST, I was given this opportunity to work with a diverse group of people who also hold my passion for robotics and I was able to develop skills that I need as I pursue my career in chemical engineering.”"
       },
       {
-        "imageURL": "/alumni/christine.jpg",
+        "image": "christine.jpg",
         "name": "Christine Simon",
         "college": "University Of Houston",
         "major": "Criminology/Criminal Justice And Computer Science",
         "message": "After interning for NASA and seeing NASA work with us and other FIRST teams, she decided to join Dulles Robotics. “I was able to make new friends, express who and learn about team work and leadership. I am proud to say I am a Dulles Robotics alumni and FIRST volunteer.”"
       },
       {
-        "imageURL": "/alumni/alex.jpg",
+        "image": "alex.jpg",
         "name": "Alex Riggs",
         "college": "United States Marine Corps"
       },
       {
-        "imageURL": "/alumni/justin.png",
+        "image": "justin.png",
         "name": "Justin",
         "college": "Texas A&M University",
         "major": "Electrical Engineering"
@@ -169,7 +169,7 @@
     "year": "2018",
     "alumni": [
       {
-        "imageURL": "/alumni/kenneth.png",
+        "image": "kenneth.png",
         "name": "Kenneth Mitra",
         "college": "University Of Texas",
         "major": "Electrical Engineering"

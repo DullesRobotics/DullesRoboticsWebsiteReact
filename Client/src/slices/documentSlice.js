@@ -4,7 +4,7 @@ import dataJson from "../data.json"
 export const documentsSlice = createSlice({
     name: 'documents',
     initialState: {
-        value: { documents: [], error: false, loading: false, finished: false }
+        value: { documents: [], error: false, loading: false, finished: false, downloading: false }
     },
     reducers: {
         addDocuments: (state, action) => {
@@ -17,11 +17,14 @@ export const documentsSlice = createSlice({
         },
         setLoading: (state, action) => {
             state.value.loading = action.payload;
+        },
+        setDownloading: (state, action) => {
+            state.value.downloading = action.payload
         }
     }
 })
 
-export const { addDocuments, setError, setLoading } = documentsSlice.actions;
+export const { addDocuments, setError, setLoading, setDownloading } = documentsSlice.actions;
 
 export const selectDocuments = state => state.documents.value;
 

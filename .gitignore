@@ -14,8 +14,6 @@
 
 # production
 /Client/build
-/Client/public/media-og
-
 # misc
 .DS_Store
 .env.local
@@ -29,3 +27,5 @@ dulleswebreact.code-workspace
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+/media-og

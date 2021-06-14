@@ -124,6 +124,11 @@ app.get(uriPrefix + "/resource/list/documents", (req, res) => {
   })
 })
 
+app.get(uriPrefix + "/resource/get/blob", (req, res) => {
+  if (!req.query.file) return res.status(400).send({ error: "Missing or invalid file identifier parameter" })
+  res.sendFile(`/var/www/storage/dr/${req.query.file}`);
+})
+
 app.get(uriPrefix + "/resource/get", (req, res) => {
 
   if (!req.query.file && !req.query.id) return res.status(400).send({ error: "Missing or invalid file identifier parameter" })

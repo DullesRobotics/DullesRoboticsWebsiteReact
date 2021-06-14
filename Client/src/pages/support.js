@@ -46,7 +46,7 @@ class Support extends React.Component {
             </div>
             <div className="mt-12 md:mt-24">
               <div className="flex">
-                <a className="mx-auto" href={process.env.PUBLIC_URL + "/documents/sponsorship_packet.pdf"} target="_blank" rel="noopener noreferrer">
+                <a className="mx-auto" href={lang.documents.url + lang.support.packet_file_name} target="_blank" rel="noopener noreferrer">
                   <Button className="shadow-md border-2 hover:border-green-500" bstyle="primaryGreen" animate={1}>
                     <div className="my-1">
                       {lang.support.packet_button}
@@ -56,7 +56,7 @@ class Support extends React.Component {
                 </a>
               </div>
               <div className="mt-4 flex">
-                <a className="mx-auto" href="mailto:brian.sonnier@fortbendisd.com" target="_blank" rel="noopener noreferrer">
+                <a className="mx-auto" href={`mailto:${lang.support.email}`} target="_blank" rel="noopener noreferrer">
                   <Button className="shadow-lg border-4 hover:border-green-500" bstyle="primaryGreen" animate={1}>
                     <div className="mx-6 my-3 font-bold text-2xl">
                       {lang.support.sponsor_button}

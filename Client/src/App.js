@@ -34,7 +34,7 @@ class App extends React.Component {
               <Route path="/news/post" exact><Redirect to="/news" /></Route>
               <Route path="/announcements" exact><Redirect to="/news" /></Route>
               <Route path="/outreach" exact><Outreach /></Route>
-              <Route path="/documents" exact><Documents /></Route>
+              <Route path="/resources/documents" exact><Documents /></Route>
               {/*<Route path="/club-resources" exact><div className="text-center text-4xl font-bold">Club Resources.</div></Route>*/}
               <Route path="/support-us" exact><Support /></Route>
               <Route path="/support" exact><Redirect to="/support-us" /></Route>
@@ -45,6 +45,7 @@ class App extends React.Component {
               <Route path="/contact" exact><Contact /></Route>
               <Route path="/contact-us" exact><Redirect to="/contact" /></Route>
               <Route path="/robots" exact><Robots /></Route>
+              <Route path="/documents" exact><Redirect to="/resources/documents" /></Route>
               <Route><FourOFourPage /></Route>
             </Switch>
           </Layout>
