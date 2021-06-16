@@ -86,7 +86,7 @@ class PostBubble extends React.Component {
     }
 
     return (
-      <div id={this.props.id} className="bg-gray-2 my-4 p-4 rounded shadow-lg">
+      <div id={this.props.id} className="bg-gray-2 my-4 p-4 ml-4 mr-2 md:ml-0 md:mr-0 rounded shadow-lg">
         <Link to={"/news/post/" + this.props.id}><h2 className="font-bold text-3xl">
           {this.props.title}
         </h2>

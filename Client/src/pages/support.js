@@ -134,7 +134,7 @@ class SponsorBobble extends React.Component {
             </ul>
           </supportbobble>
         </div>
-        <div className="md:absolute md:bottom-0">
+        <div className="md:absolute md:bottom-0 w-full">
           <Particles
             className="h-16"
             canvasClassName="rounded-b-md"
@@ -178,14 +178,14 @@ class SponsorBobble extends React.Component {
                   direction: "top",
                   particles: { color: particleColor },
                   rate: { quantity: 1, delay: mobile() ? particleRate * 6 : particleRate },
-                  size: { width: 100, height: 10 },
+                  size: { width: 200, height: 10 },
                   position: { x: 50, y: 100 }
                 },
                 {
                   direction: "top",
                   particles: { color: particleColor },
                   rate: { quantity: 1, delay: mobile() ? 0.5 : 0.1 },
-                  size: { width: 100, height: 10 },
+                  size: { width: 200, height: 10 },
                   position: { x: 50, y: 100 }
                 }
               ]
