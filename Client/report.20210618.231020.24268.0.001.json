@@ -1,0 +1,587 @@
+
+{
+  "header": {
+    "reportVersion": 2,
+    "event": "Allocation failed - JavaScript heap out of memory",
+    "trigger": "FatalError",
+    "filename": "report.20210618.231020.24268.0.001.json",
+    "dumpEventTime": "2021-06-18T23:10:20Z",
+    "dumpEventTimeStamp": "1624057820669",
+    "processId": 24268,
+    "threadId": null,
+    "cwd": "/home/elliot/bots/DullesRoboticsWebsiteReact/Client",
+    "commandLine": [
+      "/home/elliot/.nvm/versions/node/v12.16.2/bin/node",
+      "/home/elliot/bots/DullesRoboticsWebsiteReact/Client/node_modules/react-scripts/scripts/build.js"
+    ],
+    "nodejsVersion": "v12.16.2",
+    "glibcVersionRuntime": "2.31",
+    "glibcVersionCompiler": "2.17",
+    "wordSize": 64,
+    "arch": "x64",
+    "platform": "linux",
+    "componentVersions": {
+      "node": "12.16.2",
+      "v8": "7.8.279.23-node.34",
+      "uv": "1.34.2",
+      "zlib": "1.2.11",
+      "brotli": "1.0.7",
+      "ares": "1.15.0",
+      "modules": "72",
+      "nghttp2": "1.40.0",
+      "napi": "5",
+      "llhttp": "2.0.4",
+      "http_parser": "2.9.3",
+      "openssl": "1.1.1e",
+      "cldr": "36.0",
+      "icu": "65.1",
+      "tz": "2019c",
+      "unicode": "12.1"
+    },
+    "release": {
+      "name": "node",
+      "lts": "Erbium",
+      "headersUrl": "https://nodejs.org/download/release/v12.16.2/node-v12.16.2-headers.tar.gz",
+      "sourceUrl": "https://nodejs.org/download/release/v12.16.2/node-v12.16.2.tar.gz"
+    },
+    "osName": "Linux",
+    "osRelease": "5.4.73-1-pve",
+    "osVersion": "#1 SMP PVE 5.4.73-1 (Mon, 16 Nov 2020 10:52:16 +0100)",
+    "osMachine": "x86_64",
+    "cpus": [
+      {
+        "model": "Intel(R) Core(TM) i5-10400 CPU @ 2.90GHz",
+        "speed": 3343,
+        "user": 139479800,
+        "nice": 0,
+        "sys": 0,
+        "idle": 53775917600,
+        "irq": 0
+      }
+    ],
+    "networkInterfaces": [
+      {
+        "name": "lo",
+        "internal": true,
+        "mac": "00:00:00:00:00:00",
+        "address": "127.0.0.1",
+        "netmask": "255.0.0.0",
+        "family": "IPv4"
+      },
+      {
+        "name": "eth0",
+        "internal": false,
+        "mac": "ba:82:82:14:5a:4f",
+        "address": "192.168.1.142",
+        "netmask": "255.255.255.0",
+        "family": "IPv4"
+      },
+      {
+        "name": "lo",
+        "internal": true,
+        "mac": "00:00:00:00:00:00",
+        "address": "::1",
+        "netmask": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+        "family": "IPv6",
+        "scopeid": 0
+      },
+      {
+        "name": "eth0",
+        "internal": false,
+        "mac": "ba:82:82:14:5a:4f",
+        "address": "fe80::b882:82ff:fe14:5a4f",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 2
+      }
+    ],
+    "host": "discord-bots"
+  },
+  "javascriptStack": {
+    "message": "No stack.",
+    "stack": [
+      "Unavailable."
+    ]
+  },
+  "nativeStack": [
+    {
+      "pc": "0x0000000000b40285",
+      "symbol": "report::TriggerNodeReport(v8::Isolate*, node::Environment*, char const*, char const*, std::string const&, v8::Local<v8::String>) [/home/elliot/.nvm/versions/node/v12.16.2/bin/node]"
+    },
+    {
+      "pc": "0x0000000000a033ef",
+      "symbol": "node::OnFatalError(char const*, char const*) [/home/elliot/.nvm/versions/node/v12.16.2/bin/node]"
+    },
+    {
+      "pc": "0x0000000000b76ffe",
+      "symbol": "v8::Utils::ReportOOMFailure(v8::internal::Isolate*, char const*, bool) [/home/elliot/.nvm/versions/node/v12.16.2/bin/node]"
+    },
+    {
+      "pc": "0x0000000000b77379",
+      "symbol": "v8::internal::V8::FatalProcessOutOfMemory(v8::internal::Isolate*, char const*, bool) [/home/elliot/.nvm/versions/node/v12.16.2/bin/node]"
+    },
+    {
+      "pc": "0x0000000000d23ad5",
+      "symbol": " [/home/elliot/.nvm/versions/node/v12.16.2/bin/node]"
+    },
+    {
+      "pc": "0x0000000000d52dea",
+      "symbol": "v8::internal::EvacuateNewSpaceVisitor::Visit(v8::internal::HeapObject, int) [/home/elliot/.nvm/versions/node/v12.16.2/bin/node]"
+    },
+    {
+      "pc": "0x0000000000d5a2a0",
+      "symbol": "void v8::internal::LiveObjectVisitor::VisitBlackObjectsNoFail<v8::internal::EvacuateNewSpaceVisitor, v8::internal::MajorNonAtomicMarkingState>(v8::internal::MemoryChunk*, v8::internal::MajorNonAtomicMarkingState*, v8::internal::EvacuateNewSpaceVisitor*, v8::internal::LiveObjectVisitor::IterationMode) [/home/elliot/.nvm/versions/node/v12.16.2/bin/node]"
+    },
+    {
+      "pc": "0x0000000000d696a8",
+      "symbol": "v8::internal::FullEvacuator::RawEvacuatePage(v8::internal::MemoryChunk*, long*) [/home/elliot/.nvm/versions/node/v12.16.2/bin/node]"
+    },
+    {
+      "pc": "0x0000000000d4c0ee",
+      "symbol": "v8::internal::Evacuator::EvacuatePage(v8::internal::MemoryChunk*) [/home/elliot/.nvm/versions/node/v12.16.2/bin/node]"
+    },
+    {
+      "pc": "0x0000000000d4c3b4",
+      "symbol": "v8::internal::PageEvacuationTask::RunInParallel(v8::internal::ItemParallelJob::Task::Runner) [/home/elliot/.nvm/versions/node/v12.16.2/bin/node]"
+    },
+    {
+      "pc": "0x0000000000d41695",
+      "symbol": "v8::internal::ItemParallelJob::Task::RunInternal() [/home/elliot/.nvm/versions/node/v12.16.2/bin/node]"
+    },
+    {
+      "pc": "0x0000000000d41aa4",
+      "symbol": "v8::internal::ItemParallelJob::Run() [/home/elliot/.nvm/versions/node/v12.16.2/bin/node]"
+    },
+    {
+      "pc": "0x0000000000d5b757",
+      "symbol": "void v8::internal::MarkCompactCollectorBase::CreateAndExecuteEvacuationTasks<v8::internal::FullEvacuator, v8::internal::MarkCompactCollector>(v8::internal::MarkCompactCollector*, v8::internal::ItemParallelJob*, v8::internal::MigrationObserver*, long) [/home/elliot/.nvm/versions/node/v12.16.2/bin/node]"
+    },
+    {
+      "pc": "0x0000000000d6bc84",
+      "symbol": "v8::internal::MarkCompactCollector::EvacuatePagesInParallel() [/home/elliot/.nvm/versions/node/v12.16.2/bin/node]"
+    },
+    {
+      "pc": "0x0000000000d6c89a",
+      "symbol": " [/home/elliot/.nvm/versions/node/v12.16.2/bin/node]"
+    },
+    {
+      "pc": "0x0000000000d71b17",
+      "symbol": "v8::internal::MarkCompactCollector::CollectGarbage() [/home/elliot/.nvm/versions/node/v12.16.2/bin/node]"
+    },
+    {
+      "pc": "0x0000000000d30049",
+      "symbol": "v8::internal::Heap::MarkCompact() [/home/elliot/.nvm/versions/node/v12.16.2/bin/node]"
+    },
+    {
+      "pc": "0x0000000000d30d63",
+      "symbol": "v8::internal::Heap::PerformGarbageCollection(v8::internal::GarbageCollector, v8::GCCallbackFlags) [/home/elliot/.nvm/versions/node/v12.16.2/bin/node]"
+    },
+    {
+      "pc": "0x0000000000d31895",
+      "symbol": "v8::internal::Heap::CollectGarbage(v8::internal::AllocationSpace, v8::internal::GarbageCollectionReason, v8::GCCallbackFlags) [/home/elliot/.nvm/versions/node/v12.16.2/bin/node]"
+    },
+    {
+      "pc": "0x0000000000d3434c",
+      "symbol": "v8::internal::Heap::AllocateRawWithRetryOrFail(int, v8::internal::AllocationType, v8::internal::AllocationOrigin, v8::internal::AllocationAlignment) [/home/elliot/.nvm/versions/node/v12.16.2/bin/node]"
+    },
+    {
+      "pc": "0x0000000000cfaf1b",
+      "symbol": "v8::internal::Factory::NewFillerObject(int, bool, v8::internal::AllocationType, v8::internal::AllocationOrigin) [/home/elliot/.nvm/versions/node/v12.16.2/bin/node]"
+    },
+    {
+      "pc": "0x000000000103d85e",
+      "symbol": "v8::internal::Runtime_AllocateInYoungGeneration(int, unsigned long*, v8::internal::Isolate*) [/home/elliot/.nvm/versions/node/v12.16.2/bin/node]"
+    },
+    {
+      "pc": "0x00000000013c03d9",
+      "symbol": " [/home/elliot/.nvm/versions/node/v12.16.2/bin/node]"
+    }
+  ],
+  "javascriptHeap": {
+    "totalMemory": 47812608,
+    "totalCommittedMemory": 47453472,
+    "usedMemory": 45851536,
+    "availableMemory": 1100424,
+    "memoryLimit": 271581184,
+    "heapSpaces": {
+      "read_only_space": {
+        "memorySize": 262144,
+        "committedMemory": 33088,
+        "capacity": 32808,
+        "used": 32808,
+        "available": 0
+      },
+      "new_space": {
+        "memorySize": 2097152,
+        "committedMemory": 2096656,
+        "capacity": 1047456,
+        "used": 1014968,
+        "available": 32488
+      },
+      "old_space": {
+        "memorySize": 0,
+        "committedMemory": 0,
+        "capacity": 0,
+        "used": 0,
+        "available": 0
+      },
+      "code_space": {
+        "memorySize": 1478656,
+        "committedMemory": 1349440,
+        "capacity": 1256896,
+        "used": 1256896,
+        "available": 0
+      },
+      "map_space": {
+        "memorySize": 3411968,
+        "committedMemory": 3411600,
+        "capacity": 3164160,
+        "used": 3164160,
+        "available": 0
+      },
+      "large_object_space": {
+        "memorySize": 39940096,
+        "committedMemory": 39940096,
+        "capacity": 39838160,
+        "used": 39838160,
+        "available": 0
+      },
+      "code_large_object_space": {
+        "memorySize": 622592,
+        "committedMemory": 622592,
+        "capacity": 544544,
+        "used": 544544,
+        "available": 0
+      },
+      "new_large_object_space": {
+        "memorySize": 0,
+        "committedMemory": 0,
+        "capacity": 1047456,
+        "used": 0,
+        "available": 1047456
+      }
+    }
+  },
+  "resourceUsage": {
+    "userCpuSeconds": 15.9322,
+    "kernelCpuSeconds": 0.691835,
+    "cpuConsumptionPercent": 103.9,
+    "maxRss": 331808768,
+    "pageFaults": {
+      "IORequired": 21,
+      "IONotRequired": 184149
+    },
+    "fsActivity": {
+      "reads": 117882,
+      "writes": 352
+    }
+  },
+  "uvthreadResourceUsage": {
+    "userCpuSeconds": 8.44435,
+    "kernelCpuSeconds": 0.477907,
+    "cpuConsumptionPercent": 55.7641,
+    "fsActivity": {
+      "reads": 88878,
+      "writes": 352
+    }
+  },
+  "libuv": [
+  ],
+  "workers": [
+  ],
+  "environmentVariables": {
+    "LESSOPEN": "| /usr/bin/lesspipe %s",
+    "npm_package_dependencies__reduxjs_toolkit": "^1.5.0",
+    "npm_config_cache_lock_stale": "60000",
+    "npm_config_ham_it_up": "",
+    "npm_package_dependencies_graceful_fs": "^4.2.6",
+    "npm_package_dependencies_postcss_normalize": "^9.0.0",
+    "npm_config_legacy_bundling": "",
+    "npm_config_sign_git_tag": "",
+    "USER": "elliot",
+    "SSH_CLIENT": "192.168.1.112 55937 6747",
+    "npm_package_dependencies__babel_preset_react": "^7.10.4",
+    "npm_config_user_agent": "yarn/1.22.10 npm/? node/v12.16.2 linux x64",
+    "npm_config_version_commit_hooks": "true",
+    "npm_config_always_auth": "",
+    "npm_config_bin_links": "true",
+    "npm_config_key": "",
+    "XDG_SESSION_TYPE": "tty",
+    "npm_package_scripts_prebuild": "yarn build:styles",
+    "npm_config_init_version": "1.0.0",
+    "npm_config_user": "",
+    "npm_config_allow_same_version": "",
+    "npm_config_description": "true",
+    "npm_config_fetch_retries": "2",
+    "npm_config_heading": "npm",
+    "npm_config_if_present": "",
+    "npm_node_execpath": "/home/elliot/.nvm/versions/node/v12.16.2/bin/node",
+    "SHLVL": "1",
+    "npm_package_dependencies_react_tsparticles": "^1.18.11",
+    "npm_config_prefer_online": "",
+    "npm_config_noproxy": "",
+    "MOTD_SHOWN": "pam",
+    "HOME": "/home/elliot",
+    "OLDPWD": "/home/elliot/bots/DullesRoboticsWebsiteReact",
+    "npm_package_browserslist_production_0": ">0.2%",
+    "npm_config_force": "",
+    "NVM_BIN": "/home/elliot/.nvm/versions/node/v12.16.2/bin",
+    "SSH_TTY": "/dev/pts/2",
+    "npm_package_scripts_server": "nodemon server.js",
+    "npm_package_browserslist_production_1": "not dead",
+    "npm_config_only": "",
+    "npm_config_read_only": "",
+    "NVM_INC": "/home/elliot/.nvm/versions/node/v12.16.2/include/node",
+    "npm_package_dependencies_is_promise": "^4.0.0",
+    "npm_package_dependencies_react_responsive_carousel": "^3.2.9",
+    "npm_package_browserslist_production_2": "not op_mini all",
+    "npm_config_init_license": "MIT",
+    "npm_config_cache_min": "10",
+    "HOMEBREW_PREFIX": "/home/linuxbrew/.linuxbrew",
+    "YARN_WRAP_OUTPUT": "false",
+    "npm_config_version_tag_prefix": "v",
+    "npm_config_editor": "vi",
+    "npm_config_rollback": "true",
+    "npm_config_tag_version_prefix": "v",
+    "npm_package_dependencies_react_lottie": "^1.2.3",
+    "npm_config_cache_max": "Infinity",
+    "npm_config_timing": "",
+    "npm_config_userconfig": "/home/elliot/.npmrc",
+    "npm_config_engine_strict": "",
+    "npm_config_init_author_name": "",
+    "npm_config_init_author_url": "",
+    "npm_config_preid": "",
+    "npm_config_tmp": "/tmp",
+    "npm_package_dependencies_react_router_dom": "^5.2.0",
+    "npm_package_dependencies_react_scripts": "^4.0.1",
+    "npm_package_scripts_predeploy": "npm run build",
+    "npm_package_devDependencies_tailwindcss": "^1.4.6",
+    "npm_config_depth": "Infinity",
+    "npm_config_package_lock_only": "",
+    "npm_config_save_dev": "",
+    "npm_config_usage": "",
+    "NVM_DIR": "/home/elliot/.nvm",
+    "npm_package_homepage": "https://dev.dullesrobotics.com",
+    "npm_package_dependencies__testing_library_react": "^9.5.0",
+    "npm_package_dependencies_pure_react_carousel": "^1.27.1",
+    "npm_package_dependencies_react_router_hash_link": "^2.4.0",
+    "npm_package_devDependencies__babel_preset_env": "^7.10.4",
+    "npm_package_devDependencies_postcss_cli": "^7.1.1",
+    "npm_config_metrics_registry": "https://registry.yarnpkg.com/",
+    "npm_config_cafile": "",
+    "npm_config_otp": "",
+    "npm_config_package_lock": "true",
+    "npm_config_progress": "true",
+    "npm_config_https_proxy": "",
+    "npm_config_save_prod": "",
+    "INFOPATH": "/home/linuxbrew/.linuxbrew/share/info:",
+    "npm_config_audit": "true",
+    "npm_config_cidr": "",
+    "npm_config_onload_script": "",
+    "npm_config_sso_type": "oauth",
+    "LOGNAME": "elliot",
+    "npm_config_rebuild_bundle": "true",
+    "npm_config_save_bundle": "",
+    "npm_config_shell": "/bin/bash",
+    "_": "/home/elliot/.nvm/versions/node/v12.16.2/bin/yarn",
+    "npm_package_private": "true",
+    "npm_package_dependencies_remark_gfm": "^1.0.0",
+    "npm_package_devDependencies__babel_preset_react": "^7.10.4",
+    "npm_package_devDependencies_autoprefixer": "^9.8.0",
+    "npm_config_dry_run": "",
+    "npm_config_format_package_lock": "true",
+    "npm_config_prefix": "/home/elliot/.nvm/versions/node/v12.16.2",
+    "XDG_SESSION_CLASS": "user",
+    "npm_package_dependencies_react_youtube": "^7.11.2",
+    "npm_config_scope": "",
+    "npm_config_registry": "https://registry.yarnpkg.com/",
+    "npm_config_browser": "",
+    "npm_config_cache_lock_wait": "10000",
+    "npm_config_ignore_prepublish": "",
+    "npm_config_save_optional": "",
+    "npm_config_searchopts": "",
+    "npm_config_versions": "",
+    "TERM": "xterm-256color",
+    "XDG_SESSION_ID": "27761",
+    "npm_package_devDependencies__babel_core": "^7.10.4",
+    "npm_config_cache": "/home/elliot/.npm",
+    "npm_config_proxy": "",
+    "npm_config_send_metrics": "",
+    "npm_package_dependencies__babel_register": "^7.10.4",
+    "npm_package_dependencies_react_twitter_widgets": "^1.9.5",
+    "npm_package_scripts_start": "react-scripts start",
+    "npm_package_scripts_build_styles": "postcss src/styles/tailwind.css -o src/styles/styles.css",
+    "npm_config_global_style": "",
+    "npm_config_ignore_scripts": "",
+    "npm_config_version": "",
+    "npm_package_dependencies_typewriter_effect": "^2.17.0",
+    "npm_package_browserslist_development_0": "last 1 chrome version",
+    "npm_config_local_address": "",
+    "npm_config_viewer": "man",
+    "npm_config_node_gyp": "/home/elliot/.nvm/versions/node/v12.16.2/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js",
+    "PATH": "/home/elliot/.nvm/versions/node/v12.16.2/lib/node_modules/npm/node_modules/npm-lifecycle/node-gyp-bin:/home/elliot/bots/DullesRoboticsWebsiteReact/Client/node_modules/.bin:/tmp/yarn--1624057799918-0.5569421726272095:/home/elliot/bots/DullesRoboticsWebsiteReact/Client/node_modules/.bin:/home/elliot/.config/yarn/link/node_modules/.bin:/home/elliot/.yarn/bin:/home/elliot/.nvm/versions/node/v12.16.2/libexec/lib/node_modules/npm/bin/node-gyp-bin:/home/elliot/.nvm/versions/node/v12.16.2/lib/node_modules/npm/bin/node-gyp-bin:/home/elliot/.nvm/versions/node/v12.16.2/bin/node_modules/npm/bin/node-gyp-bin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/home/elliot/.nvm/versions/node/v12.16.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin",
+    "NODE": "/home/elliot/.nvm/versions/node/v12.16.2/bin/node",
+    "HOMEBREW_CELLAR": "/home/linuxbrew/.linuxbrew/Cellar",
+    "npm_package_name": "dullesrobotics",
+    "npm_package_dependencies_postcss": "^8.2.8",
+    "npm_package_dependencies_reactjs_popup": "^2.0.4",
+    "npm_package_dependencies_serve": "^11.3.2",
+    "npm_package_browserslist_development_1": "last 1 firefox version",
+    "npm_config_audit_level": "low",
+    "npm_config_prefer_offline": "",
+    "XDG_RUNTIME_DIR": "/run/user/1000",
+    "npm_package_dependencies_react_redux": "^7.2.2",
+    "npm_package_scripts_client": "serve -s build",
+    "npm_package_browserslist_development_2": "last 1 safari version",
+    "npm_config_color": "true",
+    "npm_config_sign_git_commit": "",
+    "npm_package_dependencies__brainhubeu_react_carousel": "^1.19.26",
+    "npm_package_dependencies_react_native_web": "^0.15.0",
+    "npm_package_scripts_eject": "react-scripts eject",
+    "npm_config_fetch_retry_mintimeout": "10000",
+    "npm_config_maxsockets": "50",
+    "npm_config_offline": "",
+    "npm_config_sso_poll_frequency": "500",
+    "LANG": "C",
+    "npm_package_dependencies_react_dom": "^16.13.1",
+    "npm_package_dependencies_react_native_vector_icons": "^6.6.0",
+    "npm_package_dependencies_redux": "^4.0.5",
+    "npm_config_umask": "0002",
+    "LS_COLORS": "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:",
+    "npm_package_dependencies_react_burger_menu": "^2.7.0",
+    "npm_package_dependencies_react_markdown": "^5.0.3",
+    "npm_config_fund": "true",
+    "npm_config_fetch_retry_maxtimeout": "60000",
+    "npm_config_loglevel": "notice",
+    "npm_config_logs_max": "10",
+    "npm_config_message": "%s",
+    "npm_lifecycle_script": "react-scripts build",
+    "npm_package_proxy": "https://dev.dullesrobotics.com",
+    "npm_package_dependencies_react_router": "^5.2.0",
+    "npm_package_scripts_test": "react-scripts test",
+    "npm_package_scripts_rundeploy": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
+    "npm_config_version_git_message": "v%s",
+    "npm_config_ca": "",
+    "npm_config_cert": "",
+    "npm_config_global": "",
+    "npm_config_link": "",
+    "SHELL": "/bin/bash",
+    "npm_package_version": "0.1.0",
+    "npm_package_dependencies__testing_library_jest_dom": "^4.2.4",
+    "npm_config_access": "",
+    "npm_config_also": "",
+    "npm_config_save": "true",
+    "npm_config_unicode": "",
+    "npm_lifecycle_event": "build",
+    "npm_package_dependencies__testing_library_user_event": "^7.2.1",
+    "npm_package_scripts_build": "react-scripts build",
+    "npm_config_argv": "{\"remain\":[],\"cooked\":[\"run\",\"build\"],\"original\":[\"run\",\"build\"]}",
+    "npm_config_unsafe_perm": "",
+    "npm_config_before": "",
+    "npm_config_long": "",
+    "npm_config_production": "",
+    "npm_config_searchlimit": "20",
+    "npm_config_update_notifier": "true",
+    "LESSCLOSE": "/usr/bin/lesspipe %s %s",
+    "npm_package_dependencies_gh_pages": "^3.1.0",
+    "npm_package_dependencies_is_mobile": "^3.0.0",
+    "npm_package_dependencies_yargs_parser": "^18.1.3",
+    "npm_config_auth_type": "legacy",
+    "npm_config_node_version": "12.16.2",
+    "npm_config_tag": "latest",
+    "npm_config_version_git_tag": "true",
+    "npm_config_git_tag_version": "true",
+    "npm_config_commit_hooks": "true",
+    "npm_config_script_shell": "",
+    "npm_config_shrinkwrap": "true",
+    "npm_package_dependencies_classnames": "^2.2.6",
+    "npm_package_dependencies_yarn": "^1.22.4",
+    "npm_config_strict_ssl": "true",
+    "npm_config_fetch_retry_factor": "10",
+    "npm_config_save_exact": "",
+    "npm_config_dev": "",
+    "npm_config_globalconfig": "/home/elliot/.nvm/versions/node/v12.16.2/etc/npmrc",
+    "npm_config_init_module": "/home/elliot/.npm-init.js",
+    "npm_config_parseable": "",
+    "PWD": "/home/elliot/bots/DullesRoboticsWebsiteReact/Client",
+    "npm_config_globalignorefile": "/home/elliot/.nvm/versions/node/v12.16.2/etc/npmignore",
+    "npm_execpath": "/home/elliot/.nvm/versions/node/v12.16.2/lib/node_modules/npm/bin/npm-cli.js",
+    "SSH_CONNECTION": "192.168.1.112 55937 192.168.1.142 6747",
+    "NVM_CD_FLAGS": "",
+    "npm_package_scripts_prestart": "yarn build:styles",
+    "npm_config_cache_lock_retries": "10",
+    "npm_config_searchstaleness": "900",
+    "HOMEBREW_REPOSITORY": "/home/linuxbrew/.linuxbrew/Homebrew",
+    "npm_package_dependencies_styled_components": "^5.1.1",
+    "npm_config_save_prefix": "^",
+    "npm_config_node_options": "",
+    "npm_config_scripts_prepend_node_path": "warn-only",
+    "npm_package_scripts_deploy": "gh-pages -d build",
+    "npm_config_group": "1000",
+    "npm_config_init_author_email": "",
+    "npm_config_searchexclude": "",
+    "MANPATH": "/home/linuxbrew/.linuxbrew/share/man:",
+    "npm_config_git": "git",
+    "npm_config_optional": "true",
+    "INIT_CWD": "/home/elliot/bots/DullesRoboticsWebsiteReact/Client",
+    "npm_package_dependencies_react": "^16.13.1",
+    "npm_package_eslintConfig_extends": "react-app",
+    "npm_config_json": "",
+    "BABEL_ENV": "production",
+    "NODE_ENV": "production",
+    "PUBLIC_URL": "https://dev.dullesrobotics.com",
+    "NODE_PATH": ""
+  },
+  "userLimits": {
+    "core_file_size_blocks": {
+      "soft": 0,
+      "hard": "unlimited"
+    },
+    "data_seg_size_kbytes": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "file_size_blocks": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "max_locked_memory_bytes": {
+      "soft": 65536,
+      "hard": 65536
+    },
+    "max_memory_size_kbytes": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "open_files": {
+      "soft": 524288,
+      "hard": 524288
+    },
+    "stack_size_bytes": {
+      "soft": 8388608,
+      "hard": "unlimited"
+    },
+    "cpu_time_seconds": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "max_user_processes": {
+      "soft": 62375,
+      "hard": 62375
+    },
+    "virtual_memory_kbytes": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    }
+  },
+  "sharedObjects": [
+    "linux-vdso.so.1",
+    "/lib/x86_64-linux-gnu/libdl.so.2",
+    "/usr/lib/x86_64-linux-gnu/libstdc++.so.6",
+    "/lib/x86_64-linux-gnu/libm.so.6",
+    "/lib/x86_64-linux-gnu/libgcc_s.so.1",
+    "/lib/x86_64-linux-gnu/libpthread.so.0",
+    "/lib/x86_64-linux-gnu/libc.so.6",
+    "/lib64/ld-linux-x86-64.so.2"
+  ]
+}
