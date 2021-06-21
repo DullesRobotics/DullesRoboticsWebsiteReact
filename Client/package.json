@@ -2,8 +2,8 @@
   "name": "dullesrobotics",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://dev.dullesrobotics.com",
-  "homepage": "https://dev.dullesrobotics.com",
+  "proxy": "https://dullesrobotics.com",
+  "homepage": "https://dullesrobotics.com",
   "dependencies": {
     "@babel/preset-react": "^7.10.4",
     "@babel/register": "^7.10.4",
