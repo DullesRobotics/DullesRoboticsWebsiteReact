@@ -16,7 +16,7 @@ const port = process.env.PORT || 6937;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cors({ origin: ['https://xcal.dev', 'http://localhost:3000', '/\.dullesrobotics\.com$/', 'http://192.168.1.112:3000', 'https://dev.dullesrobotics.com'], credentials: true }));
+app.use(cors({ origin: ['https://www.dullesrobotics.com', 'https://dev.dullesrobotics.com', 'https://dullesrobotics.com'], credentials: true }));
 
 let team = "frc7494", emailRegx = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
