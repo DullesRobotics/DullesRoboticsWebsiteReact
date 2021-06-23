@@ -31,3 +31,5 @@ yarn-error.log*
 /media-og
 
 deploy.sh
+
+/Client/src/styles/styles.css
