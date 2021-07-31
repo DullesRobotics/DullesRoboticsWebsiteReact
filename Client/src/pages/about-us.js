@@ -313,7 +313,7 @@ export default function AboutUs(props) {
             </div>
           </div>
         </div>
-        <SectionDivider className="h-10 lg:h-15" divider="skew-tri" color1="#4054B2" color2={3} />
+        {/* <SectionDivider className="h-10 lg:h-15" divider="skew-tri" color1="#4054B2" color2={3} />
         <div id="mentors" className="bg-gray-3 text-white lg:grid lg:grid-cols-10">
           <div className="col-span-1" />
           <div className="col-span-8 pb-16">
@@ -325,7 +325,7 @@ export default function AboutUs(props) {
             </div>
           </div>
           <div className="col-span-1" />
-        </div>
+        </div> */}
       </div>
       <div className={"absolute"} style={{
         "z-index": "-9", "top": "-100px",

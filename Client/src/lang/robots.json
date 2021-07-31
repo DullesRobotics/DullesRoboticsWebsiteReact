@@ -1,5 +1,83 @@
 [
   {
+    "name": "Red Titan",
+    "type": "FTC",
+    "team-name": "Big Red",
+    "team-number": "12456",
+    "year": 2021,
+    "image": "404.jpg",
+    "gradient": "linear-gradient(180deg, rgba(206, 179, 179, 0.6) 0%, rgba(236, 112, 112, 0.6) 100%)",
+    "description": "Red Titan was Big Red's robot used in the FTC Ultimate Goal season.",
+    "game": "Ultimate Goal",
+    "specs": {
+      "weight": "≅ 30 lbs."
+    },
+    "competitions": [
+      {
+        "name": "Houston Southwest FTC League Meet 1"
+      },
+      {
+        "name": "Houston Southwest FTC League Meet 2"
+      },
+      {
+        "name": "Houston Southwest FTC League Meet 3"
+      },
+      {
+        "name": "Houston-Southwest League Tournament",
+        "detail": "Motivate Award Winner"
+      },
+      {
+        "name": "Houston Regional Championship Tournament (In-Person)",
+        "detail": "**INSPIRE AWARD WINNER**"
+      }
+    ],
+    "features": [
+      "It could shoot all 3 rings with high accuracy in under 1 second.",
+      "Extrusion based system allowed us to use a mix of custom CNC'd parts and vendor parts.",
+      "Intake was geared to be 15:1, which allowed us to intake all 3 rings very quickly."
+    ]
+  },
+  {
+    "name": "Tolerance",
+    "type": "FTC",
+    "team-name": "RoboVikings",
+    "team-number": "13822",
+    "year": 2021,
+    "image": "tolerance.png",
+    "gradient": "linear-gradient(180deg, rgba(191, 175, 211, 0.6) 0%, rgba(155, 107, 214, 0.6) 100%)",
+    "description": "Tolerance was RoboVikings' robot used in the FTC Ultimate Goal season.",
+    "game": "Ultimate Goal",
+    "specs": {
+      "weight": "≅ 30 lbs."
+    },
+    "competitions": [
+      {
+        "name": "Houston Southwest FTC League Meet 1"
+      },
+      {
+        "name": "Houston Southwest FTC League Meet 2"
+      },
+      {
+        "name": "Houston Southwest FTC League Meet 3"
+      },
+      {
+        "name": "Houston-Southwest League Tournament",
+        "detail": "Inspire Award Winner, Control Award Winner, 2nd-Ranked Team"
+      },
+      {
+        "name": "Houston Regional Championship Tournament (In-Person)",
+        "detail": "Third Alliance, Dean's List Scholarship Awardee"
+      }
+    ],
+    "features": [
+      "Webcam allowed for automatic aiming and shooter-power predicting through computer vision. It also used computer vision to determine the amount of starting rings on the field.",
+      "Rotatable claw with large gear ratio allow for strong grasp and handling of wobble goal.",
+      "Fast and wide intake allowed for quick collection of rings.",
+      "3-ring storage with servo-slider allowed multiple shots to be made in quick sucession.",
+      "Mecanum wheels allow for quick omni-directional strafing."
+    ]
+  },
+  {
     "name": "Artillery",
     "type": "FRC",
     "team-name": "Circuit Bizurkers",

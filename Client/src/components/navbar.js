@@ -24,7 +24,7 @@ const subMenus = {
         { key: 23, title: lang.header.nav.about_us.teams, link: "/about-us#teams" },
         { key: 24, title: lang.header.nav.about_us.departments, link: "/about-us#departments" },
         { key: 25, title: lang.header.nav.about_us.awards, link: "/about-us#awards" },
-        { key: 26, title: lang.header.nav.about_us.mentors, link: "/about-us#mentors" },
+        //{ key: 26, title: lang.header.nav.about_us.mentors, link: "/about-us#mentors" },
     ],
     // 6: [
     //     { key: 60, title: 'DOCUMENTS', link: "/documents" },
