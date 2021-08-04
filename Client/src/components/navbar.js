@@ -10,7 +10,7 @@ const topLevel = [
     { key: 3, title: lang.header.nav.news, link: "/news" },
     { key: 4, title: lang.header.nav.robots, link: "/robots" },
     { key: 5, title: lang.header.nav.outreach, link: "/outreach" },
-    { key: 6, title: lang.header.nav.resources, link: "/documents" },
+    { key: 6, title: lang.header.nav.resources, link: "/resources" },
     { key: 7, title: lang.header.nav.support_us, link: "/support-us" },
     { key: 8, title: lang.header.nav.contact, link: "/contact" },
     // { key: 9, title: 'USER', link: "#", right: true },

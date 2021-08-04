@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from './components/layout'
 import { BrowserRouter, Router, Route, Switch, useLocation, Redirect } from "react-router-dom";
 import HomeScreen from './pages/home'
-import Documents from './pages/documents'
+import Resources from './pages/resources'
 import Announcements from './pages/announcements'
 import Posts from './pages/post'
 import Contact from './pages/contact'
@@ -34,7 +34,7 @@ class App extends React.Component {
               <Route path="/news/post" exact><Redirect to="/news" /></Route>
               <Route path="/announcements" exact><Redirect to="/news" /></Route>
               <Route path="/outreach" exact><Outreach /></Route>
-              <Route path="/resources/documents" exact><Documents /></Route>
+              <Route path="/resources" exact><Resources /></Route>
               {/*<Route path="/club-resources" exact><div className="text-center text-4xl font-bold">Club Resources.</div></Route>*/}
               <Route path="/support-us" exact><Support /></Route>
               <Route path="/support" exact><Redirect to="/support-us" /></Route>
@@ -45,7 +45,8 @@ class App extends React.Component {
               <Route path="/contact" exact><Contact /></Route>
               <Route path="/contact-us" exact><Redirect to="/contact" /></Route>
               <Route path="/robots" exact><Robots /></Route>
-              <Route path="/documents" exact><Redirect to="/resources/documents" /></Route>
+              <Route path="/documents" exact><Redirect to="/resources" /></Route>
+              <Route path="/resources/documents" exact><Redirect to="/resources" /></Route>
               <Route><FourOFourPage /></Route>
             </Switch>
           </Layout>
