@@ -13,7 +13,7 @@ const topLevel = [
     { key: 6, title: lang.header.nav.resources, link: "/resources" },
     { key: 7, title: lang.header.nav.support_us, link: "/support-us" },
     { key: 8, title: lang.header.nav.contact, link: "/contact" },
-    // { key: 9, title: 'USER', link: "#", right: true },
+    { key: 9, title: lang.header.nav.interested, link: "/interest", important: true }
 ]
 
 const subMenus = {
@@ -74,7 +74,7 @@ class NavBar extends React.Component {
                 submenu.push(
                     <li key={sl.key}>
                         <Link to={sl.link}>
-                            <Button bstyle="nav" className={idx === 0 ? subMenus[this.state.currentSubMenu].length === 1 ? `rounded-tr-md rounded-b-md` : `rounded-tr-md` : idx === subMenus[this.state.currentSubMenu].length - 1 ? `rounded-b-md` : ``}>
+                            <Button bstyle="nav" className={(idx === 0 ? subMenus[this.state.currentSubMenu].length === 1 ? `rounded-tr-md rounded-b-md` : `rounded-tr-md` : idx === subMenus[this.state.currentSubMenu].length - 1 ? `rounded-b-md` : ``)}>
                                 <div className="w-48 p-1 flex items-center gap-3 flex-shrink-0 text-white">
                                     <span className="mx-auto text-center">{sl.title}</span>
                                 </div>
@@ -88,7 +88,7 @@ class NavBar extends React.Component {
                 <span className="inline-block" onMouseEnter={() => this.onHover(tl.key)} onMouseLeave={() => this.onMouseAway()}>
                     <div>
                         <Link to={tl.link}>
-                            <Button bstyle="nav" className="mr-0 xl:mr-1">
+                            <Button bstyle="nav" className={"mr-0 xl:mr-1 rounded " + (tl.important ? "bg-blue-2" : "")}>
                                 <div className="p-1 flex items-center gap-3 flex-shrink-0 text-white">
                                     <span className="text-center"><p>{tl.title}</p></span>
                                 </div>

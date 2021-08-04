@@ -14,6 +14,7 @@ import Alumni from './pages/alumni'
 import AboutUs from './pages/about-us'
 import Robots from './pages/robots/robots'
 import Outreach from './pages/outreach'
+import Interest from './pages/interest'
 
 class App extends React.Component {
   render() {
@@ -47,6 +48,7 @@ class App extends React.Component {
               <Route path="/robots" exact><Robots /></Route>
               <Route path="/documents" exact><Redirect to="/resources" /></Route>
               <Route path="/resources/documents" exact><Redirect to="/resources" /></Route>
+              <Route path="/interest" exact><Interest /></Route>
               <Route><FourOFourPage /></Route>
             </Switch>
           </Layout>
