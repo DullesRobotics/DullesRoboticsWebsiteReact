@@ -313,19 +313,21 @@ export default function AboutUs(props) {
             </div>
           </div>
         </div>
-        {/* <SectionDivider className="h-10 lg:h-15" divider="skew-tri" color1="#4054B2" color2={3} />
+        <SectionDivider className="h-10 lg:h-15" divider="skew-tri" color1="#4054B2" color2={3} />
         <div id="mentors" className="bg-gray-3 text-white lg:grid lg:grid-cols-10">
           <div className="col-span-1" />
           <div className="col-span-8 pb-16">
             <p className="text-center font-bold text-5xl md:text-6xl">
-              <Text>{lang.about_us.mentors.title}</Text>
+              <Text>
+                {mentorDivList.lenght > 1 ? lang.about_us.mentors.plural_title : lang.about_us.mentors.singular_title}
+              </Text>
             </p>
-            <div className="md:grid grid-cols-4 text-center">
+            <div className={`md:grid grid-cols-${mentorDivList.lenght > 3 ? 4 : mentorDivList.length} text-center`}>
               {mentorDivList}
             </div>
           </div>
           <div className="col-span-1" />
-        </div> */}
+        </div>
       </div>
       <div className={"absolute"} style={{
         "z-index": "-9", "top": "-100px",

@@ -141,7 +141,8 @@
       "advanced_message": "Advanced To The 2019 FRC World Championships In Houston, TX"
     },
     "mentors": {
-      "title": "Mentors"
+      "singular_title": "Mentor",
+      "plural_title": "Mentors"
     }
   },
   "alumni": {
