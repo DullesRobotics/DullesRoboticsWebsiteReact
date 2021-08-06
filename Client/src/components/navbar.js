@@ -138,7 +138,10 @@ class MobileMenu extends React.Component {
             final.push(
                 <div className="py-2 min-w-full">
                     <Link to={this.props.dir === tl.link ? "#" : tl.link}>
-                        <Button className={(subMenus.hasOwnProperty(tl.key) ? "rounded-l rounded-r-none" : "rounded")} bstyle={this.props.dir === tl.link ? "secondarySelected" : "secondary"}>
+                        <Button
+                            className={(subMenus.hasOwnProperty(tl.key) ? "rounded-l rounded-r-none" : "rounded") + (tl.important ? " bg-blue-2 hover:text-white text-white hover:bg-blue-4" : "")}
+                            bstyle={this.props.dir === tl.link ? "secondarySelected" : "secondary"}
+                        >
                             <span className="text-left" style={{ width: subMenus.hasOwnProperty(tl.key) ? "108px" : "144px" }}><p>{tl.title}</p></span>
                         </Button>
                     </Link>

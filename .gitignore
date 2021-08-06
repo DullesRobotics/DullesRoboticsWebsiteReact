@@ -33,3 +33,4 @@ yarn-error.log*
 deploy.sh
 
 /Client/src/styles/styles.css
+Client/yarn.lock

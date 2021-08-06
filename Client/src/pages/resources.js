@@ -14,7 +14,7 @@ import LoadingIcon from '../components/lottiecomponents/loading';
 
 function Resources(props) {
   const bundle = [];
-  const groups = new Set();
+  const groups = new Queue();
 
   const docData = useSelector(selectDocuments);
   const dispatch = useDispatch();
@@ -25,12 +25,13 @@ function Resources(props) {
   for (let i in docData.documents) {
     const doc = docData.documents[i]
     if (doc.group)
-      groups.add(doc.group)
+      groups.enqueue(doc.group)
     else
-      groups.add("Documents")
+      groups.enqueue("Documents")
   }
 
-  groups.forEach(group => {
+  for (let i = 0; i < groups.length; i++) {
+    const group = groups.dequeue();
     const groupBundle = [];
     const filteredDocs = docData.documents.filter(g => g.group ? g.group === group : group === "Documents");
     for (let j in filteredDocs) {
@@ -67,7 +68,7 @@ function Resources(props) {
         <ul>{groupBundle}</ul>
       </div>
     )
-  })
+  }
 
   return (
     <div>
@@ -90,6 +91,34 @@ function Resources(props) {
       <div className="bg-gray-3" style={docData.loading && !docData.finished ? { 'min-height': '70vh' } : { 'min-height': '58vh' }}></div>
     </div>
   );
+}
+
+class Queue {
+  constructor() {
+    this.items = {};
+    this.headIndex = 0;
+    this.tailIndex = 0;
+  }
+
+  enqueue(item) {
+    this.items[this.tailIndex] = item;
+    this.tailIndex++;
+  }
+
+  dequeue() {
+    const item = this.items[this.headIndex];
+    delete this.items[this.headIndex];
+    this.headIndex++;
+    return item;
+  }
+
+  peek() {
+    return this.items[this.headIndex];
+  }
+
+  get length() {
+    return this.tailIndex - this.headIndex;
+  }
 }
 
 export default Resources;

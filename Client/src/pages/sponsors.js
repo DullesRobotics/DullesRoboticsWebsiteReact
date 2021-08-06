@@ -38,6 +38,7 @@ function Sponsors(props) {
         <div>
           <p className="ml-2 text-4xl md:text-5xl">{tLFinalized[i].name} <i className={`text-2xl ml-3 fas fa-${tLFinalized[i].icon}`} /></p>
           <Particles
+            id={i}
             className="h-10"
             canvasClassName="rounded-b-md"
             options={{

@@ -136,6 +136,7 @@ class SponsorBobble extends React.Component {
         </div>
         <div className="md:absolute md:bottom-0 w-full">
           <Particles
+            id={this.props.tier}
             className="h-16"
             canvasClassName="rounded-b-md"
             options={{
