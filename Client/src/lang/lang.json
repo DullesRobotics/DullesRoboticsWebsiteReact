@@ -117,7 +117,7 @@
       "title": "Departments",
       "build": {
         "title": "Build 🔨",
-        "content": "The build team is charge of the building of our robots, both for FTC and FRC. They work against deadlines to ensure that the robot is ready for debugging, while also remaining in close communication with the Programming and Design teams to ensure the robot functions correctly and meets the original concept."
+        "content": "The build team is in charge of building our robots, both for FTC and FRC. They work against deadlines to ensure that the robot is ready for debugging, while also remaining in close communication with the Programming and Design teams to ensure the robot functions correctly and meets the original concept."
       },
       "programming": {
         "title": "Programming 💻",
@@ -133,7 +133,7 @@
       },
       "marketing": {
         "title": "Marketing 💬",
-        "content": "The marketing team handles the team's finances and sponsorship. Their focus is to raise money for the operations and competitions.            "
+        "content": "The marketing team handles the team's finances and sponsorships. Their focus is to raise money for equipment and competitions.            "
       }
     },
     "awards": {
