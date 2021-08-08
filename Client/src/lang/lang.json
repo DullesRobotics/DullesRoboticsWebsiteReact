@@ -21,7 +21,7 @@
       "button": "Support Us"
     },
     "interested_box": {
-      "header": "The 2021-2022 season is almost upon us!",
+      "header": "The 2021-2022 season is almost here!",
       "second_header": "Interested? We don't blame you!"
     }
   },
@@ -38,7 +38,7 @@
         "teams": "TEAMS",
         "departments": "DEPARTMENTS",
         "awards": "AWARDS",
-        "mentors": "MENTORS"
+        "mentors": "MENTOR"
       },
       "news": "NEWS",
       "robots": "ROBOTS",
@@ -69,7 +69,7 @@
     "mission_statement": {
       "title": "Our Mission Statement",
       "statement": "\"To encourage the next generation of aspiring engineers to pursue a career in STEM, as well as build their technical expertise, leadership, teamwork, communication, and accountability by providing them with hands on experience in real-world applications\"",
-      "credit": "-Circuit Bizurkers"
+      "credit": "-&nbsp;Dulles Robotics"
     },
     "about_the_club": {
       "title": "About The Club",
@@ -236,7 +236,7 @@
     "email": "dullesrobotics@gmail.com",
     "legal": {
       "title": "Is It Tax Deductible?",
-      "content": "Dulles Robotics is a 501(c)3 tax-exempt organization and your donation is tax-deductible within the guidelines of U.S. law. To claim a donation as a deduction on your U.S. taxes, please keep your email donation receipt as your official record. We’ll send it to you upon successful completion of your donation. Donations are also eligible for employer matching. Please contact your employer for more information."
+      "content": "Dulles Robotics is a 501(c)3 tax-exempt organization (through Dulles High School) and your donation is tax-deductible within the guidelines of U.S. law. To claim a donation as a deduction on your U.S. taxes, please keep your email donation receipt as your official record. We’ll send it to you upon successful completion of your donation. Donations are also eligible for employer matching. Please contact your employer for more information."
     }
   },
   "contact": {
