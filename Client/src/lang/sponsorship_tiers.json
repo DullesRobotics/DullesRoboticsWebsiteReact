@@ -1,35 +1,11 @@
 [
   {
-    "name": "Primary",
+    "name": "Bronze",
     "min_cost": "1000",
     "benefits": [
-      "Thank You Card",
-      "Mention on Team Website",
-      "Signed Team Photo"
-    ],
-    "img": "primarytier.png",
-    "color": "#a08872",
-    "opacity_percent": 0.3,
-    "particle_delay_period": 0.5,
-    "hidden": false,
-    "icon": "star",
-    "sponsors": [
-      {
-        "name": "TMiller Financial",
-        "description": "TMiller Financial engages with Business Owners, Professionals, Retirees and Pre-Retirees, and their families to help provide positive financial outcomes. We are thankful for their gracious support.",
-        "image_url": "tmiller.png",
-        "image_width": "20rem",
-        "website": "https://www.tmillerfinancial.com/"
-      }
-    ]
-  },
-  {
-    "name": "Bronze",
-    "min_cost": "3000",
-    "benefits": [
-      "Primary Benefits",
-      "Logo on Shirts",
-      "\"Proud Sponsor\" Poster"
+      "Small Banner",
+      "Mention on team website & carousel",
+      "Annual signed team photo"
     ],
     "img": "bronzetier.png",
     "color": "#cc6e16",
@@ -62,7 +38,11 @@
   {
     "name": "Silver",
     "min_cost": "5000",
-    "benefits": ["Bronze Benefits", "Gift Basket"],
+    "benefits": [
+      "Bronze benefits", 
+      "Logo on team shirts",
+      "Regular banner"
+    ],
     "img": "silvertier.png",
     "color": "#9aa4a5",
     "opacity_percent": 0.5,
@@ -73,12 +53,11 @@
   },
   {
     "name": "Gold",
-    "min_cost": "10,000",
+    "min_cost": "10000",
     "benefits": [
-      "Silver Benefits",
+      "Bronze + Silver benefits",
       "Logo On Robot",
-      "Logo On Banner",
-      "Plaque"
+      "Logo On Banner"
     ],
     "img": "goldtier.png",
     "color": "#eadb04",
@@ -90,12 +69,12 @@
   },
   {
     "name": "Diamond",
-    "min_cost": "15,000",
+    "min_cost": "20,000",
     "benefits": [
-      "Gold Benefits",
+      "Bronze + Silver + Gold Benefits",
       "Prominent Logo",
       "Robot Demo",
-      "Robotics Camp"
+      "Plaque"
     ],
     "icon": "gem",
     "img": "diamondtier.png",
