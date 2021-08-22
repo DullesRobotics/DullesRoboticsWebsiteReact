@@ -38,11 +38,7 @@
   {
     "name": "Silver",
     "min_cost": "5000",
-    "benefits": [
-      "Bronze benefits", 
-      "Logo on team shirts",
-      "Regular banner"
-    ],
+    "benefits": ["Bronze benefits", "Logo on team shirts", "Regular banner"],
     "img": "silvertier.png",
     "color": "#9aa4a5",
     "opacity_percent": 0.5,
@@ -53,12 +49,8 @@
   },
   {
     "name": "Gold",
-    "min_cost": "10000",
-    "benefits": [
-      "Bronze + Silver benefits",
-      "Logo On Robot",
-      "Logo On Banner"
-    ],
+    "min_cost": "10,000",
+    "benefits": ["Bronze + Silver benefits", "Logo On Robot", "Logo On Banner"],
     "img": "goldtier.png",
     "color": "#eadb04",
     "opacity_percent": 0.6,
@@ -69,7 +61,7 @@
   },
   {
     "name": "Diamond",
-    "min_cost": "20000",
+    "min_cost": "20,000",
     "benefits": [
       "Bronze + Silver + Gold Benefits",
       "Prominent Logo",

@@ -10,83 +10,103 @@ import lang from '../lang/lang.json'
 import SponsorshipTiersJSON from '../lang/sponsorship_tiers.json'
 import ServerImage from '../components/serverimage'
 
-class Support extends React.Component {
-  render() {
-    return (
-      <div>
-        <Spacer className="bg-gray-4" />
-        <div className="pt-6 pb-5 bg-gray-4">
-          <p className="text-center text-white text-4xl md:text-5xl font-bold -mb-1 mx-3 md:mx-0">
-            <Text>{lang.support.title}</Text>
+function Support(props) {
+  let tiers = [];
+  let realI = 0;
+  for (let i in SponsorshipTiersJSON)
+    if (!SponsorshipTiersJSON[i].hidden) {
+      tiers.push(<div className="col-span-1 my-5 md:my-0 mx-10 md:mx-0 md:mr-3"><SponsorBobble tier={realI} /></div>)
+      realI++;
+    }
+
+  return (
+    <div>
+      <Spacer className="bg-gray-4" />
+      <div className="pt-6 pb-5 bg-gray-4">
+        <p className="text-center text-white text-4xl md:text-5xl font-bold -mb-1 mx-3 md:mx-0">
+          <Text>{lang.support.title}</Text>
+        </p>
+      </div>
+      <SectionDivider divider="skew-tri" color1="4" color2="3" height="30px" />
+      <div className="pt-8 pb-8 md:pb-6 md:grid md:grid-cols-6 lg:grid-cols-4 bg-gray-3 md:-mb-2">
+        <div className="col-span-1" />
+        <div className="col-span-4 lg:col-span-2 text-white mx-3 md:mx-0">
+          <p className="text-center font-semibold text-xl">
+            <Text>{lang.support.description}</Text>
           </p>
         </div>
-        <SectionDivider divider="skew-tri" color1="4" color2="3" height="30px" />
-        <div className="pt-8 pb-8 md:pb-6 md:grid md:grid-cols-6 lg:grid-cols-4 bg-gray-3 md:-mb-2">
-          <div className="col-span-1" />
-          <div className="col-span-4 lg:col-span-2 text-white mx-3 md:mx-0">
-            <p className="text-center font-semibold text-xl">
-              <Text>{lang.support.description}</Text>
-            </p>
+        <div className="col-span-1" />
+      </div>
+      <SectionDivider divider="skew-tri" color1="3" color2="2" height="30px" />
+      <div className="pt-6 pb-6 lg:grid lg:grid-cols-7 bg-gray-2">
+        <div className="col-span-1" />
+        <div className={`lg:col-span-5 text-white md:mx-5 lg:mx-0`}>
+          <p className="text-left text-white text-3xl md:text-4xl font-bold ml-10 md:ml-0">
+            <Text>{lang.support.sponsorship_tiers_header}</Text>
+          </p>
+          <hr className="border-gray-400 hidden md:block" />
+          <div className={`md:grid md:grid-cols-${tiers.length} mt-3 min-h-0`}>
+            {tiers}
           </div>
-          <div className="col-span-1" />
-        </div>
-        <SectionDivider divider="skew-tri" color1="3" color2="2" height="30px" />
-        <div className="pt-6 pb-6 lg:grid lg:grid-cols-7 bg-gray-2">
-          <div className="col-span-1" />
-          <div className={`lg:col-span-5 text-white md:mx-5 lg:mx-0`}>
-            <p className="text-left text-white text-3xl md:text-4xl font-bold ml-10 md:ml-0">
-              <Text>{lang.support.sponsorship_tiers_header}</Text>
-            </p>
-            <hr className="border-gray-400 hidden md:block" />
-            <div className="md:grid md:grid-cols-5 mt-3 min-h-0">
-              <div className="col-span-1 my-5 md:my-0 mx-10 md:mx-0 md:mr-3"><SponsorBobble tier={0} /></div>
-              <div className="col-span-1 my-5 md:my-0 mx-10 md:mx-0 md:mr-3"><SponsorBobble tier={1} /></div>
-              <div className="col-span-1 my-5 md:my-0 mx-10 md:mx-0 md:mr-3"><SponsorBobble tier={2} /></div>
-              <div className="col-span-1 my-5 md:my-0 mx-10 md:mx-0 md:mr-3"><SponsorBobble tier={3} /></div>
-              <div className="col-span-1 my-5 md:my-0 mx-10 md:mx-0 md:mr-3"><SponsorBobble tier={4} /></div>
+          <div className="mt-12 md:mt-24">
+            <div className="flex">
+              <a className="mx-auto" href={lang.documents.url + lang.support.packet_file_name} target="_blank" rel="noopener noreferrer">
+                <Button className="shadow-md border-2 hover:border-green-500" bstyle="primaryGreen" animate={1}>
+                  <div className="my-1">
+                    {lang.support.packet_button}
+                    <i class="fas fa-file-pdf ml-2 mt-1" />
+                  </div>
+                </Button>
+              </a>
             </div>
-            <div className="mt-12 md:mt-24">
-              <div className="flex">
-                <a className="mx-auto" href={lang.documents.url + lang.support.packet_file_name} target="_blank" rel="noopener noreferrer">
+            <div className="mt-4 mb-8 flex">
+              <a className="mx-auto" href={`mailto:${lang.support.email}`} target="_blank" rel="noopener noreferrer">
+                <Button className="shadow-lg border-4 hover:border-green-500" bstyle="primaryGreen" animate={1}>
+                  <div className="mx-6 my-3 font-bold text-2xl">
+                    {lang.support.sponsor_button}
+                    <i class="fas fa-envelope ml-2 mt-1" /></div>
+                </Button>
+              </a>
+            </div>
+            {/* <hr className="pt-4" />
+            <div>
+              <div className={"bg-gray-5 p-4 rounded-lg shadow-xl " + hoverCSS.hvrfloat}>
+                <p className="text-2xl text-white text-left font-bold"><Text>{lang.support.donate_title}</Text></p>
+                <p><Text>{lang.support.donate_description}</Text></p>
+              </div>
+              <div className="flex pt-4">
+                <a className="mx-auto" href={lang.support.donate_link} target="_blank" rel="noopener noreferrer">
                   <Button className="shadow-md border-2 hover:border-green-500" bstyle="primaryGreen" animate={1}>
                     <div className="my-1">
-                      {lang.support.packet_button}
-                      <i class="fas fa-file-pdf ml-2 mt-1" />
+                      {lang.support.donate_button}
+                      <i class="fas fa-donate ml-2 mt-1" />
                     </div>
                   </Button>
                 </a>
               </div>
-              <div className="mt-4 flex">
-                <a className="mx-auto" href={`mailto:${lang.support.email}`} target="_blank" rel="noopener noreferrer">
-                  <Button className="shadow-lg border-4 hover:border-green-500" bstyle="primaryGreen" animate={1}>
-                    <div className="mx-6 my-3 font-bold text-2xl">
-                      {lang.support.sponsor_button}
-                      <i class="fas fa-envelope ml-2 mt-1" /></div>
-                  </Button>
-                </a>
-              </div>
-            </div>
+            </div> */}
           </div>
-          <div className="col-span-1" />
         </div>
-        <div className="bg-gray-2" style={{ 'min-height': '5vh' }}></div>
-        <SectionDivider divider="skew-tri" color1="2" color2="3" height="40px" />
-        <div className="pt-6 pb-8 md:grid md:grid-cols-6 lg:grid-cols-4 bg-gray-3">
-          <div className="col-span-1" />
-          <div className="col-span-4 lg:col-span-2 text-white mx-3 md:mx-0">
-            <p className="text-center font-bold text-4xl">
-              <Text>{lang.support.legal.title}</Text>
-            </p>
-            <p className="text-center text-lg mt-3">
-              <Text>{lang.support.legal.content}</Text>
-            </p>
-          </div>
-          <div className="col-span-1" />
-        </div>
+        <div className="col-span-1" />
       </div>
-    );
-  }
+      <div className="bg-gray-2" style={{ 'min-height': '5vh' }}></div>
+      <SectionDivider divider="skew-tri" color1="2" color2="3" height="40px" />
+      <div className="pt-6 pb-8 md:grid md:grid-cols-6 lg:grid-cols-4 bg-gray-3">
+        <div className="col-span-1" />
+        <div className="col-span-4 lg:col-span-2 text-white mx-3 md:mx-0">
+          <p className="text-center font-bold text-4xl">
+            <Text>{lang.support.legal.title}</Text>
+          </p>
+          <p className="text-center text-lg mt-3">
+            <Text>{lang.support.legal.content}</Text>
+          </p>
+        </div>
+        <div className="col-span-1" />
+      </div>
+    </div>
+  );
 }
+
 
 class SponsorBobble extends React.Component {
 
