@@ -175,6 +175,7 @@ function InstagramFeed() {
   return (
     <div className="bg-gray-4 rounded p-4 shadow-xl">
       <div>
+        <p className="m-1 font-semibold text-2xl text-center md:text-left"><Text>{lang.news.insta_header}</Text></p>
         {list}
       </div>
       <div className="flex justify-center">

@@ -39,12 +39,12 @@ export default function TBAFeed(props) {
         );
     }
 
-    const title = lang.news.frc_competition_results.title.replace("%year%", competitionsData.season ? competitionsData.season : new Date().getFullYear())
+    const title = lang.news.competition_results.title.replace("%year%", competitionsData.season ? competitionsData.season : new Date().getFullYear())
 
     return (
         <div className="px-4">
             <p className="text-3xl font-bold leading-8">{title}</p>
-            { !competitionsData.error ? competitionsData.loading ? <LoadingIcon /> :
+            {!competitionsData.error ? competitionsData.loading ? <LoadingIcon /> :
                 <div className={props.className}>
                     <p className="text-md">{parseDescriptor(competitionsData.season, competitionsData.district_info, competitionsData.comps)}</p>
                     <section className={`min-w-full feeder ${BobbleCSS.feed}`}>
@@ -56,27 +56,34 @@ export default function TBAFeed(props) {
                     <Text>{lang.news.tba_error}</Text>
                 </p>
             }
-            { props.courtesy ?
+            {props.courtesy ?
                 <p className="text-sm mt-2">
-                    <a
-                        className="font-semibold text-blue-400 hover:underline"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href="https://www.thebluealliance.com/team/7494">
-                        {lang.news.frc_competition_results.previous_years}
-                    </a>
+                    {lang.news.competition_results.previous_years.prefix}
+                    {getLink(lang.news.competition_results.previous_years.FRC, lang.news.competition_results.previous_years.FRC_link)},
+                    &nbsp;
+                    {getLink(lang.news.competition_results.previous_years.Bigred, lang.news.competition_results.previous_years.Bigred_link)},
+                    &nbsp;
+                    {getLink(lang.news.competition_results.previous_years.Robovikings, lang.news.competition_results.previous_years.Robovikings_link)}
                     <br />
-                    {lang.news.frc_competition_results.courtesy}&nbsp;
-                    <a
-                        className="font-semibold text-blue-400 hover:underline"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href="https://www.thebluealliance.com/">
-                        {lang.news.frc_competition_results.tba}
-                    </a>
+                    {lang.news.competition_results.courtesy}&nbsp;
+                    {getLink(lang.news.competition_results.tba, lang.news.competition_results.tba_link)}
+                    &nbsp;and&nbsp;
+                    {getLink(lang.news.competition_results.toa, lang.news.competition_results.toa_link)}
                 </p> : <></>}
         </div>
     );
+}
+
+function getLink(name, link) {
+    return (
+        <a
+            className="font-semibold text-blue-400 hover:underline"
+            target="_blank"
+            rel="noopener noreferrer"
+            href={link}>
+            {name}
+        </a>
+    )
 }
 
 
@@ -100,7 +107,7 @@ function parseDescriptor(currentSeason, state_info, comps) {
 
     let descriptor = "";
     if (state_info && state_info.rank && state_info.points) {
-        descriptor += `Overall in the state of Texas, Dulles Robotics ${new Date().getFullYear() === Number(currentSeason) ? "is" : "was"} rank ${state_info.rank} with ${state_info.points} point`;
+        descriptor += `FRC: Overall in the state of Texas, Dulles Robotics ${new Date().getFullYear() === Number(currentSeason) ? "is" : "was"} rank ${state_info.rank} with ${state_info.points} point`;
         descriptor += state_info.points === 1 ? `.` : `s.`;
     }
     descriptor += ` In official play, we ${new Date().getFullYear() === Number(currentSeason) ? "have" : ""} won ${wins} game`;

@@ -185,11 +185,22 @@
   },
   "news": {
     "title": "News &amp; Announcements",
-    "frc_competition_results": {
-      "title": "%year% FRC Competition Results",
-      "previous_years": "View Previous Years",
+    "competition_results": {
+      "title": "%year% Competition Results",
+      "previous_years": {
+        "prefix": "View Previous Years: ",
+        "FRC": "FRC 7494",
+        "FRC_link": "https://www.thebluealliance.com/team/7494",
+        "Bigred": "FTC 12456",
+        "Bigred_link": "https://theorangealliance.org/teams/12456",
+        "Robovikings": "FTC 13822",
+        "Robovikings_link": "https://theorangealliance.org/teams/13822"
+      },
       "courtesy": "Data courtesy of",
-      "tba": "The Blue Alliance"
+      "tba": "The Blue Alliance",
+      "tba_link": "https://www.thebluealliance.com/",
+      "toa": "The Orange Alliance",
+      "toa_link": "https://www.theorangealliance.org/"
     },
     "load_more_posts": "Load More",
     "read_more_of_post": "Read More",
@@ -206,7 +217,8 @@
     },
     "recent_news": "Recent News",
     "cant_load_instagram": "Sorry, we couldn't retrieve our instagram posts. You can always view them <a className=\"text-blue-1\" target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://instagram.com/dulles_robotics\"> on Instagram.</a>",
-    "cant_load_twitter": "Sorry, our Twitter timeline can't be loaded. Try refreshing."
+    "cant_load_twitter": "Sorry, our Twitter timeline can't be loaded. Try refreshing.",
+    "insta_header": "Instagram"
   },
   "robots": {
     "title": "Our Robots",

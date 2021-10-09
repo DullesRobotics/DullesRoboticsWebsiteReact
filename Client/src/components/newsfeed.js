@@ -77,7 +77,7 @@ class PostBubble extends React.Component {
 
     let d = new Date(0);
     d.setUTCMilliseconds(this.props.timestamp);
-    let ds = monthNames[d.getMonth()] + " " + d.getDay() + ", " + d.getFullYear();
+    let ds = monthNames[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear();
 
     let c = this.props.content.substring(0, 200), cl = c.split(" "), cf = c;
     if (cl.length > 0 && c.length >= 200) {
