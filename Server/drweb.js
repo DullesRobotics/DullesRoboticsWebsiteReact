@@ -10,6 +10,7 @@ const mysql = require('mysql2');
 var http = require('https');
 var url = require('url');
 var remote = require('remote-file-size')
+const { Headers } = require('node-fetch');
 
 const app = express();
 const port = process.env.PORT || 6937;
@@ -432,11 +433,10 @@ app.post(uriPrefix + "/contact", (req, res) => {
 })
 
 app.get(uriPrefix + "/tba/season", (req, res) => {
-  // getMaxTBASeason().then(maxSeason => {
-  //   if (!maxSeason) res.status(200).send({ "max_season": new Date().getFullYear(), "error": true })
-  //   else return res.status(200).send(maxSeason);
-  // });
-  return res.status(200).send({ max_season: 2020 });
+  getMaxTOASeason().then(maxSeason => {
+    if (!maxSeason) res.status(200).send({ "max_season": new Date().getFullYear(), "error": true })
+    else return res.status(200).send(maxSeason);
+  });
 });
 
 app.get(uriPrefix + '/tba', (req, res) => {
@@ -445,6 +445,7 @@ app.get(uriPrefix + '/tba', (req, res) => {
     res.status(400).send({ error: "Missing param year" })
     return;
   }
+
   try {
     for (let n in tbaCache)
       if (tbaCache[n].year && tbaCache[n].year === year)
@@ -620,19 +621,62 @@ app.get(uriPrefix + "/instagram", (req, res) => {
   } else res.status(200).send({ data: instaCache, cached: true });
 })
 
-async function getMaxTBASeason() {
+// async function getMaxTBASeason() {
+//   return new Promise((resolve, reject) => {
+//     if (!tbaSeasonCache || new Date().getTime() - lastTBASeasonCacheRefresh > 500000000) {
+//       fetch(`https://www.thebluealliance.com/api/v3/status?X-TBA-Auth-Key=${token.tba_key}`)
+//         .then(res => res.json())
+//         .then(json => {
+//           if (!json || json["Error"] || json["Errors"])
+//             reject();
+//           if (json["max_season"]) {
+//             tbaSeasonCache = json["max_season"];
+//             lastTBASeasonCacheRefresh = new Date().getTime();
+//             resolve({ "max_season": json["max_season"] });
+//           } else reject();
+//         }).catch(() => { reject() });
+//     } else resolve({ "max_season": tbaSeasonCache, "from_cache": true });
+//   })
+// }
+
+async function getMaxTOASeason() {
   return new Promise((resolve, reject) => {
     if (!tbaSeasonCache || new Date().getTime() - lastTBASeasonCacheRefresh > 500000000) {
-      fetch(`https://www.thebluealliance.com/api/v3/status?X-TBA-Auth-Key=${token.tba_key}`)
+      let year1, year2;
+      fetch(`https://www.theorangealliance.org/api/team/12456/`,
+        {
+          headers: new Headers({
+            "X-Application-Origin": "dullesroboticswebsite",
+            "X-TOA-Key": token.toa_key,
+            "Content-Type": "application/json"
+          })
+        })
         .then(res => res.json())
         .then(json => {
-          if (!json || json["Error"] || json["Errors"])
-            reject();
-          if (json["max_season"]) {
-            tbaSeasonCache = json["max_season"];
-            lastTBASeasonCacheRefresh = new Date().getTime();
-            resolve({ "max_season": json["max_season"] });
-          } else reject();
+          if (!json || json["error"] || json["_code"] || json.length < 1) year1 = 0;
+          year1 = json[0].last_active;
+        }).catch(() => { reject() });
+
+
+      fetch(`https://www.theorangealliance.org/api/team/13822/`,
+        {
+          headers: new Headers({
+            "X-Application-Origin": "dullesroboticswebsite",
+            "X-TOA-Key": token.toa_key,
+            "Content-Type": "application/json"
+          })
+        })
+        .then(res => res.json())
+        .then(json => {
+          if (!json || json["error"] || json["_code"] || json.length < 1) year2 = 0;
+          year2 = json[0].last_active;
+
+          let year = Math.max(year1 ? year1 : 0, year2 ? year2 : 0);
+          year = year === 0 ? new Date().getFullYear() : year;
+          tbaSeasonCache = year;
+          lastTBASeasonCacheRefresh = new Date().getTime();
+
+          resolve({ "max_season": year === 0 ? new Date().getFullYear() : year })
         }).catch(() => { reject() });
     } else resolve({ "max_season": tbaSeasonCache, "from_cache": true });
   })
