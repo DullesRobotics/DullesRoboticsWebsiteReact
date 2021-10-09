@@ -76,8 +76,8 @@ export default function HomeScreen(props) {
           </p>
         </div>
         <div>
-          <SectionDivider className="mt-20 lg:mt-32 xl:mt-64 h-2 md:h-5 lg:h-20" divider="skew-c" color1={100} color2={8} />
-          <div style={{ backgroundColor: "#3C8FE1" }} className="text-white text-center py-5 lg:py-0">
+          <SectionDivider className="mt-20 lg:mt-32 xl:mt-64 h-2 md:h-5 lg:h-20" divider="skew-c" color1={100} color2={/*8*/4} />
+          {/* <div style={{ backgroundColor: "#3C8FE1" }} className="text-white text-center py-5 lg:py-0">
             <p className="text-xl sm:text-2xl font-semibold"><Text>{lang.home.interested_box.header}</Text></p>
             <p className="font-bold text-2xl sm:text-3xl"><Text>{lang.home.interested_box.second_header}</Text></p>
             <Link to="/interest">
@@ -86,7 +86,7 @@ export default function HomeScreen(props) {
               </Button>
             </Link>
           </div>
-          <SectionDivider className="h-2 md:h-5 lg:h-20" divider="skew-c" color1={8} color2={4} />
+          <SectionDivider className="h-2 md:h-5 lg:h-20" divider="skew-c" color1={8} color2={4} /> */}
           <div className="grid grid-cols-1 md:grid-cols-9 lg:grid-cols-5 xl:grid-cols-9 bg-gray-4 py-8">
             <div className="md:col-span-1 xl:col-span-2" />
             <div className="px-4 md:px-0 col-span-1 md:col-span-7 lg:col-span-3 xl:col-span-5 text-left text-white">
@@ -178,13 +178,13 @@ export default function HomeScreen(props) {
       </div>
       {/* Background elements, in order from front to back */}
       <div className={"absolute"} style={{
-        "z-index": "-7", "top": (dimensions.width >= 1280 ? "1200px" : (dimensions.width >= 768 ? "830px" : (dimensions.width >= 400 ? "700px" : "800px"))),
+        "z-index": "-7", "top": (dimensions.width >= 1280 ? "1010px" : (dimensions.width >= 768 ? "610px" : (dimensions.width >= 335 ? "510px" : "610px"))),
         "backgroundImage": "linear-gradient(to bottom, rgba(113, 9, 232, 0.5) 0%, rgba(242, 41, 91, 0.5) 120%)", "backgroundRepeat": "no-repeat", "backgroundSize": "cover"
         , margin: '0 auto', width: '100%', height: (dimensions.width >= 1280 ? "1200px" : (dimensions.width >= 1024 ? "950px" : (dimensions.width >= 768 ? "600px" : "510px"))), backgroundPosition: "center center"
       }} />
 
       <div className={"absolute"} style={{
-        "z-index": "-8", "top": (dimensions.width >= 1280 ? "1200px" : (dimensions.width >= 768 ? "830px" : (dimensions.width >= 400 ? "700px" : "800px"))),
+        "z-index": "-8", "top": (dimensions.width >= 1280 ? "1010px" : (dimensions.width >= 768 ? "610px" : (dimensions.width >= 335 ? "510px" : "610px"))),
         "backgroundImage": `url(${middleBannerURL})`, "backgroundRepeat": "no-repeat", "backgroundSize": "cover"
         , margin: '0 auto', width: '100%', height: (dimensions.width >= 1280 ? "1200px" : (dimensions.width >= 1024 ? "950px" : (dimensions.width >= 768 ? "600px" : "510px"))), backgroundPosition: "center center"
       }} />
@@ -195,24 +195,22 @@ export default function HomeScreen(props) {
         , margin: '0 auto', width: '100%', height: (dimensions.width >= 1280 ? "1200px" : (dimensions.width >= 1024 ? "950px" : (dimensions.width >= 768 ? "600px" : "510px"))), backgroundPosition: "center center"
       }} />
 
-      {
-        !mobile() ? <div className="absolute top-0" style={{ "z-index": "-10" }}>
-          <iframe
-            title="Youtube Video"
-            width={dimensions.width - 17}
-            height={9 * (dimensions.width / 16)}
-            src={`https://www.youtube-nocookie.com/embed/${images.home.yt_video}?autoplay=1&loop=1&playlist=${images.home.yt_video}&version=3&disablekb=1&mute=1&controls=0&start=21&end=197`}
-            frameborder="0">
-          </iframe>
-        </div> : <></>
-      }
+      {!mobile() ? <div className="absolute top-0" style={{ "z-index": "-10" }}>
+        <iframe
+          title="Youtube Video"
+          width={dimensions.width - 17}
+          height={9 * (dimensions.width / 16)}
+          src={`https://www.youtube-nocookie.com/embed/${images.home.yt_video}?autoplay=1&loop=1&playlist=${images.home.yt_video}&version=3&disablekb=1&mute=1&controls=0&start=21&end=197`}
+          frameborder="0">
+        </iframe>
+      </div> : <></>}
 
       <div className={"absolute"} style={{
         "z-index": "-11", "top": "-100px",
         "backgroundImage": `url(${topBannerURL})`, "backgroundRepeat": "no-repeat", "backgroundSize": "cover"
         , margin: '0 auto', width: '100%', height: (dimensions.width >= 1280 ? "1200px" : (dimensions.width >= 1024 ? "950px" : (dimensions.width >= 768 ? "600px" : "510px"))), backgroundPosition: "center center"
       }} />
-    </div >
+    </div>
   );
 
 }
