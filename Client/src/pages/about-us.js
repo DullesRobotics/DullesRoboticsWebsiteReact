@@ -45,7 +45,7 @@ export default function AboutUs(props) {
     const mentor = MentorJSON[m]
     mentorDivList.push(
       <div
-        className="col-span-1 mx-5 md:mx-2 bg-gray-4 transition duration-200 hover:bg-gray-5"
+        className="col-span-1 mx-5 md:mx-2 my-2 bg-gray-4 transition duration-200 hover:bg-gray-5"
         style={{ boxShadow: "3px 3px rgba(66, 68, 69, 1)" }}>
         <div className="p-5 m-5 md:m-0">
           <p className="text-6xl"><i className="fas fa-user-circle" /></p>
@@ -319,10 +319,10 @@ export default function AboutUs(props) {
           <div className="col-span-8 pb-16">
             <p className="text-center font-bold text-5xl md:text-6xl">
               <Text>
-                {mentorDivList.lenght > 1 ? lang.about_us.mentors.plural_title : lang.about_us.mentors.singular_title}
+                {mentorDivList.length > 1 ? lang.about_us.mentors.plural_title : lang.about_us.mentors.singular_title}
               </Text>
             </p>
-            <div className={`md:grid grid-cols-${mentorDivList.lenght > 3 ? 4 : mentorDivList.length} text-center`}>
+            <div className={`md:grid grid-cols-${mentorDivList.length > 3 ? 3 : mentorDivList.length} text-center`}>
               {mentorDivList}
             </div>
           </div>

@@ -11,6 +11,7 @@ var http = require('https');
 var url = require('url');
 var remote = require('remote-file-size')
 const { Headers } = require('node-fetch');
+const { resolve } = require('path');
 
 const app = express();
 const port = process.env.PORT || 6937;
@@ -23,6 +24,7 @@ let team = "frc7494", emailRegx = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s
 
 let tbaCache = [];
 let tbaSeasonCache = null, lastTBASeasonCacheRefresh = 0;
+let toaCache = {};
 let instaCache = [], lastInstaCacheRefresh = 0;
 let lastPostRefresh = posts.lastUpdated ? posts.lastUpdated : 0, postData = posts.postData
 
@@ -439,6 +441,138 @@ app.get(uriPrefix + "/tba/season", (req, res) => {
   });
 });
 
+app.get(uriPrefix + '/toa', (req, res) => {
+
+  const year = req.query.year;
+  if (!req.query.year) {
+    res.status(400).send({ error: "Missing param year" })
+    return;
+  }
+
+  queryTOA(year).then(json => {
+    res.send(json)
+  })
+
+})
+
+async function queryTOA(year) {
+  return new Promise((resolve, reject) => {
+
+    let team = 13822
+
+    if (
+      toaCache[year] &&
+      toaCache[year]["updated"] &&
+      new Date().getTime() - toaCache[year]["updated"] < 10000000)
+      return resolve({ "comps": toaCache[year], from_cache: true });
+
+
+    fetch(`https://www.theorangealliance.org/api/team/${team}/events/${year}`,
+      {
+        headers: new Headers({
+          "X-Application-Origin": "dullesroboticswebsite",
+          "X-TOA-Key": token.toa_key,
+          "Content-Type": "application/json"
+        })
+      })
+      .then(res => res.json())
+      .then(json => {
+        if (!json || json["_code"])
+          resolve({ response: "error", error: true })
+
+        let payload = [];
+        for (let eventID in json) {
+
+          const event = json[eventID]
+          const eventKey = event.event_key
+          fetch(`https://www.theorangealliance.org/api/event/${eventKey}`,
+            {
+              headers: new Headers({
+                "X-Application-Origin": "dullesroboticswebsite",
+                "X-TOA-Key": token.toa_key,
+                "Content-Type": "application/json"
+              })
+            })
+            .then(res => res.json())
+            .then(json2 => {
+              fetch(`https://www.theorangealliance.org/api/event/${eventKey}/rankings`,
+                {
+                  headers: new Headers({
+                    "X-Application-Origin": "dullesroboticswebsite",
+                    "X-TOA-Key": token.toa_key,
+                    "Content-Type": "application/json"
+                  })
+                })
+                .then(res => res.json())
+                .then(json3 => {
+                  fetch(`https://www.theorangealliance.org/api/event/${eventKey}/awards`,
+                    {
+                      headers: new Headers({
+                        "X-Application-Origin": "dullesroboticswebsite",
+                        "X-TOA-Key": token.toa_key,
+                        "Content-Type": "application/json"
+                      })
+                    })
+                    .then(res => res.json())
+                    .then(json4 => {
+                      if (!json2 || json2["_code"] || !json3 || json3["_code"])
+                        payload.push({ "name": "error" })
+                      else {
+                        json13822Results = Object.values(json3).filter(j => j.team_key == "13822")
+                        json12456Results = Object.values(json3).filter(j => j.team_key == "12456")
+
+                        let awards13822 = [], awards12456 = [];
+                        if (json4 && !json4["_code"]) {
+                          json13822Awards = Object.values(json4).filter(j => j.team_key == "13822")
+                          json12456Awards = Object.values(json4).filter(j => j.team_key == "12456")
+                          awards13822 = json13822Awards.map(e => { return { name: e.award_name, award_type: e.award.award_type } })
+                          awards12456 = json12456Awards.map(e => { return { name: e.award_name, award_type: e.award.award_type } })
+                        }
+
+                        payload.push({
+                          "key": json2[0]["event_key"],
+                          "type": "First Tech Challenge",
+                          "name": json2[0]["event_name"],
+                          "city": json2[0]["city"],
+                          "state_prov": json2[0]["state_prov"],
+                          "country": json2[0]["country"],
+                          "start_date": json2[0]["start_date"] ? json2[0]["start_date"].slice(0, 10) : null,
+                          "end_date": json2[0]["end_date"] ? json2[0]["end_date"].slice(0, 10) : null,
+                          "event_type_string": json2[0]["event_type_string"],
+                          "status": {
+                            "team12456": {
+                              "wins": json12456Results[0].wins,
+                              "losses": json12456Results[0].losses,
+                              "ties": json12456Results[0].ties,
+                              "rank": json12456Results[0].rank,
+                              "awards": awards12456
+                            },
+                            "team13822": {
+                              "wins": json13822Results[0].wins,
+                              "losses": json13822Results[0].losses,
+                              "ties": json13822Results[0].ties,
+                              "rank": json13822Results[0].rank,
+                              "awards": awards13822
+                            }
+                          }
+                        })
+                      }
+
+                      if (payload.length >= json.length) {
+                        resolve({ "comps": payload });
+                        toaCache[year] = payload;
+                        toaCache[year]["updated"] = new Date().getTime();
+                        return
+                      }
+                    });
+                })
+            })
+        }
+      })
+      .catch(e => reject({ "error": e }))
+  })
+}
+
 app.get(uriPrefix + '/tba', (req, res) => {
   const year = req.query.year;
   if (!req.query.year) {
@@ -465,6 +599,7 @@ app.get(uriPrefix + '/tba', (req, res) => {
         let payload = [];
         for (let c in json)
           payload.push({
+            "type": "First Robotics Challenge",
             "key": json[c]["key"],
             "name": json[c]["name"],
             "city": json[c]["city"],
@@ -483,7 +618,7 @@ app.get(uriPrefix + '/tba', (req, res) => {
           })
 
         if (payload.length < 1) {
-          res.status(200).send({ comps: {}, district_info: {} })
+          res.status(200).send({ comps: [], district_info: {} })
           return;
         }
 

@@ -34,7 +34,7 @@ export default function Announcements(props) {
       <div className="pt-4 pb-3 md:grid md:grid-cols-6 xl:grid-cols-5 bg-gray-5">
         <div className="col-span-1"></div>
         <div className="md:col-span-4 xl:col-span-3 text-white">
-          <TBAFeed courtesy year={2020} />
+          <TBAFeed courtesy />
         </div>
         <div className="col-span-1" />
       </div>

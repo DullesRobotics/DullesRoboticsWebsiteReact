@@ -38,7 +38,7 @@
         "teams": "TEAMS",
         "departments": "DEPARTMENTS",
         "awards": "AWARDS",
-        "mentors": "MENTOR"
+        "mentors": "OFFICERS/MENTORS"
       },
       "news": "NEWS",
       "robots": "ROBOTS",
@@ -141,8 +141,8 @@
       "advanced_message": "Advanced To The 2019 FRC World Championships In Houston, TX"
     },
     "mentors": {
-      "singular_title": "Mentor",
-      "plural_title": "Mentors"
+      "singular_title": "Officer / Mentor",
+      "plural_title": "Officers and Mentors"
     }
   },
   "alumni": {
@@ -200,7 +200,8 @@
       "tba": "The Blue Alliance",
       "tba_link": "https://www.thebluealliance.com/",
       "toa": "The Orange Alliance",
-      "toa_link": "https://www.theorangealliance.org/"
+      "toa_link": "https://www.theorangealliance.org/",
+      "incomplete": "Incomplete data is a result of these providers and not a fault of Dulles Robotics."
     },
     "load_more_posts": "Load More",
     "read_more_of_post": "Read More",
