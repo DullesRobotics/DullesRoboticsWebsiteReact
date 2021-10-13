@@ -25,7 +25,7 @@ export default function Announcements(props) {
       <Spacer className="bg-gray-1" />
       <div className="pt-6 md:pt-10 pb-5 md:grid md:grid-cols-6 xl:grid-cols-5 bg-gray-1">
         <div className="col-span-1" />
-        <p className="md:col-span-4 xl:col-span-3 text-center md:text-left text-white text-5xl font-bold mx-5 leading-10">
+        <p className="md:col-span-4 xl:col-span-3 text-center md:text-left text-white text-4xl sm:text-5xl font-bold mx-5 leading-10">
           <Text>{lang.news.title}</Text>
         </p>
         <div className="col-span-1" />
