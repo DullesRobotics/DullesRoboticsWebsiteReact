@@ -30,9 +30,9 @@ const subMenus = {
     //     { key: 60, title: 'DOCUMENTS', link: "/documents" },
     //     { key: 60, title: 'CLUB RESOURCES', link: "/club-resources" },
     // ],
-    // 7: [
-    //     { key: 70, title: 'OUR SPONSORS', link: "/sponsors" },
-    // ],
+    7: [
+        { key: 70, title: 'OUR SPONSORS', link: "/sponsors" },
+    ],
     // 9: [
     //     { key: 90, title: 'MEMBER HOME', link: "#" },
     //     { key: 91, title: 'VOLUNTEER HOME', link: "#" },

@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom'
 
 import Text from '../components/text'
 import lang from '../lang/lang.json'
+import sponsors from '../lang/sponsorship_tiers.json'
 
 import ServerImage from '../components/serverimage'
 import images from '../lang/images.json'
@@ -20,12 +21,6 @@ import {
   loadMediaFile,
   selectMedia
 } from '../slices/mediaSlice'
-
-const slides = [
-  (<ServerImage alt="Waste Management Logo" className="h-24 w-auto mx-auto" file={images.sponsors.wm} />),
-  (<ServerImage alt="NASA Logo" className="h-32 w-auto mx-auto" file={images.sponsors.nasa} />),
-  (<ServerImage alt="TMiller Financial Logo" className="h-32 w-auto mx-auto" file={images.sponsors.tmiller} />)
-]
 
 const nextButton = <button className="rounded ml-3"><Button bstyle="secondary"><i className="text-blue-2 fas fa-chevron-right"></i></Button></button>,
   backButton = <button className="rounded mr-3"><Button bstyle="secondary"><i className="text-blue-2 fas fa-chevron-left"></i></Button></button>
@@ -37,7 +32,7 @@ export default function HomeScreen(props) {
     width: window.innerWidth
   })
 
-  //const [slide, setSlide] = useState(0)
+  const [slide, setSlide] = useState(0)
 
   React.useEffect(() => {
     function handleResize() {
@@ -63,6 +58,9 @@ export default function HomeScreen(props) {
     middleBannerURL = blobs.cached.get(images.home.middle_banner)
   else
     dispatch(loadMediaFile(images.home.middle_banner))
+
+
+  const sponsorCarouselItems = getSponsorCarouselItems();
 
   return (
     <div>
@@ -117,24 +115,29 @@ export default function HomeScreen(props) {
               <Text>{lang.home.image_box}</Text>
             </p>
           </div>
-          <SectionDivider className="h-2 md:h-5 lg:h-20" divider="skew-c" color1={100} color2={/*1*/ 5} />
+          <SectionDivider className="h-2 md:h-5 lg:h-20" divider="skew-c" color1={100} color2={sponsorCarouselItems.length > 0 ? 1 : 5} />
 
-          {/* <div className="xl:grid xl:grid-cols-8 bg-gray-1 py-10">
-            <div className="xl:col-span-2 relative" />
-            <div className="mx-3 lg:mx-10 xl:mx-0 xl:col-span-4 text-left text-white">
-              <p className="font-bold text-4xl pl-10 mb-5">Our Sponsors</p>
+          {sponsorCarouselItems.length > 0 ?
+            <>
+              <div className="xl:grid xl:grid-cols-8 bg-gray-1 py-10">
+                <div className="xl:col-span-2 relative" />
+                <div className="mx-3 lg:mx-10 xl:mx-0 xl:col-span-4 text-left text-white">
+                  <p className="font-bold text-4xl pl-10 mb-5">Our Sponsors</p>
 
-              <CarouselHolder key={dimensions.width} onSlideChange={setSlide} slideValue={slide} />
-              <div className="flex justify-center mt-5">
-                <Link to="/sponsors" className="mr-1"><Button bstyle="primary" animate>About our Sponsors<i className="ml-2 fas fa-arrow-right hidden sm:inline"></i></Button></Link>
-                <Link to="/support-us" className="ml-1"><Button bstyle="primary" animate>Support Us<i className="ml-2 fas fa-arrow-right hidden sm:inline"></i></Button></Link>
+                  <CarouselHolder key={dimensions.width} onSlideChange={setSlide} slides={sponsorCarouselItems} slideValue={slide} />
+                  <div className="flex justify-center mt-5">
+                    <Link to="/sponsors" className="mr-1"><Button bstyle="primary" animate>About our Sponsors<i className="ml-2 fas fa-arrow-right hidden sm:inline"></i></Button></Link>
+                    <Link to="/support-us" className="ml-1"><Button bstyle="primary" animate>Support Us<i className="ml-2 fas fa-arrow-right hidden sm:inline"></i></Button></Link>
+                  </div>
+
+                </div>
+                <div className="xl:col-span-2 relative" />
               </div>
+              <SectionDivider className="h-2 md:h-5 lg:h-20" divider="skew-c" color1={1} color2={5} />
+            </>
+            : <></>}
 
-            </div>
-            <div className="xl:col-span-2 relative" />
-          </div> */}
-          {/* 
-            <SectionDivider className="h-2 md:h-5 lg:h-20" divider="skew-c" color1={1} color2={5} /> */}
+
 
           <div className="grid grid-cols-1 md:grid-cols-9 lg:grid-cols-5 xl:grid-cols-9 bg-gray-5 py-8">
             <div className="md:col-span-1 xl:col-span-2" />
@@ -215,27 +218,43 @@ export default function HomeScreen(props) {
 
 }
 
-export class CarouselHolder extends React.Component {
-
-  render() {
-    return (
-      <div>
-        <Carousel
-          autoPlay={5000}
-          infinite={true}
-          slidesPerPage={1}
-          addArrowClickHandler={true}
-          arrowRight={nextButton}
-          arrowLeft={backButton}
-          onChange={this.props.onSlideChange}
-          slides={slides}
-          value={this.props.slideValue}
-          plugins={[
-            'centered'
-          ]}
-        />
-        <Dots className="mt-8" value={this.props.slideValue} onChange={this.props.onSlideChange} number={slides.length} />
-      </div>
-    )
+function getSponsorCarouselItems() {
+  const slides = [];
+  //loop through sponsorship tiers in sponsors and add everything from the sponsors array into slides
+  for (let tier in sponsors) {
+    for (let sponsorID in sponsors[tier].sponsors) {
+      var sponsor = sponsors[tier].sponsors[sponsorID];
+      slides.push(
+        <a href={sponsor.website} target="_blank" rel="noopener noreferrer">
+          <ServerImage alt={`${sponsor.name} Logo`} className={`h-auto mx-auto ${sponsor.image_properties}`} style={{ width: sponsor.small_image_width }} file={sponsor.image_url} />
+        </a>
+      );
+    }
   }
+
+  return slides;
+}
+
+export function CarouselHolder(props) {
+
+  return (
+    <div>
+      <Carousel
+        autoPlay={5000}
+        infinite={true}
+        slidesPerPage={1}
+        addArrowClickHandler={true}
+        arrowRight={nextButton}
+        arrowLeft={backButton}
+        onChange={props.onSlideChange}
+        slides={props.slides}
+        value={props.slideValue}
+        plugins={[
+          'centered'
+        ]}
+      />
+      <Dots className="mt-8" value={props.slideValue} onChange={props.onSlideChange} number={props.slides.length} />
+    </div>)
+
+
 }

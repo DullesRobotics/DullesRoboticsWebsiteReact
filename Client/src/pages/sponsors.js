@@ -6,6 +6,7 @@ import mobile from "is-mobile"
 import SponsorTiersJSON from '../lang/sponsorship_tiers.json'
 import ServerImage from '../components/serverimage'
 import images from '../lang/images.json'
+import { Redirect, useParams, Link } from "react-router-dom";
 
 function Sponsors(props) {
   const bundle = [];
@@ -15,20 +16,21 @@ function Sponsors(props) {
     if (tLFinalized[i].sponsors.length > 0) {
       const inception = [];
       for (let j in tLFinalized[i].sponsors) {
+        const sponsor = tLFinalized[i].sponsors[j];
         inception.push(
           <div className="row-span-1 md:grid md:grid-cols-2 my-10">
             <div className="md:col-span-1">
-              <a href={tLFinalized[i].sponsors[j].website} target="_blank" rel="noopener noreferrer">
-                <ServerImage className="mx-auto" style={{ width: tLFinalized[i].sponsors[j].image_width }} file={tLFinalized[i].sponsors[j].image_url} alt={tLFinalized[i].sponsors[j].name + " Logo"} />
+              <a href={sponsor.website} target="_blank" rel="noopener noreferrer">
+                <ServerImage className={`mx-auto ${sponsor.image_properties}`} style={{ width: sponsor.big_image_width }} file={sponsor.image_url} alt={sponsor.name + " Logo"} />
               </a>
             </div>
             <div className="mt-10 md:mt-0 md:col-span-1 ml-4">
-              <a href={tLFinalized[i].sponsors[j].website} target="_blank" rel="noopener noreferrer">
+              <a href={sponsor.website} target="_blank" rel="noopener noreferrer">
                 <p className="text-4xl md:text-5xl leading-10">
-                  {tLFinalized[i].sponsors[j].name}
+                  {sponsor.name}
                 </p>
               </a>
-              <p className="font-normal text-lg my-5">{tLFinalized[i].sponsors[j].description}</p>
+              <p className="font-normal text-lg my-5">{sponsor.description}</p>
             </div>
           </div>
         );
@@ -102,6 +104,12 @@ function Sponsors(props) {
     }
   }
 
+  //if bundle is null redirect to support page
+  if (bundle.length === 0) {
+    return <Redirect to="/support" />
+  }
+
+
   return (
     <div>
       <Spacer className="bg-gray-1" />
@@ -119,7 +127,7 @@ function Sponsors(props) {
         </div>
         <div className="col-span-1" />
       </div>
-      <div className="bg-gray-2" style={{ 'min-height': '20vh' }}></div>
+      <div className="bg-gray-2" style={{ 'min-height': bundle.length < 2 ? '35vh' : '20vh' }}></div>
     </div>
   );
 }

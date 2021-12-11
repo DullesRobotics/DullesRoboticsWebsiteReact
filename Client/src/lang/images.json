@@ -1,11 +1,6 @@
 {
   "fourOfour": "robotnotfound.jpg",
   "header_logo": "profilerounded.png",
-  "sponsors": {
-    "wm": "wm.png",
-    "nasa": "nasa.png",
-    "tmiller": "tmiller.png"
-  },
   "home": {
     "top_banner": "txpasteam.jpg",
     "middle_banner": "robopic2020-notcropped-smol.jpg",
