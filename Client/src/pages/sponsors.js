@@ -5,8 +5,7 @@ import Particles from "react-tsparticles";
 import mobile from "is-mobile"
 import SponsorTiersJSON from '../lang/sponsorship_tiers.json'
 import ServerImage from '../components/serverimage'
-import images from '../lang/images.json'
-import { Redirect, useParams, Link } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 function Sponsors(props) {
   const bundle = [];

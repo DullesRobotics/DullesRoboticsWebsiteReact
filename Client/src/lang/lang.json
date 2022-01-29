@@ -2,6 +2,16 @@
   "home": {
     "title": "Dulles Robotics",
     "subtitle": "Preparing Our Members For The Future",
+    "banner": {
+      "enabled": true,
+      "title": "Competition is Starting!",
+      "description": "Dulles Robotics is hosting our first regional robotics qualifier of the season! Starts at 9am CST on Saturday, January 29th.",
+      "button": {
+        "text": "Live Stream Soon",
+        "link": "",
+        "disabled": true
+      }
+    },
     "about_us": {
       "title": "About Us",
       "content": "We are a robotics club based out of Dulles High School in Sugar Land, Texas. Dulles Robotics is home to the FTC Teams 12456 and 13822 as well as FRC team 7494. These teams participate in the *FIRST* Robotics programs.",

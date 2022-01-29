@@ -52,7 +52,7 @@ export default function PostPage() {
       return <Redirect to="/news" />;
 
     d.setUTCMilliseconds(post.timestamp);
-    ds = monthNames[d.getMonth()] + " " + d.getDay() + ", " + d.getFullYear();
+    ds = monthNames[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear();
   }
 
   const prevButton = <Button bstyle={!isLoading && !postsData.loading && post.prevID ? "secondary" : "secondaryDisabled"} >
