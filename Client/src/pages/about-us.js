@@ -28,6 +28,8 @@ export default function AboutUs(props) {
     width: window.innerWidth
   })
 
+
+
   React.useEffect(() => {
     function handleResize() {
       setDimensions({
@@ -294,7 +296,7 @@ export default function AboutUs(props) {
           </div>
           <div className="col-span-1" />
         </div>
-        <SectionDivider className="h-10 lg:h-15" divider="skew-tri" color1={1} color2="#6146FF" />
+        {/* <SectionDivider className="h-10 lg:h-15" divider="skew-tri" color1={1} color2="#6146FF" />
         <div style={{ backgroundImage: "linear-gradient(to bottom, #6146FF 0%, #4054B2 100%)" }}>
           <div className="px-5 pt-6 pb-8 sm:pb-4 lg:pb-8 text-white">
             <div className="grid grid-cols-none lg:grid-cols-6 grid-rows-2 lg:grid-rows-none">
@@ -312,8 +314,8 @@ export default function AboutUs(props) {
               <div className="lg:col-span-1 hidden lg:block" />
             </div>
           </div>
-        </div>
-        <SectionDivider className="h-10 lg:h-15" divider="skew-tri" color1="#4054B2" color2={3} />
+        </div> */}
+        <SectionDivider className="h-10 lg:h-15" divider="skew-tri" color1={1/*"#4054B2"*/} color2={3} />
         <div id="mentors" className="bg-gray-3 text-white lg:grid lg:grid-cols-10">
           <div className="col-span-1" />
           <div className="col-span-8 pb-16">
@@ -348,37 +350,49 @@ function AwardChart() {
 
   let yearBundle = [];
 
+  const [extendedYear, setExtendedYear] = useState(0)
+
   for (let year in Awards) {
 
     let awardCol1 = [], awardCol2 = [];
-    let i = 0;
-    for (let j = 0; j < Awards[year].ftc.length; j++) {
-      const award = Awards[year].ftc[j],
-        awardBobble = <AwardBobble year={Awards[year].year} name={award.name} description={award.description} icon={award.icon} important={award.important} isFTC={true} />;
-      if (i % 2 === 0) awardCol1.push(awardBobble);
-      else awardCol2.push(awardBobble);
-      i++;
-    }
-    if (Awards[year].frc)
-      for (let j = 0; j < Awards[year].frc.length; j++) {
-        const award = Awards[year].frc[j],
-          awardBobble = <AwardBobble year={Awards[year].year} name={award.name} description={award.description} icon={award.icon} important={award.important} isFTC={false} />;
+    let outdated = Awards[year].year <= new Date().getFullYear() - 3 && Awards[year].year !== extendedYear;
+    if (!outdated) {
+      let i = 0;
+      for (let j = 0; j < Awards[year].ftc.length; j++) {
+        const award = Awards[year].ftc[j],
+          awardBobble = <AwardBobble year={Awards[year].year} name={award.name} description={award.description} icon={award.icon} important={award.important} isFTC={true} />;
         if (i % 2 === 0) awardCol1.push(awardBobble);
         else awardCol2.push(awardBobble);
         i++;
       }
+      if (Awards[year].frc)
+        for (let j = 0; j < Awards[year].frc.length; j++) {
+          const award = Awards[year].frc[j],
+            awardBobble = <AwardBobble year={Awards[year].year} name={award.name} description={award.description} icon={award.icon} important={award.important} isFTC={false} />;
+          if (i % 2 === 0) awardCol1.push(awardBobble);
+          else awardCol2.push(awardBobble);
+          i++;
+        }
+    }
 
     yearBundle.push(
       <div>
-        <p className="pt-5 mb-2 font-bold text-4xl italic">{`${Awards[year].earlyYear} - ${Awards[year].year}${Awards[year].disclaimer ? "*" : ""}`}</p>
-        <div className="md:grid md:grid-cols-2">
-          <div className="col-span-1 ml-6 sm:ml-0 mr-8 sm:mr-20 md:mr-12 lg:mr-0">
-            {awardCol1}
+        <p className="pt-5 mb-2 font-bold text-4xl italic">
+          {`${Awards[year].earlyYear} - ${Awards[year].year}${Awards[year].disclaimer ? "*" : ""}`}
+        </p>
+        {!outdated ?
+          <div className="md:grid md:grid-cols-2">
+            <>
+              <div className="col-span-1 ml-6 sm:ml-0 mr-8 sm:mr-20 md:mr-12 lg:mr-0">
+                {awardCol1}
+              </div>
+              <div className="md:-ml-10 ml-6 sm:ml-0 mr-8 sm:mr-20 md:mr-12 lg:mr-0 lg:ml-10 col-span-1">
+                {awardCol2}
+              </div>
+            </>
+
           </div>
-          <div className="md:-ml-10 ml-6 sm:ml-0 mr-8 sm:mr-20 md:mr-12 lg:mr-0 lg:ml-10 col-span-1">
-            {awardCol2}
-          </div>
-        </div>
+          : <div className='flex'><button onClick={() => setExtendedYear(Awards[year].year)} className="mx-auto"><Button bstyle="secondary">Show Awards</Button></button></div>}
         {Awards[year].disclaimer ? <p className="italic mt-6 text-center text-sm">*{Awards[year].disclaimer}</p> : <></>}
       </div>
     );

@@ -1,11 +1,47 @@
 [
   {
+    "earlyYear": 2021,
+    "year": 2022,
+    "ftc": [
+      {
+        "name": "FTC Inspire Award",
+        "description": "**1st Place**\n\nAwarded at the Southwest Houston League Championship",
+        "icon": "thumbs-up"
+      },
+      {
+        "name": "FTC Finalist Alliance",
+        "description": "Awarded at the Southwest Houston League Championship",
+        "icon": "trophy"
+      },
+      {
+        "name": "FTC Connect Award",
+        "description": "**1st Place**\n\nAwarded at the Southwest Houston League Championship",
+        "icon": "handshake"
+      },
+      {
+        "name": "FTC Design Award",
+        "description": "**2nd Place**\n\nAwarded at the Southwest Houston League Championship",
+        "icon": "palette"
+      },
+      {
+        "name": "FTC Control Award",
+        "description": "**2nd & 3rd Place**\n\nAwarded at the Southwest Houston League Championship",
+        "icon": "code"
+      },
+      {
+        "name": "FTC Think Award",
+        "description": "**2nd & 3rd Place**\n\nAwarded at the Southwest Houston League Championship",
+        "icon": "lightbulb"
+      }
+    ]
+  },
+  {
     "earlyYear": 2020,
     "year": 2021,
     "ftc": [
       {
         "name": "FTC Inspire Award",
-        "description": "Awarded at the Houston Regional Championship Tournament. **Earns a team auto-admittance to nationals in 2022.**",
+        "description": "**1st Place**\n\nAwarded at the Houston Regional Championship Tournament",
         "icon": "thumbs-up",
         "important": true
       },
@@ -17,12 +53,12 @@
       },
       {
         "name": "FTC Control Award",
-        "description": "Awarded at the Southwest Houston League Championship",
+        "description": "**1st Place**\n\nAwarded at the Southwest Houston League Championship",
         "icon": "code"
       },
       {
         "name": "FTC Inspire Award",
-        "description": "Awarded at the Southwest Houston League Championship",
+        "description": "**1st Place**\n\nAwarded at the Southwest Houston League Championship",
         "icon": "thumbs-up"
       }
     ],
@@ -34,24 +70,24 @@
     "ftc": [
       {
         "name": "FTC Control Award",
-        "description": "(Sponsored by Arm, Inc.) \n\nAwarded at the Southwest Houston League Championship",
+        "description": "(Sponsored by Arm, Inc.)\n\n**1st Place**\n\nAwarded at the Southwest Houston League Championship",
         "icon": "code"
       },
       {
         "name": "FTC Collins Aerospace Innovate Award",
-        "description": "Awarded at the Southwest Houston League Championship",
+        "description": "**1st Place**\n\nAwarded at the Southwest Houston League Championship",
         "icon": "arrow-alt-circle-up"
       }
     ],
     "frc": [
       {
         "name": "FRC Safety Award",
-        "description": "(Sponsored by Underwriters Laboratories) \n\nAwarded at the FiT District Channelview Event",
+        "description": "(Sponsored by Underwriters Laboratories)\n\n**1st Place**\n\nAwarded at the FiT District Channelview Event",
         "icon": "clipboard-check"
       },
       {
         "name": "FRC District Engineering Inspiration Award",
-        "description": "Awarded at the FiT District Channelview Event​",
+        "description": "**1st Place**\n\nAwarded at the FiT District Channelview Event​",
         "icon": "thumbs-up"
       }
     ],
@@ -63,17 +99,17 @@
     "ftc": [
       {
         "name": "FTC Rover Ruckus Inspire Award",
-        "description": "Awarded at the Southwest Houston League Championship",
+        "description": "**1st Place**\n\nAwarded at the Southwest Houston League Championship",
         "icon": "thumbs-up"
       },
       {
         "name": "FTC Think Award",
-        "description": "Awarded at the Southwest Houston League Championship",
+        "description": "**1st Place**\n\nAwarded at the Southwest Houston League Championship",
         "icon": "lightbulb"
       },
       {
         "name": "FTC Motivate Award",
-        "description": "Awarded at the Southwest Houston League Championship",
+        "description": "**1st Place**\n\nAwarded at the Southwest Houston League Championship",
         "icon": "trophy"
       }
     ],
@@ -85,22 +121,22 @@
       },
       {
         "name": "FRC Rookie Inspiration Award",
-        "description": "(Sponsored by National Instruments) \n\nAwarded at the FIT District Channelview Event",
+        "description": "(Sponsored by National Instruments)\n\n**1st Place**\n\nAwarded at the FIT District Channelview Event",
         "icon": "thumbs-up"
       },
       {
         "name": "FRC Rookie All Star Award",
-        "description": "Awarded at the FiT District Pasadena Event",
+        "description": "**1st Place**\n\nAwarded at the FiT District Pasadena Event",
         "icon": "star"
       },
       {
         "name": "FRC Safety Award",
-        "description": "(Sponsored by Underwriters Laboratories) \n\nAwarded at the FiT District Pasadena Event​",
+        "description": "(Sponsored by Underwriters Laboratories)\n\n**1st Place**\n\nAwarded at the FiT District Pasadena Event​",
         "icon": "clipboard-check"
       },
       {
         "name": "FRC District Championship Rookie All Star Award",
-        "description": "Awarded at the FIRST In Texas District Championship",
+        "description": "**1st Place**\n\nAwarded at the FIRST In Texas District Championship",
         "icon": "star"
       }
     ]
@@ -111,27 +147,27 @@
     "ftc": [
       {
         "name": "FTC Design Award",
-        "description": "Awarded at the Reinbot Rodeo Competition",
+        "description": "**1st Place**\n\nAwarded at the Reinbot Rodeo Competition",
         "icon": "palette"
       },
       {
         "name": "FTC Innovate Award",
-        "description": "Awarded at the Southwest Houston League Championship",
+        "description": "**1st Place**\n\nAwarded at the Southwest Houston League Championship",
         "icon": "arrow-alt-circle-up"
       },
       {
         "name": "FTC Connect Award",
-        "description": "Awarded at the Southwest Houston League Championship",
+        "description": "**1st Place**\n\nAwarded at the Southwest Houston League Championship",
         "icon": "handshake"
       },
       {
         "name": "FTC Finalist Alliance",
-        "description": "Awarded at the Southwest Houston League Championship",
+        "description": "**1st Place**\n\nAwarded at the Southwest Houston League Championship",
         "icon": "trophy"
       },
       {
         "name": "FTC Inspire Award",
-        "description": "Awarded at the Southwest Houston League Championship",
+        "description": "**1st Place**\n\nAwarded at the Southwest Houston League Championship",
         "icon": "thumbs-up"
       },
       {
@@ -141,12 +177,12 @@
       },
       {
         "name": "FTC Design Award",
-        "description": "Awarded at the Texas Regional Championship",
+        "description": "**1st Place**\n\nAwarded at the Texas Regional Championship",
         "icon": "palette"
       },
       {
         "name": "FTC Connect Award",
-        "description": "Awarded at the Reinbot Rodeo Competition",
+        "description": "**1st Place**\n\nAwarded at the Reinbot Rodeo Competition",
         "icon": "handshake"
       }
     ]
@@ -157,18 +193,18 @@
     "ftc": [
       {
         "name": "Texas UIL Team Spirit Award",
-        "description": "**Awarded for outstanding demonstration of team enthusiasm and good sportsmanship.** Achieved at the UIL First Division State Championships.",
+        "description": "**1st Place**\n\n**Awarded for outstanding demonstration of team enthusiasm and good sportsmanship.** Achieved at the UIL First Division State Championships.",
         "icon": "medal",
         "important": true
       },
       {
         "name": "FTC Think Award",
-        "description": "Awarded at the West Houston League Championship",
+        "description": "**1st Place**\n\nAwarded at the West Houston League Championship",
         "icon": "lightbulb"
       },
       {
         "name": "FTC Finalist Alliance",
-        "description": "Awarded at the San Jacinto College Qualifier",
+        "description": "**1st Place**\n\nAwarded at the San Jacinto College Qualifier",
         "icon": "trophy"
       }
     ]
