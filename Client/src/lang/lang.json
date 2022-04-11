@@ -247,7 +247,11 @@
     "title": "Resources",
     "view": "View",
     "download": "Download",
-    "url": "https://api.xcal.dev/storage/dr/"
+    "url": "https://api.dullesrobotics.com/storage/"
+  },
+  "media": {
+    "title": "Media",
+    "search": "Search Media"
   },
   "support": {
     "title": "Support And Sponsor Us",

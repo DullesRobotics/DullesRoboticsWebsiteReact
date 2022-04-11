@@ -80,13 +80,15 @@ function Resources(props) {
         </p>
         <div className="col-span-1" />
       </div>
-      <div className="pt-4 pb-5 md:grid md:grid-cols-6 lg:grid-cols-4 bg-gray-3">
-        <div className="col-span-1" />
-        <div className={`mx-3 md:mx-0 col-span-4 lg:col-span-2 divide-y divide-white text-left text-white text-5xl font-bold`}>
-          {docData.loading && !docData.finished ? <LoadingIcon /> : docData.error ? <p>Sorry, there was an error loading documents. Try again or contact us.</p> : bundle}
-          <div />
+      <div className=''>
+        <div className="pt-4 pb-5 md:grid md:grid-cols-6 lg:grid-cols-4 bg-gray-3">
+          <div className="col-span-1" />
+          <div className={`mx-3 md:mx-0 col-span-4 lg:col-span-2 divide-y divide-white text-left text-white text-5xl font-bold`}>
+            {docData.loading && !docData.finished ? <LoadingIcon /> : docData.error ? <p>Sorry, there was an error loading documents. Try again or contact us.</p> : bundle}
+            <div />
+          </div>
+          <div className="col-span-1" />
         </div>
-        <div className="col-span-1" />
       </div>
       <div className="bg-gray-3" style={docData.loading && !docData.finished ? { 'min-height': '70vh' } : { 'min-height': '58vh' }}></div>
     </div>

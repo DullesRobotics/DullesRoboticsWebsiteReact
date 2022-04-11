@@ -350,12 +350,12 @@ function AwardChart() {
 
   let yearBundle = [];
 
-  const [extendedYear, setExtendedYear] = useState(0)
+  const [extendedYears, setExtendedYears] = useState({})
 
   for (let year in Awards) {
 
     let awardCol1 = [], awardCol2 = [];
-    let outdated = Awards[year].year <= new Date().getFullYear() - 3 && Awards[year].year !== extendedYear;
+    let outdated = Awards[year].year <= new Date().getFullYear() - 3 && !extendedYears[Awards[year].year];
     if (!outdated) {
       let i = 0;
       for (let j = 0; j < Awards[year].ftc.length; j++) {
@@ -392,7 +392,7 @@ function AwardChart() {
             </>
 
           </div>
-          : <div className='flex'><button onClick={() => setExtendedYear(Awards[year].year)} className="mx-auto"><Button bstyle="secondary">Show Awards</Button></button></div>}
+          : <div className='flex'><button onClick={() => setExtendedYears((prev) => { return { ...prev, [Awards[year].year]: true } })} className="mx-auto"><Button bstyle="secondary">Show Awards</Button></button></div>}
         {Awards[year].disclaimer ? <p className="italic mt-6 text-center text-sm">*{Awards[year].disclaimer}</p> : <></>}
       </div>
     );

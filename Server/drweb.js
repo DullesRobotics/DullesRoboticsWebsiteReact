@@ -30,7 +30,7 @@ let lastPostRefresh = posts.lastUpdated ? posts.lastUpdated : 0, postData = post
 
 const mailIPSends = []
 
-const uriPrefix = "/dr/v1"
+const uriPrefix = "/v1"
 
 const transporter = nodemailer.createTransport({
   pool: true,
@@ -54,6 +54,19 @@ transporter.verify(function (error, success) {
 });
 
 dayTimer();
+
+app.get("/storage/:name", (req, res) => {
+  const fileName = token.fileLocations.storage_server + req.params.name
+  res.sendFile(fileName, (e) => {
+    if (e) {
+      res.status(400).send({ error: "Error sending file." })
+      console.error(`error sending file: ${fileName}`, e)
+    }
+    else {
+      console.log(`sent file: ${fileName}`)
+    }
+  });
+});
 
 app.get(uriPrefix + '/ping', (req, res) => {
   res.send({ response: 'pong' });
@@ -129,7 +142,7 @@ app.get(uriPrefix + "/resource/list/documents", (req, res) => {
 
 app.get(uriPrefix + "/resource/get/blob", (req, res) => {
   if (!req.query.file) return res.status(400).send({ error: "Missing or invalid file identifier parameter" })
-  res.sendFile(`/var/www/storage/dr/${req.query.file}`);
+  res.sendFile(`${token.fileLocations.storage_server}${req.query.file}`);
 })
 
 app.get(uriPrefix + "/resource/get", (req, res) => {
@@ -228,7 +241,6 @@ app.post(uriPrefix + "/resource/delete", (req, res) => {
       });
     }
   })
-
 })
 
 app.get(uriPrefix + '/posts', (req, res) => {
