@@ -38,7 +38,7 @@ function Sponsors(props) {
       bundle.push(
         <div>
           <p className="ml-2 text-4xl md:text-5xl">{tLFinalized[i].name} <i className={`text-2xl ml-3 fas fa-${tLFinalized[i].icon}`} /></p>
-          <Particles
+          {tLFinalized[i].opacity_percent !== 0 ? <Particles
             id={i}
             className="h-10"
             canvasClassName="rounded-b-md"
@@ -93,7 +93,7 @@ function Sponsors(props) {
                   position: { x: 50, y: 100 }
                 }
               ]
-            }} />
+            }} /> : <></>}
           <hr style={{ borderTopWidth: "1px" }} />
           <div className={`grid grid-rows-${tLFinalized[i].sponsors.length}`}>
             {inception}
