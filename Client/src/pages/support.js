@@ -25,7 +25,6 @@ function Support(props) {
   for (let i in tiers) {
     if (realI % 4 === 0) {
       let tempTiers = [tiers[realI], tiers[realI + 1], tiers[realI + 2], tiers[realI + 3]].filter(x => x !== undefined);
-      console.log(tempTiers);
       rows.push(<div className={`row-span-1 md:grid md:grid-cols-${Math.min(4, tempTiers.length)} my-4`}>{tempTiers}</div>)
     }
     realI++;

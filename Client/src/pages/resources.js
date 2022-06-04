@@ -33,7 +33,7 @@ function Resources(props) {
 
   for (let group of groups) {
     const groupBundle = [];
-    console.log(docData)
+
     const filteredDocs = docData.documents.filter(g => g.group ? g.group === group : group === "Documents");
     for (let j in filteredDocs) {
       const doc = filteredDocs[j]

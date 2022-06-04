@@ -76,37 +76,31 @@ app.post(uriPrefix + "/resource/add", (req, res) => {
   if (!req.body.token || req.body.token !== token.editToken)
     return res.status(400).send({ error: "Missing token" })
 
-  if (req.body.is_media === null || !req.body.url || !req.body.title || req.body.protected === null)
+  if (!req.body.url || !req.body.title)
     return res.status(400).send({ error: "Missing parameters (1)" })
 
-  if ((isNaN(req.body.is_media) || req.body.is_media > 1 || req.body.is_media < 0))
-    return res.status(400).send({ error: "Invalid parameters (2)" })
-
-  if ((isNaN(req.body.protected) || req.body.protected > 1 || req.body.protected < 0))
-    return res.status(400).send({ error: "Invalid parameters (3)" })
+  if (req.body.group && req.body.group.length > 32)
+    return res.status(400).send({ error: "Group size is too large. Max characters is 32" })
 
   if (req.body.description && req.body.description.length > 256)
     return res.status(400).send({ error: "Description size is too large. Max characters is 256" })
 
-  if (req.body.date && req.body.date.length > 32)
-    return res.status(400).send({ error: "Invalid parameters (4)" })
-
   if (req.body.title.length > 64)
     return res.status(400).send({ error: "Title size is too large. Max characters is 64" })
 
-  const title = req.body.title, url = req.body.url, type = Number(req.body.is_media), date = req.body.date, desc = req.body.description, prot = req.body.protected
+  const title = req.body.title, url = req.body.url, desc = req.body.description, group = req.body.group
   remote(url, function (err, o) {
     if (err) return res.status(500).send({ error: err })
 
     o /= 1000 //convert to kb
 
-    if ((type === 1 && Number(o) > 10000) || (type === 0 && Number(o) > 20000))
-      return res.status(400).send({ error: "Those files are too large. 20 MB max for documents and 10 MB max for media. Any larger requires a discussion." })
+    if (Number(o) > 20000)
+      return res.status(400).send({ error: "Those files are too large. 20 MB max for documents. Any larger requires a discussion." })
 
     download_file_httpget(url).then((fileInfo) => {
       const fileName = fileInfo.name
-      pool.query("INSERT INTO `dullesrobo`.`resources` (`is_media`, `file`, `title`, `description`, `date`, `timestamp`, `protected`, `file_size_kb`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
-        [type, fileName, title, desc, date, new Date().getTime(), prot, o], (err, rows) => {
+      pool.query("INSERT INTO `dullesrobo`.`resources` (`file`, `title`, `description`, `timestamp`, `file_size_kb`, `group`) VALUES (?, ?, ?, ?, ?, ?)",
+        [fileName, title, desc, new Date().getTime(), o, group], (err, rows) => {
           if (err)
             return res.status(400).send({ error: "An error occurred updating the database: " + err })
           else {
@@ -119,6 +113,83 @@ app.post(uriPrefix + "/resource/add", (req, res) => {
   })
 })
 
+/*
+ * MEDIA TYPES -
+  * 0 - Server Image
+  * 1 - Embedded Image/Video
+ */
+app.post(uriPrefix + "/media/add", (req, res) => {
+  if (!req.body.token || req.body.token !== token.editToken)
+    return res.status(400).send({ error: "Missing token" })
+
+  if (!req.body.url || req.body.url.length > 256 || !req.body.type || req.body.type > 1)
+    return res.status(400).send({ error: "Missing parameters" })
+
+  if (req.body.description && req.body.description.length > 1024)
+    return res.status(400).send({ error: "Description size is too large. Max characters is 1024" })
+
+  if (req.body.title && req.body.title.length > 64)
+    return res.status(400).send({ error: "Title size is too large. Max characters is 64" })
+
+  if (req.body.date && req.body.date.length > 45)
+    return res.status(400).send({ error: "Date size is too large. Max characters is 45" })
+
+  if (req.body.group && req.body.group > 99999)
+    return res.status(400).send({ error: "Group id is too big. Make sure it exists. If it's the year 2099 and somehow y'all have over 99999 groups, update this on my grave :>." })
+
+  const title = req.body.title, url = req.body.url, desc = req.body.description, group = req.body.group, type = req.body.type, date = req.body.date
+
+  function updateDB(url, title, desc, group, type, date) {
+    pool.query("INSERT INTO `dullesrobo`.`media_files` (`url`, `title`, `description`, `timestamp`, `group`, `date`, `type`) VALUES (?, ?, ?, ?, ?, ?, ?)",
+      [url, title, desc, new Date().getTime(), group, date, type], (err, rows) => {
+        if (err)
+          return res.status(400).send({ error: "An error occurred updating the database: " + err })
+        else {
+          return res.status(200).send({ success: true, response: "Voila, it's been uploaded.", file: { name: url } })
+        }
+      })
+  }
+
+  if (Number(type) === 0) {
+    download_file_httpget(url).then((fileInfo) => {
+      const fileName = fileInfo.name
+      updateDB(fileName, title, desc, group, type, date);
+    }).catch((err) => {
+      res.status(500).send({ error: err })
+    })
+  } else if (Number(type) === 1) {
+    updateDB(url, title, desc, group, type, date);
+  } else res.status(400).send({ error: "Invalid media type" })
+
+})
+
+app.post(uriPrefix + "/media/folder/add", (req, res) => {
+  if (!req.body.token || req.body.token !== token.editToken)
+    return res.status(400).send({ error: "Missing token" })
+
+  if (!req.body.title)
+    return res.status(400).send({ error: "Missing parameters" })
+
+  if (req.body.title.length > 90)
+    return res.status(400).send({ error: "Title size is too large. Max characters is 90" })
+
+  pool.query("INSERT INTO `dullesrobo`.`media_folders` (`title`) VALUES (?)",
+    [req.body.title], (err, rows) => {
+      if (err)
+        return res.status(400).send({ error: "An error occurred updating the database: " + err })
+      else {
+        return res.status(200).send({ success: true, response: "Voila, it's been added." })
+      }
+    })
+})
+
+app.get(uriPrefix + "/media/folder/list", (req, res) => {
+  pool.query(`SELECT * FROM dullesrobo.media_folders`, [], (err, rows) => {
+    if (err) return res.status(500).send({ error: "Error retrieving media folders: " + err })
+    else return res.status(200).send({ media_folders: rows })
+  })
+})
+
 app.get(uriPrefix + "/resource/list", (req, res) => {
   pool.query(`SELECT * FROM dullesrobo.resources ORDER BY timestamp DESC`, [], (err, rows) => {
     if (err) return res.status(500).send({ error: "Error retrieving resources: " + err })
@@ -126,23 +197,43 @@ app.get(uriPrefix + "/resource/list", (req, res) => {
   })
 })
 
-app.get(uriPrefix + "/resource/list/media", (req, res) => {
-  pool.query(`SELECT * FROM dullesrobo.resources WHERE is_media = 0 ORDER BY timestamp DESC`, [], (err, rows) => {
+app.get(uriPrefix + "/media/list", (req, res) => {
+  pool.query(`SELECT * FROM dullesrobo.media_files ORDER BY timestamp DESC`, [], (err, rows) => {
     if (err) return res.status(500).send({ error: "Error retrieving media: " + err })
-    else return res.status(200).send({ resources: rows })
+    else return res.status(200).send({ media: rows })
   })
 })
 
-app.get(uriPrefix + "/resource/list/documents", (req, res) => {
-  pool.query(`SELECT * FROM dullesrobo.resources WHERE is_media = 0 ORDER BY timestamp DESC`, [], (err, rows) => {
-    if (err) return res.status(500).send({ error: "Error retrieving documents: " + err })
-    else return res.status(200).send({ resources: rows })
-  })
-})
-
-app.get(uriPrefix + "/resource/get/blob", (req, res) => {
+app.get(uriPrefix + "/media/get/blob", (req, res) => {
   if (!req.query.file) return res.status(400).send({ error: "Missing or invalid file identifier parameter" })
   res.sendFile(`${token.fileLocations.storage_server}${req.query.file}`);
+})
+
+app.get(uriPrefix + "/media/get", (req, res) => {
+
+  if (!req.query.url && !req.query.id) return res.status(400).send({ error: "Missing or invalid file identifier parameter" })
+
+  const isFile = req.query.url
+
+  if (isFile) {
+    if (req.query.url.length > 64)
+      return res.status(400).send({ error: "Invalid file parameter" })
+
+    pool.query(`SELECT * FROM dullesrobo.media_files WHERE url = ?`, [req.query.url], (err, rows) => {
+      if (err || rows.length < 1) return res.status(500).send({ error: "Error retrieving resource." })
+      if (rows.length < 1) return res.status(400).send({ error: "Resource not found." })
+      else return res.status(200).send({ resource: rows })
+    })
+  } else {
+    if (isNaN(req.query.id))
+      return res.status(400).send({ error: "Invalid id parameter" })
+
+    pool.query(`SELECT * FROM dullesrobo.media_files WHERE id = ?`, [req.query.id], (err, rows) => {
+      if (err) return res.status(500).send({ error: "Error retrieving resource." })
+      if (rows.length < 1) return res.status(400).send({ error: "Resource not found." })
+      else return res.status(200).send({ resource: rows })
+    })
+  }
 })
 
 app.get(uriPrefix + "/resource/get", (req, res) => {
@@ -172,40 +263,52 @@ app.get(uriPrefix + "/resource/get", (req, res) => {
   }
 })
 
+app.post(uriPrefix + "/media/folder/edit", (req, res) => {
+
+  if (!req.body.token || req.body.token !== token.editToken)
+    return res.status(400).send({ error: "Missing token" })
+
+  if (!req.body.id && !req.body.title)
+    return res.status(400).send({ error: "Missing parameters" })
+
+  if (req.body.title > 90)
+    return res.status(400).send({ error: "Title should be <90 chararcters." })
+
+  const title = req.body.title, id = req.body.id
+
+  pool.query(`UPDATE \`dullesrobo\`.\`media_folders\` SET \`title\` = ? WHERE (\`id\` = ?)`, [title, id], (err, rows) => {
+    if (err)
+      return res.status(400).send({ error: "An error occurred updating the database: " + err })
+    else {
+      return res.status(200).send(({ success: true, response: "Edited metadata. If that ID is valid, it'll reflect soon." }))
+    }
+  })
+})
+
 app.post(uriPrefix + "/resource/edit", (req, res) => {
 
   if (!req.body.token || req.body.token !== token.editToken)
     return res.status(400).send({ error: "Missing token" })
 
-  if (!req.body.file || req.body.is_media === null || !req.body.protected === null)
+  if (!req.body.file)
     return res.status(400).send({ error: "Missing parameters" })
 
   if (req.body.file.length > 64)
     return res.status(400).send({ error: "Invalid parameters" })
 
-  if ((isNaN(req.body.is_media) || req.body.is_media > 1 || req.body.is_media < 0))
-    return res.status(400).send({ error: "Invalid parameters" })
-
-  if ((isNaN(req.body.protected) || req.body.protected > 1 || req.body.protected < 0))
-    return res.status(400).send({ error: "Invalid parameters" })
-
   if (req.body.description && req.body.description.length > 256)
     return res.status(400).send({ error: "Description size is too large. Max characters is 256" })
-
-  if (req.body.date && req.body.date.length > 32)
-    return res.status(400).send({ error: "Invalid parameters" })
 
   if (req.body.title && req.body.title.length > 64)
     return res.status(400).send({ error: "Title size is too large. Max characters is 64" })
 
-  const title = req.body.title, type = req.body.is_media, date = req.body.date, desc = req.body.description, prot = req.body.protected
-  const args = [type, prot]
+  const title = req.body.title, desc = req.body.description
+  const args = [new Date().getTime()]
   if (desc) args.push(desc)
-  if (date) args.push(date)
   if (title) args.push(title)
   args.push(req.body.file)
 
-  pool.query(`UPDATE \`dullesrobo\`.\`resources\` SET \`is_media\` = ?, \`protected\` = ?${desc !== "keep" ? `, \`description\` = ?` : ``}${date !== "keep" ? `, \`date\` = ?` : ``}${title !== "keep" ? `, \`title\` = ?` : ``} WHERE (\`file\` = ?)`, args, (err, rows) => {
+  pool.query(`UPDATE \`dullesrobo\`.\`resources\` SET \`timestamp\` = ? ${desc ? `, \`description\` = ?` : ``}${title ? `, \`title\` = ?` : ``} WHERE \`file\` = ?`, args, (err, rows) => {
     if (err)
       return res.status(400).send({ error: "An error occurred updating the database: " + err })
     else {
@@ -215,20 +318,73 @@ app.post(uriPrefix + "/resource/edit", (req, res) => {
   })
 })
 
+app.post(uriPrefix + "/media/folder/delete", (req, res) => {
+
+  if (!req.body.token || req.body.token !== token.editToken)
+    return res.status(400).send({ error: "Missing token" })
+
+  if (!req.body.id) return res.status(400).send({ error: "Missing or invalid folder id" })
+
+  pool.query("DELETE FROM `dullesrobo`.`media_folders` WHERE `id` = ?", [req.body.id], (err, rows) => {
+    if (err)
+      return res.status(400).send({ error: "An error occurred updating the database." })
+    else {
+      if (rows.affectedRows === 0)
+        return res.status(400).send({ error: "That folder doesn't exist." })
+      else
+        return res.status(200).send({ success: true, response: "The folder was deleted from the database. All associated media should be re-assigned to not be lost." })
+    }
+  })
+})
+
+app.post(uriPrefix + "/media/delete", (req, res) => {
+
+  if (!req.body.token || req.body.token !== token.editToken)
+    return res.status(400).send({ error: "Missing token" })
+
+  if (!req.body.file) return res.status(400).send({ error: "Missing or invalid file" })
+
+  pool.query("DELETE FROM `dullesrobo`.`media_files` WHERE `url` = ?", [req.body.file], (err, rows) => {
+    if (err)
+      return res.status(400).send({ error: "An error occurred updating the database." })
+    else {
+      if (rows.affectedRows === 0)
+        return res.status(400).send({ error: "That file doesn't exist." })
+      console.log(rows)
+      if (String(req.body.file).indexOf("http") == -1) {
+        fs.unlink(`${token.fileLocations.storage_server}${req.body.file}`, function (err) {
+          if (err) {
+            console.log(`File ${req.body.file} is a waste file!`);
+            rows.
+              res.status(500).send({ error: "File deleted from database but NOT storage!!" })
+          } else {
+            console.log(`File ${req.body.file} deleted!`);
+            return res.status(200).send({ success: true, response: "The file, if it was valid, was deleted from both the database and storage." })
+          }
+
+          // if no error, file has been deleted successfully
+        });
+      } else {
+        return res.status(200).send({ success: true, response: "The file, if it was valid, was deleted from both the database." })
+      }
+    }
+  })
+})
+
 app.post(uriPrefix + "/resource/delete", (req, res) => {
 
   if (!req.body.token || req.body.token !== token.editToken)
     return res.status(400).send({ error: "Missing token" })
 
-  if (!req.body.file || req.body.length > 64) return res.status(400).send({ error: "Missing or invalid file parameter" })
+  if (!req.body.file || req.body.file.length > 64) return res.status(400).send({ error: "Missing or invalid file parameter" })
 
-  pool.query("DELETE FROM `dullesrobo`.`resources` WHERE `file` = ? AND `protected` = 0", [req.body.file], (err, rows) => {
+  pool.query("DELETE FROM `dullesrobo`.`resources` WHERE `file` = ?", [req.body.file], (err, rows) => {
     if (err)
       return res.status(400).send({ error: "An error occurred updating the database." })
     else {
       if (rows.affectedRows === 0)
-        return res.status(400).send({ error: "That file doesn't exist or is protected." })
-      fs.unlink(`${token.fileLocations.storage}${req.body.file}`, function (err) {
+        return res.status(400).send({ error: "That file doesn't exist." })
+      fs.unlink(`${token.fileLocations.storage_server}${req.body.file}`, function (err) {
         if (err) {
           console.log(`File ${req.body.file} is a waste file!`);
           res.status(500).send({ error: "File deleted from database but NOT storage!!" })
@@ -899,7 +1055,7 @@ async function download_file_httpget(file_url) {
 
     let file_ending = url.parse(file_url).pathname.split('/').pop().split(".").pop();
     let file_name = `${generate(15)}.${file_ending}`
-    let file = fs.createWriteStream(token.fileLocations.storage + file_name);
+    let file = fs.createWriteStream(token.fileLocations.storage_server + file_name);
 
     http.get(options, function (res) {
       res.on('error', function (data) {
@@ -912,7 +1068,7 @@ async function download_file_httpget(file_url) {
 
       res.on('end', function () {
         file.end();
-        console.log(file_name + ' downloaded to ' + token.fileLocations.storage);
+        console.log(file_name + ' downloaded to ' + token.fileLocations.storage_server);
         resolve({ name: file_name })
       });
     });

@@ -23,7 +23,6 @@ export default function ServerImage(props) {
         threshold={0}
         rootMargin="10px 10px 10px 10px"
         onChange={(isVisible) => {
-          console.log("isVisible:" + isVisible);
           setVisible(isVisible);
         }}
       >

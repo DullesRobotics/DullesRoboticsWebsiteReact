@@ -39,7 +39,7 @@ export default function PostPage() {
     }
     if (!post && !postsData.loading) {
       isLoading = true;
-      console.log("hi: " + postsData.indPost);
+
       dispatch(getPost(id));
     }
   }

@@ -121,7 +121,7 @@ function InstagramFeed() {
   if (postsData.instagram.length === 0 && !postsData.finished && !postsData.loading && !postsData.error)
     dispatch(loadInstagramPosts());
 
-  console.log(postsData);
+
 
   if (postsData.error || (postsData.loading && !postsData.finished) || postsData.instagram.length === 0) {
     return (
@@ -142,7 +142,7 @@ function InstagramFeed() {
     let media;
     const split = photos[p].media_url.split("?")[0].split(".");
     const fileType = split[split.length - 1];
-    console.log(fileType)
+
     switch (photos[p].media_type.toLowerCase()) {
       case "image":
       case "carousel_album":
