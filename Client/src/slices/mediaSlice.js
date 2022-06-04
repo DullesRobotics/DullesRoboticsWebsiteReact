@@ -22,7 +22,7 @@ export const loadMediaFile = (file) => {
         try {
             if (!selectMedia(getState()).cached.has(file)) {
                 dispatch(addMedia({ file: file, blob: null }))
-                fetch(`${dataJson.api_server}/resource/get/blob?file=${file}`, { mode: 'cors', credentials: 'include' })
+                fetch(`${dataJson.api_server}/media/get/blob?file=${file}`, { mode: 'cors', credentials: 'include' })
                     .then(res => res.blob())
                     .then(blob => {
                         if (!blob)
