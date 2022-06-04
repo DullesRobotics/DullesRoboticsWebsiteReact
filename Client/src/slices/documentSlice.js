@@ -33,7 +33,7 @@ export const loadDocuments = () => {
         try {
             if (!getState().competitions.value.finished) {
                 dispatch(setLoading(true));
-                fetch(`${dataJson.api_server}/resource/list/documents`, { mode: 'cors', credentials: 'include' })
+                fetch(`${dataJson.api_server}/resource/list`, { mode: 'cors', credentials: 'include' })
                     .then(res => res.json())
                     .then(json => {
                         if (!json || json.error || !json.resources) {
