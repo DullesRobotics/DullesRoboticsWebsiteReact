@@ -122,7 +122,7 @@ app.post(uriPrefix + "/media/add", (req, res) => {
   if (!req.body.token || req.body.token !== token.editToken)
     return res.status(400).send({ error: "Missing token" })
 
-  if (!req.body.url || req.body.url.length > 256 || !req.body.type || req.body.type > 1)
+  if (!req.body.url || req.body.url.length > 256 || req.body.type === null || req.body.type > 1)
     return res.status(400).send({ error: "Missing parameters" })
 
   if (req.body.description && req.body.description.length > 1024)
@@ -134,14 +134,14 @@ app.post(uriPrefix + "/media/add", (req, res) => {
   if (req.body.date && req.body.date.length > 45)
     return res.status(400).send({ error: "Date size is too large. Max characters is 45" })
 
-  if (req.body.group && req.body.group > 99999)
-    return res.status(400).send({ error: "Group id is too big. Make sure it exists. If it's the year 2099 and somehow y'all have over 99999 groups, update this on my grave :>." })
+  if (req.body.folder && req.body.folder > 99999)
+    return res.status(400).send({ error: "Folder id is too big. Make sure it exists. If it's the year 2099 and somehow y'all have over 99999 folders, update this on my grave :>." })
 
-  const title = req.body.title, url = req.body.url, desc = req.body.description, group = req.body.group, type = req.body.type, date = req.body.date
+  const title = req.body.title, url = req.body.url, desc = req.body.description, folder = req.body.folder, type = req.body.type, date = req.body.date
 
-  function updateDB(url, title, desc, group, type, date) {
+  function updateDB(url, title, desc, folder, type, date) {
     pool.query("INSERT INTO `dullesrobo`.`media_files` (`url`, `title`, `description`, `timestamp`, `group`, `date`, `type`) VALUES (?, ?, ?, ?, ?, ?, ?)",
-      [url, title, desc, new Date().getTime(), group, date, type], (err, rows) => {
+      [url, title, desc, new Date().getTime(), folder, date, type], (err, rows) => {
         if (err)
           return res.status(400).send({ error: "An error occurred updating the database: " + err })
         else {
@@ -153,17 +153,17 @@ app.post(uriPrefix + "/media/add", (req, res) => {
   if (Number(type) === 0) {
     download_file_httpget(url).then((fileInfo) => {
       const fileName = fileInfo.name
-      updateDB(fileName, title, desc, group, type, date);
+      updateDB(fileName, title, desc, folder, type, date);
     }).catch((err) => {
       res.status(500).send({ error: err })
     })
   } else if (Number(type) === 1) {
-    updateDB(url, title, desc, group, type, date);
+    updateDB(url, title, desc, folder, type, date);
   } else res.status(400).send({ error: "Invalid media type" })
 
 })
 
-app.post(uriPrefix + "/media/folder/add", (req, res) => {
+app.post(uriPrefix + "/media_folder/add", (req, res) => {
   if (!req.body.token || req.body.token !== token.editToken)
     return res.status(400).send({ error: "Missing token" })
 
@@ -183,7 +183,7 @@ app.post(uriPrefix + "/media/folder/add", (req, res) => {
     })
 })
 
-app.get(uriPrefix + "/media/folder/list", (req, res) => {
+app.get(uriPrefix + "/media_folder/list", (req, res) => {
   pool.query(`SELECT * FROM dullesrobo.media_folders`, [], (err, rows) => {
     if (err) return res.status(500).send({ error: "Error retrieving media folders: " + err })
     else return res.status(200).send({ media_folders: rows })
@@ -263,7 +263,7 @@ app.get(uriPrefix + "/resource/get", (req, res) => {
   }
 })
 
-app.post(uriPrefix + "/media/folder/edit", (req, res) => {
+app.post(uriPrefix + "/media_folder/edit", (req, res) => {
 
   if (!req.body.token || req.body.token !== token.editToken)
     return res.status(400).send({ error: "Missing token" })
@@ -318,7 +318,7 @@ app.post(uriPrefix + "/resource/edit", (req, res) => {
   })
 })
 
-app.post(uriPrefix + "/media/folder/delete", (req, res) => {
+app.post(uriPrefix + "/media_folder/delete", (req, res) => {
 
   if (!req.body.token || req.body.token !== token.editToken)
     return res.status(400).send({ error: "Missing token" })
@@ -471,6 +471,7 @@ app.post(uriPrefix + "/post/add", (req, res) => {
     }
   })
 })
+
 
 app.post(uriPrefix + "/post/refresh", (req, res) => {
 
