@@ -624,10 +624,10 @@ app.get(uriPrefix + '/toa', (req, res) => {
 
 })
 
-async function queryTOA(year) {
+sync function queryTOA(year) {
   return new Promise((resolve, reject) => {
 
-    let team = 13822
+    let team = 12456
 
     if (
       toaCache[year] &&
@@ -698,6 +698,27 @@ async function queryTOA(year) {
                           awards12456 = json12456Awards.map(e => { return { name: e.award_name, award_type: e.award.award_type } })
                         }
 
+                        let status = {}
+                        if (json12456Results[0]) {
+                          status["team12456"] = {
+                            "wins": json12456Results[0].wins,
+                            "losses": json12456Results[0].losses,
+                            "ties": json12456Results[0].ties,
+                            "rank": json12456Results[0].rank,
+                            "awards": awards12456
+                          }
+                        }
+
+                        if (json13822Results[0]) {
+                          status["team13822"] = {
+                            "wins": json13822Results[0].wins,
+                            "losses": json13822Results[0].losses,
+                            "ties": json13822Results[0].ties,
+                            "rank": json13822Results[0].rank,
+                            "awards": awards13822
+                          }
+                        }
+
                         payload.push({
                           "key": json2[0]["event_key"],
                           "type": "First Tech Challenge",
@@ -708,22 +729,7 @@ async function queryTOA(year) {
                           "start_date": json2[0]["start_date"] ? json2[0]["start_date"].slice(0, 10) : null,
                           "end_date": json2[0]["end_date"] ? json2[0]["end_date"].slice(0, 10) : null,
                           "event_type_string": json2[0]["event_type_string"],
-                          "status": {
-                            "team12456": {
-                              "wins": json12456Results[0].wins,
-                              "losses": json12456Results[0].losses,
-                              "ties": json12456Results[0].ties,
-                              "rank": json12456Results[0].rank,
-                              "awards": awards12456
-                            },
-                            "team13822": {
-                              "wins": json13822Results[0].wins,
-                              "losses": json13822Results[0].losses,
-                              "ties": json13822Results[0].ties,
-                              "rank": json13822Results[0].rank,
-                              "awards": awards13822
-                            }
-                          }
+                          "status": status
                         })
                       }
 
@@ -894,36 +900,36 @@ app.get(uriPrefix + '/tba', (req, res) => {
   } catch (err) { return res.status(500).send({ error: "An error occurred." }) }
 })
 
-app.get(uriPrefix + "/instagram", (req, res) => {
-  if (lastInstaCacheRefresh + 86400000 < new Date().getTime()) {
-    fetch(`https://graph.instagram.com/me/media?fields=id,caption&access_token=${token.instagram.token}`)
-      .then(res => res.json())
-      .then(json => {
-        if (!json || !json.data) {
-          lastInstaCacheRefresh = new Date().getTime();
-          return res.status(500).send({ error: "No data was provided by Facebook (Instagram)." });
-        }
-        getInstagramMedia(json.data, 5).then((promiseResponse, promiseRejection) => {
-          if (promiseRejection || !promiseResponse) {
-            lastInstaCacheRefresh = new Date().getTime();
-            return res.status(500).send({ error: "A data processing error has occurred." })
-          }
+// app.get(uriPrefix + "/instagram", (req, res) => {
+//   if (lastInstaCacheRefresh + 86400000 < new Date().getTime()) {
+//     fetch(`https://graph.instagram.com/me/media?fields=id,caption&access_token=${token.instagram.token}`)
+//       .then(res => res.json())
+//       .then(json => {
+//         if (!json || !json.data) {
+//           lastInstaCacheRefresh = new Date().getTime();
+//           return res.status(500).send({ error: "No data was provided by Facebook (Instagram)." });
+//         }
+//         getInstagramMedia(json.data, 5).then((promiseResponse, promiseRejection) => {
+//           if (promiseRejection || !promiseResponse) {
+//             lastInstaCacheRefresh = new Date().getTime();
+//             return res.status(500).send({ error: "A data processing error has occurred." })
+//           }
 
-          promiseResponse.sort((a, b) => b.timestamp > a.timestamp ? 1 : -1)
+//           promiseResponse.sort((a, b) => b.timestamp > a.timestamp ? 1 : -1)
 
-          instaCache = promiseResponse;
-          lastInstaCacheRefresh = new Date().getTime();
-          res.status(200).send({ data: promiseResponse, cached: false });
-        }).catch((err) => {
-          lastInstaCacheRefresh = new Date().getTime();
-          return res.status(500).send({ error: "A data processing error has occurred." })
-        });
-      }).catch((err) => {
-        lastInstaCacheRefresh = new Date().getTime();
-        return res.status(500).send({ error: "An error occurred with Facebook (Instagram).", details: err });
-      });
-  } else res.status(200).send({ data: instaCache, cached: true });
-})
+//           instaCache = promiseResponse;
+//           lastInstaCacheRefresh = new Date().getTime();
+//           res.status(200).send({ data: promiseResponse, cached: false });
+//         }).catch((err) => {
+//           lastInstaCacheRefresh = new Date().getTime();
+//           return res.status(500).send({ error: "A data processing error has occurred." })
+//         });
+//       }).catch((err) => {
+//         lastInstaCacheRefresh = new Date().getTime();
+//         return res.status(500).send({ error: "An error occurred with Facebook (Instagram).", details: err });
+//       });
+//   } else res.status(200).send({ data: instaCache, cached: true });
+// })
 
 // async function getMaxTBASeason() {
 //   return new Promise((resolve, reject) => {
@@ -986,64 +992,64 @@ async function getMaxTOASeason() {
   })
 }
 
-/**
- * runs a daily loop
- */
-async function dayTimer() {
-  updateInstagramToken();
-  setInterval(() => {
-    updateInstagramToken();
-  }, 86400000)
-}
+// /**
+//  * runs a daily loop
+//  */
+// async function dayTimer() {
+//   updateInstagramToken();
+//   setInterval(() => {
+//     updateInstagramToken();
+//   }, 86400000)
+// }
 
-async function getInstagramMedia(dataList, amount) {
-  return new Promise((resolve, reject) => {
-    let finalList = [];
-    for (let i = 0; i < amount && i < dataList.length; i++) {
-      fetch(`https://graph.instagram.com/${dataList[i].id}?fields=id,media_type,media_url,timestamp&access_token=${token.instagram.token}`)
-        .then(res => res.json())
-        .then(json => {
-          if (!json || !json.media_url || !json.media_type)
-            return reject({ error: "Incomplete data was provided by Facebook (Instagram)." })
-          finalList.push({
-            id: dataList[i].id,
-            caption: dataList[i].caption,
-            media_type: json.media_type,
-            media_url: json.media_url,
-            timestamp: json.timestamp
-          })
-          if (i + 1 >= amount || i + 1 >= dataList.length)
-            resolve(finalList);
-        }).catch(() => { return reject({ error: "An error occurred with Instagram's media servers." }) })
-    }
-  })
-}
+// async function getInstagramMedia(dataList, amount) {
+//   return new Promise((resolve, reject) => {
+//     let finalList = [];
+//     for (let i = 0; i < amount && i < dataList.length; i++) {
+//       fetch(`https://graph.instagram.com/${dataList[i].id}?fields=id,media_type,media_url,timestamp&access_token=${token.instagram.token}`)
+//         .then(res => res.json())
+//         .then(json => {
+//           if (!json || !json.media_url || !json.media_type)
+//             return reject({ error: "Incomplete data was provided by Facebook (Instagram)." })
+//           finalList.push({
+//             id: dataList[i].id,
+//             caption: dataList[i].caption,
+//             media_type: json.media_type,
+//             media_url: json.media_url,
+//             timestamp: json.timestamp
+//           })
+//           if (i + 1 >= amount || i + 1 >= dataList.length)
+//             resolve(finalList);
+//         }).catch(() => { return reject({ error: "An error occurred with Instagram's media servers." }) })
+//     }
+//   })
+// }
 
-async function updateInstagramToken() {
-  return new Promise((resolve, reject) => {
-    if (new Date().getTime() >= token.instagram.time_to_renew) {
-      fetch(`https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=${token.instagram.token}`)
-        .then(res => res.json())
-        .then(json => {
-          if (!json || !json.access_token || !json.expires_in) {
-            reject()
-            return
-          }
+// async function updateInstagramToken() {
+//   return new Promise((resolve, reject) => {
+//     if (new Date().getTime() >= token.instagram.time_to_renew) {
+//       fetch(`https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=${token.instagram.token}`)
+//         .then(res => res.json())
+//         .then(json => {
+//           if (!json || !json.access_token || !json.expires_in) {
+//             reject()
+//             return
+//           }
 
-          let newToken = json.access_token;
-          console.log("New Token: " + newToken)
+//           let newToken = json.access_token;
+//           console.log("New Token: " + newToken)
 
-          const fileName = "token.json"
-          let m = JSON.parse(fs.readFileSync(fileName).toString());
-          m.instagram.token = newToken;
-          m.instagram.time_to_renew = new Date().getTime() + (json.expires_in * 1000) - 172800000;
-          fs.writeFile(fileName, JSON.stringify(m), (err) => { if (err) reject(); else resolve(); })
-          console.log("Token applied");
+//           const fileName = "token.json"
+//           let m = JSON.parse(fs.readFileSync(fileName).toString());
+//           m.instagram.token = newToken;
+//           m.instagram.time_to_renew = new Date().getTime() + (json.expires_in * 1000) - 172800000;
+//           fs.writeFile(fileName, JSON.stringify(m), (err) => { if (err) reject(); else resolve(); })
+//           console.log("Token applied");
 
-        }).catch(() => { });
-    } else resolve();
-  })
-}
+//         }).catch(() => { });
+//     } else resolve();
+//   })
+// }
 
 // Function for downloading file using HTTP.get
 async function download_file_httpget(file_url) {
