@@ -53,7 +53,7 @@ transporter.verify(function (error, success) {
   }
 });
 
-dayTimer();
+//dayTimer();
 
 app.get("/storage/:name", (req, res) => {
   const fileName = token.fileLocations.storage_server + req.params.name
@@ -624,7 +624,7 @@ app.get(uriPrefix + '/toa', (req, res) => {
 
 })
 
-sync function queryTOA(year) {
+async function queryTOA(year) {
   return new Promise((resolve, reject) => {
 
     let team = 12456
