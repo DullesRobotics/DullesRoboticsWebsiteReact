@@ -11,7 +11,7 @@ import gfm from 'remark-gfm'
 import hoverCSS from '../styles/hover.module.css'
 import Text from '../components/text'
 import lang from '../lang/lang.json'
-import MentorJSON from '../lang/mentors.json'
+import OfficerJSON from '../lang/officers.json'
 import ServerImage from '../components/serverimage'
 import images from '../lang/images.json'
 
@@ -41,19 +41,27 @@ export default function AboutUs(props) {
     return _ => window.removeEventListener('resize', handleResize)
   })
 
-  const mentorDivList = []
+  const officerDivList = []
 
-  for (let m in MentorJSON) {
-    const mentor = MentorJSON[m]
-    mentorDivList.push(
+  for (let o in OfficerJSON) {
+    const officer = OfficerJSON[o]
+    officerDivList.push(
       <div
         className="col-span-1 mx-5 md:mx-2 my-2 bg-gray-4 transition duration-200 hover:bg-gray-5"
         style={{ boxShadow: "3px 3px rgba(66, 68, 69, 1)" }}>
         <div className="p-5 m-5 md:m-0">
-          <p className="text-6xl"><i className="fas fa-user-circle" /></p>
-          <p className="text-3xl font-bold -mt-2 tracking leading-8">{mentor.name}</p>
-          <p className="uppercase text-md font-bold text-blue-3 -mt-1 md:mt-1">{mentor.designation.toUpperCase()}</p>
-          <p className="text-sm mt-2">{mentor.description}</p>
+          {officer.image ?
+            <ServerImage
+              className="rounded-lg mx-auto xl:w-1/2 md:w-2/3 w-1/2 mb-4"
+              file={officer.image}
+              alt={officer.name} /> :
+            <p className="text-center text-6xl">
+              <i className="fas fa-user-circle" />
+            </p>
+          }
+          <p className="text-3xl font-bold -mt-2 tracking leading-8">{officer.name}</p>
+          <p className="uppercase text-md font-bold text-blue-3 -mt-1 md:mt-1">{officer.designation.toUpperCase()}</p>
+          <p className="text-sm mt-2">{officer.description}</p>
         </div>
       </div>)
   }
@@ -321,11 +329,11 @@ export default function AboutUs(props) {
           <div className="col-span-8 pb-16">
             <p className="text-center font-bold text-5xl md:text-6xl">
               <Text>
-                {mentorDivList.length > 1 ? lang.about_us.mentors.plural_title : lang.about_us.mentors.singular_title}
+                {officerDivList.length > 1 ? lang.about_us.mentors.plural_title : lang.about_us.mentors.singular_title}
               </Text>
             </p>
-            <div className={`md:grid grid-cols-${mentorDivList.length > 3 ? 3 : mentorDivList.length} text-center`}>
-              {mentorDivList}
+            <div className={`md:grid grid-cols-${officerDivList.length > 3 ? 3 : officerDivList.length} text-center`}>
+              {officerDivList}
             </div>
           </div>
           <div className="col-span-1" />

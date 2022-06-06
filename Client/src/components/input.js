@@ -14,7 +14,7 @@ class Input extends React.Component {
           }
         </label>
         <input
-          onChange={(e) => { this.props.change(e) }}
+          onChange={(e) => { if (this.props.change) this.props.change(e) }}
           value={this.props.value}
           className={
             "shadow transition font-semibold duration-150 ease-in-out appearance-none border rounded w-full py-2 px-3" +

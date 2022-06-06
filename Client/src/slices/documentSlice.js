@@ -31,7 +31,7 @@ export const selectDocuments = state => state.documents.value;
 export const loadDocuments = () => {
     return (dispatch, getState) => {
         try {
-            if (!getState().competitions.value.finished) {
+            if (!getState().documents.value.finished) {
                 dispatch(setLoading(true));
                 fetch(`${dataJson.api_server}/resource/list`, { mode: 'cors', credentials: 'include' })
                     .then(res => res.json())

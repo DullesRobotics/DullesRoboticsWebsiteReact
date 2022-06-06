@@ -1,5 +1,52 @@
 [
   {
+    "year": "2022",
+    "alumni": [
+      {
+        "name": "David Han",
+        "image": "yhQsZonSP3AQBtv.png",
+        "college": "Texas A&M University",
+        "major": "Electrical Engineering",
+        "message": "Over the four years David has dedicated to Dulles Robotics, he has fulfilled a variety of roles and adapted to various situations. In his senior year, he was vice president of Dulles Robotics and the design lead. Initially beginning as a build member, he expanded his horizons to include administrative work and shifted his focus to design. \"Participating in FIRST Robotics has allowed me to meet people I wouldn't have met otherwise, and as a result has changed who I am in a positive manner.\""
+      },
+      {
+        "name": "Abel Gizaw",
+        "image": "jczp5s1H27DYOWe.jpg",
+        "college": "Texas A&M University",
+        "major": "General Engineering",
+        "message": "Abel played a huge part in the build team and was extremely knowledgable on using chain. He was also involved in design. \"The club gave the experience to work with a team and use the engineering process to reach a solutions.\""
+      },
+      {
+        "image": "F2EpOMz0Qv6hJeC.jpg",
+        "name": "Kristina Li",
+        "college": "Texas A&M University",
+        "major": "Industrial Engineering",
+        "message": "Kristina was the club secretary officer, taking minutes for the meetings and helping to organize the competition meets as league hosts. \"I think the best part about Dulles Robotics is that you don't have to be a programmer or builder to be part of the team. Anyone from all backgrounds are welcomed. The best part was the weekly Don’s sandwich runs we had.\""
+      },
+      {
+        "image": "KN9oBpHET7stW0w.jpg",
+        "name": "Elliot Michlin",
+        "college": "Texas A&M University",
+        "major": "Computer Engineering",
+        "message": "Elliot Michlin was the lead programmer for 3 years and historian for Dulles Robotics. He led RoboVikings' programming in 2019 and 2020, and the entire club's programming in 2021. He also built the entire front and backend of the website. \"Dulles Robotics has provided me with friends and a community I cherish. The priceless skills I learned because of it in programming and web development have helped me find my future.\""
+      },
+      {
+        "image": "Q7IkcFQMQSryVo-.jpg",
+        "name": "Aaron Williams",
+        "college": "Prarie View A&M University",
+        "major": "Mechanical Engineering",
+        "message": "Aaron joined Dulles Robotics in his freshman year and gravitated toward robot design. He was a student mentor for 3 years and club president in his senior year. His favorite roles were as design lead for Big Red (FTC Team 12456) and guiding incoming students into their respective club roles. \"FIRST has taught me a lot about myself and given me some of the best friends I've had. I'll bring these experiences with me to wherever life takes me. Hopefully one day I can start a team of my own and inspire others.\""
+      },
+      {
+        "name": "Michael Christensen",
+        "college": "Texas A&M University",
+        "major": "General Engineering",
+        "image": "9yPaJiYycky6bj3.jpg",
+        "message": "Michael was a talented club coordinator who ensured safety and responsibility amongst members. He was with the club for nearly four years."
+      }
+    ]
+  },
+  {
     "year": "2021",
     "alumni": [
       {

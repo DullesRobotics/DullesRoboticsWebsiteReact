@@ -8,11 +8,6 @@ import { Timeline } from 'react-twitter-widgets'
 import TBAFeed from '../components/tba/feed'
 import Loading from '../components/lottiecomponents/loading'
 import { useSelector, useDispatch } from 'react-redux'
-import {
-  selectInstagramPosts,
-  loadInstagramPosts,
-  selectSocialFeed
-} from '../slices/socialSlice'
 import Text from '../components/text'
 import lang from '../lang/lang.json'
 
@@ -56,18 +51,18 @@ export default function Announcements(props) {
                 <i className="fab fa-twitter mt-2" />
               </div>
             </button>
-            <button onClick={() => setFeed(1)} className="focus:outline-none">
-              <div className={`col-span-1 py-1 border-2 border-white transition-colors duration-100 hover:bg-purple-600 border-opacity-${feed === 1 ? "100 bg-purple-600" : "0 bg-purple-500"}`}>
-                <i className="fab fa-instagram mt-2" />
-              </div>
-            </button>
             <button onClick={() => setFeed(2)} className="focus:outline-none">
-              <div className={`col-span-1 rounded-r-lg border-2 border-white py-1 transition-colors duration-100 hover:bg-blue-700 border-opacity-${feed === 2 ? "100 bg-blue-700" : "0 bg-blue-600"}`}>
+              <div className={`col-span-1 border-2 border-white py-1 transition-colors duration-100 hover:bg-blue-700 border-opacity-${feed === 2 ? "100 bg-blue-700" : "0 bg-blue-600"}`}>
                 <i className="fab fa-facebook mt-2" />
               </div>
             </button>
+            <button onClick={() => setFeed(1)} className="focus:outline-none">
+              <div className={`col-span-1 py-1 rounded-r-lg border-2 border-white transition-colors duration-100 hover:bg-purple-600 border-opacity-${feed === 1 ? "100 bg-purple-600" : "0 bg-purple-500"}`}>
+                <i className="fab fa-instagram mt-2" />
+              </div>
+            </button>
           </div>
-          <div className="flex md:block justify-center">
+          <div className="flex justify-center">
             {feed === 0 ?
               <Timeline
                 dataSource={{
@@ -91,7 +86,10 @@ export default function Announcements(props) {
                 }
               /> : <></>}
             {feed === 1 ?
-              <InstagramFeed /> : <></>}
+              <a href='https://www.instagram.com/dulles_robotics/' target="_blank" rel="noopener noreferrer" className='mx-auto'>
+                <Button bstyle="primary">Visit Our Instagram Here</Button>
+              </a>
+              : <></>}
             {feed === 2 ?
               <iframe
                 title="Dulles Robotics' Facebook Feed (@dullesrobotics)"
@@ -112,84 +110,4 @@ export default function Announcements(props) {
     </div >
   );
 
-}
-
-function InstagramFeed() {
-
-  const postsData = useSelector(selectSocialFeed);
-  const dispatch = useDispatch();
-  if (postsData.instagram.length === 0 && !postsData.finished && !postsData.loading && !postsData.error)
-    dispatch(loadInstagramPosts());
-
-
-
-  if (postsData.error || (postsData.loading && !postsData.finished) || postsData.instagram.length === 0) {
-    return (
-      <div>
-        <LoadingIcon />
-        {postsData.error || (postsData.finished && postsData.instagram.length === 0) ?
-          <p className="text-gray-300 text-center">
-            <Text>{lang.news.cant_load_instagram}</Text>
-          </p>
-          : <></>}
-      </div>
-    )
-  }
-
-  const photos = postsData.instagram;
-  let list = [];
-  for (let p in photos) {
-    let media;
-    const split = photos[p].media_url.split("?")[0].split(".");
-    const fileType = split[split.length - 1];
-
-    switch (photos[p].media_type.toLowerCase()) {
-      case "image":
-      case "carousel_album":
-        media =
-          <img
-            className="transition-all duration-100 border-4 border-opacity-0 hover:border-opacity-100 border-white"
-            alt={photos[p].caption}
-            src={photos[p].media_url} />
-        break;
-      case "video":
-        media =
-          <video controls crossorigin="anonymous">
-            <source src={photos[p].media_url} type={`video/${fileType}`} />
-            <Text>{lang.news.browser_cant_play_video}</Text>
-          </video>
-        break;
-      default: media = <></>; break;
-    }
-
-    list.push(
-      <div key={photos[p].id} className="mx-10 mb-10 md:mb-5 md:mx-0">
-        <div className="flex justify-center">
-          {media}
-        </div>
-        <p className="mt-2 ml-2">{photos[p].caption}</p>
-      </div>
-    );
-  }
-
-  return (
-    <div className="bg-gray-4 rounded p-4 shadow-xl">
-      <div>
-        <p className="m-1 font-semibold text-2xl text-center md:text-left"><Text>{lang.news.insta_header}</Text></p>
-        {list}
-      </div>
-      <div className="flex justify-center">
-        <a
-          className="text-blue-3"
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://instagram.com/dulles_robotics"
-        >
-          <Button bstyle="primary" >
-            {lang.news.view_more_instagram} <i class="ml-2 mt-1 fas fa-external-link-square-alt" />
-          </Button>
-        </a>
-      </div>
-    </div>
-  );
 }

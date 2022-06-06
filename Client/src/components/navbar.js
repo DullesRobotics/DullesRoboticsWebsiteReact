@@ -26,10 +26,9 @@ const subMenus = {
         { key: 25, title: lang.header.nav.about_us.awards, link: "/about-us#awards" },
         { key: 26, title: lang.header.nav.about_us.mentors, link: "/about-us#mentors" }
     ],
-    // 6: [
-    //     { key: 60, title: 'DOCUMENTS', link: "/documents" },
-    //     { key: 60, title: 'CLUB RESOURCES', link: "/club-resources" },
-    // ],
+    6: [
+        { key: 60, title: 'MEDIA', link: "/resources/media" },
+    ],
     7: [
         { key: 70, title: 'OUR SPONSORS', link: "/sponsors" },
     ],

@@ -1,14 +1,36 @@
 [
   {
-    "title": "Helping Our Community",
-    "description": "We are grateful for those around us and thankful for our achievements. A huge part of showing our gratitude is by giving back to our community. Here in Dulles Robotics, we plan and organize many outreach activities to make sure those around us grow with us too. Helping others has become a reflex action and we are delighted to be a helping hand! We have taken our CAD skills to make 3-D printed masks in times when hospitals were running out due to COVID. Our members have donated to victims of Hurricane Laura to help those in need. We will continue to reach out and create a friendly atmosphere where ever we go."
+    "title": "",
+    "description": "&emsp;&emsp;Doing our part for the community is a big part of Our Philosophy, and over the years we have accumulated dozens of outreach activities that we could display here. Some of these include: mentoring middle school teams, holding STEM Festivals to get others involved and interested in STEM, hosting FIRST Lego League Tournaments, hosting First Tech Challenge league scrimmages, holding workshops and online courses for others to learn about the process of robotics, creating videos about common programming softwares for other FTC teams, visiting an orphanage to teach the kids about STEM and STEM-related activities, and many more. \n\n&emsp;&emsp;Over the years, We  have come to gain experience helping our community, by participating in outreach activities. Every year, members continue teaching each other Gracious Professionalism, a value important for FIRST and for their futures. By giving a helping hand to our community and assisting other people in their journey to uncover their interests in the STEM field, we hope to make a long lasting impact and continue spreading FIRST values and events. \n\n&emsp;&emsp;However, recent years have been especially difficult due to the challenges that COVID-19 poses. With the pandemic, it was nearly impossible to hold any face to face events, which was upsetting to all of us, as outreach is something all of our members truly enjoy. Some specific outreach events we have recently participated in include…"
   },
   {
-    "title": "Spreading FIRST",
-    "description": "Dulles Robotics strives to take the knowledge we learn and spread it to others. Our goal is to allow everyone, regardless of age, gender, and race, to have the opportunity to learn about the STEM field. It is crucial for the younger generation to learn about the STEM pathway as it is growing in popularity and it is what will build our future. We have held many camps, workshops, and events allowing kids to learn about programming languages like Java, Python, and HTML and CAD software like Autodesk Inventor and Fusion. We host meetings for colleges to come speak about what robotics is like beyond high school so people have a plan for the future. Along with technical knowledge, we strive to spread values of FIRST such as gracious professionalism, gratitude, and resilience."
+    "title": "Math and Science Academy Night (2021)",
+    "description": "Ready to spread our knowledge, we set up a presentation and many interactive elements for those who came to see us during the Academy Night! The team exposed the future and current MSA students to the wonders of robotics, displaying our robot and being ready to answer any questions that were asked of us."
   },
   {
-    "title": "Collaborating with Others",
-    "description": "The greatest way to accomplish goals is through teamwork. We are always open to collaborating with others. We have teamed up with FRC team Vortx many times to hold workshops teaching programming and other technical skills. If you would like to collaborate on an outreach event please contact us!"
+    "title": "Chevron Marathon (2022)",
+    "description": "Members volunteered at the Chevron Houston Marathon, working to help those who ran in the marathon store their personal belongings in compartments. Members got to interact with many people, while putting up a gracious face for the public to see. We enjoyed volunteering and hope to  participate again next time!"
+  },
+  {
+    "title": "Fish Camp (2021)",
+    "description": "Our club hosted an event for freshmen who wanted to learn more about robotics and how it works at our school. Members arranged presentations and showed off not only STEM and engineering demonstrations, but also reached out to new members - introducing them to the wonderful world of robotics and keeping our club sustainable."
+  },
+  {
+    "title": "Girls Who Code (2021)",
+    "description": "We visited Dulles Middle School to speak about and teach elementary to high school girls how to do basic coding and the basis of robotics."
+  },
+  {
+    "title": "VortX #3735 Summer Program Collab (2021)",
+    "description": "This virtual coding camp for 4th-8th graders gave the students a design based creative computing summer program incorporating coding projects with Scratch."
+  },
+  {
+    "title": "San Jacinto College Programming Tutorials for Block Code and Android Studio (2020)",
+    "media": [
+      "https://www.youtube.com/watch?v=fJvpQpVwjzM",
+      "https://www.youtube.com/watch?v=NIr-ZrYT4c4",
+      "https://www.youtube.com/watch?v=zypTJ2eR6Co",
+      "https://www.youtube.com/watch?v=h5pDBFJOmVI"
+    ],
+    "description": "We were contacted by San Jacinto College to create programming videos in order to teach the whole region how to utilize and efficiently use Block and Android Studio. Wanting to provide the best quality of information as possible, we spent hours scripting, recording, and editing our footage to be put on YouTube. "
   }
 ]

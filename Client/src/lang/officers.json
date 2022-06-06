@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Izack Waczko",
+    "designation": "Co-President",
+    "description": "A junior who has shown exceptional brilliance in computer design and building robots from his first day as a freshman. He oversees the building of all robots to ensure function and safety. He also oversees part orders and our budget. He has been with the club for 3 years.",
+    "image": null
+  },
+  {
+    "name": "Tanav Palisetti",
+    "designation": "Co-President",
+    "description": "A senior who has been with the club for all 4 years, Tanav has assisted with robotics build teams and administration since his freshmen year. He has been a leader in all robotics competitions, regardless of if Dulles was hosting it. Tanav assists with planning and running meets and tournaments.",
+    "image": null
+  },
+  {
+    "name": "Mithilya Raj",
+    "designation": "Vice President & Communications Lead",
+    "description": "Mithilya Raj is a junior at Dulles who has been with with the club for 3 years. She manages meetings, messages, calendars, social media accounts, and public relations, as well as engineering portfolios for Dulles Robotics.",
+    "image": null
+  },
+  {
+    "name": "Andrew John",
+    "designation": "2nd Vice President & Student Life Lead",
+    "description": "Andrew John is a junior at Dulles and has been with the club for 2 years. He enjoys to CAD and 3d print but finds he spends more time complaining about the printer than printing. For his role in robotics, he tries to get all non-robotics activities organized and completed.",
+    "image": null
+  },
+  {
+    "name": "Charlie Nguyen",
+    "designation": "Event Coordinator & Build Lead",
+    "description": "A sophomore at Dulles, Charlie handles coordination of build members and teams. He's also the event coordinator which coordinating events and helps advisors of Dulles robotics.",
+    "image": null
+  },
+  {
+    "name": "Hasini Nareddy",
+    "designation": "Secretary",
+    "description": "Hasini Nareddy is a sophomore who has shown a passion for robotics ever since she joined our club. She's experienced in the build department, but wants to contribute to programming as she learns how to code. She will be in charge of logging meeting minutes and keeping engineering logs.",
+    "image": null
+  },
+  {
+    "name": "Nathan Luong",
+    "designation": "Financial Secretary",
+    "description": "Nathan Luong is a junior at Dulles and has been with the club for 3 years. He is experienced in CAD and robot build, and he also manages the clubs budget.",
+    "image": null
+  },
+  {
+    "name": "Elysia Li",
+    "designation": "Historian",
+    "description": "Elysia Li is a freshman at Dulles who has been with the club for 2 years. She records memories through pictures and media, and spends her time working on pit and other design necessities. She hopes to outreach to as many people as possible.",
+    "image": null
+  }
+]

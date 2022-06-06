@@ -15,6 +15,7 @@ import AboutUs from './pages/about-us'
 import Robots from './pages/robots/robots'
 import Outreach from './pages/outreach'
 import Interest from './pages/interest'
+import Media from './pages/media'
 
 class App extends React.Component {
   render() {
@@ -36,6 +37,7 @@ class App extends React.Component {
               <Route path="/announcements" exact><Redirect to="/news" /></Route>
               <Route path="/outreach" exact><Outreach /></Route>
               <Route path="/resources" exact><Resources /></Route>
+              <Route path="/resources/media" exact><Media /></Route>
               {/*<Route path="/club-resources" exact><div className="text-center text-4xl font-bold">Club Resources.</div></Route>*/}
               <Route path="/support-us" exact><Support /></Route>
               <Route path="/support" exact><Redirect to="/support-us" /></Route>
@@ -47,6 +49,7 @@ class App extends React.Component {
               <Route path="/contact-us" exact><Redirect to="/contact" /></Route>
               <Route path="/robots" exact><Robots /></Route>
               <Route path="/documents" exact><Redirect to="/resources" /></Route>
+              <Route path="/media" exact><Redirect to="/resources/media" /></Route>
               <Route path="/resources/documents" exact><Redirect to="/resources" /></Route>
               <Route path="/interest" exact><Interest /></Route>
               <Route><FourOFourPage /></Route>
