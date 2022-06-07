@@ -104,7 +104,9 @@ export default function Media(props) {
             <select onChange={(event) => setFilters({ ...filters, filter: event.target.value })} name='Filter' id='filter' className='rounded p-2 bg-gray-300'>
               <option key='All Media' value='All Media'>All Media</option>
               {options.map(o => (
-                <option key={o} value={o}>{o}</option>
+                <option key={o} value={o} selected={filters.filter === o ? true : false}>
+                  {o}
+                </option>
               ))}
             </select>
           </div>
@@ -122,11 +124,11 @@ export default function Media(props) {
         </div>
       </div>
       <SectionDivider className="h-10 lg:h-15" divider="skew-c" color1={5} color2={4} />
-      <div className='bg-gray-4'>
+      <div className='bg-gray-4 h-screen'>
         {mediaInformation.loading ? <div className='h-screen py-4'><LoadingIcon /></div> :
           mediaBundle.length === 0 ?
             <div className='text-white text-center text-xl font-semibold h-screen py-4'>No media found</div> :
-            <div className="py-4 w-4/5 mx-auto grid grid-cols-1 h-screen md:grid-cols-2 xl:grid-cols-3">
+            <div className="py-4 w-4/5 mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
               {mediaBundle}
             </div>
         }

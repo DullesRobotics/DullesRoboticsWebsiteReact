@@ -53,9 +53,9 @@ export default function Outreach(props) {
             {OutreachJSON[j].description}
           </ReactMarkdown>
         </p>
-        {OutreachJSON[j].media_url ?
+        {OutreachJSON[j].media_folder ?
           <div className="my-4">
-            <Link to={OutreachJSON[j].media_url}>
+            <Link to={`/resources/media#${OutreachJSON[j].media_folder}`}>
               <Button bstyle="secondary">View Media</Button>
             </Link>
           </div> : <></>}

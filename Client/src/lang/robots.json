@@ -5,7 +5,7 @@
     "team-name": "Big Red",
     "team-number": "12456",
     "year": 2022,
-    "image": "redtitan.jpg",
+    "image": "StmdNAlL1vd6t8e.jpg",
     "gradient": "linear-gradient(180deg, rgba(206, 179, 179, 0.6) 0%, rgba(236, 112, 112, 0.6) 100%)",
     "description": "Plateosaurus was Big Red's robot used in the FTC Frieght Frenzy season.",
     "game": "Ultimate Goal",
@@ -42,15 +42,16 @@
       "The rubber duck carousel span fast using a core hex motor.",
       "The intake used surgical tubing to collect rings quickly and efficiently.",
       "A bucket at the end of the intake could be lifted extremely high using a string and linear slide. A servo on the end of the bucket could tilt it and deposit the box's contents into the goal."
-    ]
+    ],
+    "media-category": "Big Red's Robot 2022, Plateosaurus"
   },
   {
     "name": "KARL",
     "type": "FTC",
-    "team-name": "Big Red",
-    "team-number": "12456",
+    "team-name": "RoboVikings",
+    "team-number": "13822",
     "year": 2022,
-    "image": "redtitan.jpg",
+    "image": "XHT6cF3MJe6Hhbp.jpg",
     "gradient": "linear-gradient(180deg, rgba(191, 175, 211, 0.6) 0%, rgba(155, 107, 214, 0.6) 100%)",
     "description": "KARL, standing for **Knowledge, Accomplishment, Robotics, and Love**, was Roboviking's robot used in the FTC Freight Frenzy season.",
     "game": "Freight Frenzy",
@@ -76,7 +77,8 @@
       "The mecanum drivetrain gave the robot quick but strafable movement throughout the field. The wheels were bigger to account for the barrier.",
       "The rubber duck carousel span fast using a REV core hex motor.",
       "Our intake is fairly simplified to reduce risk of failure and breakage. It is composed of shaft collars, custom 3D printed brackets and lined up zip ties that were taped together. The zip ties were fastened to the brackets and spun around an axis by a core hex motor, in order to intake shipping elements and move them into a 3D printed box. "
-    ]
+    ],
+    "media-category": "RoboViking's Robot 2022: KARL"
   },
   {
     "name": "Red Titan",

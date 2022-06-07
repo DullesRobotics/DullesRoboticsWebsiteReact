@@ -17,6 +17,7 @@ import {
   selectMedia
 } from '../../slices/mediaSlice'
 import images from '../../lang/images.json'
+import { Link } from 'react-router-dom'
 
 export default function Robots(props) {
 
@@ -193,6 +194,13 @@ export function RoboBlock(props) {
                             </ReactMarkdown>
                           </div>
                         </post>
+                        {props.json["media-category"] ?
+                          <Link to={`/resources/media#${props.json["media-category"]}`}>
+                            <Button className='mt-4' animate bstyle="primary">
+                              <Text>{lang.robots.view_media}</Text>
+                            </Button>
+                          </Link> : <></>
+                        }
                       </p>
                     </div>
                   </div>
