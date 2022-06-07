@@ -1,19 +1,17 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/Client/node_modules
-/Client/node_modules/.cache/babel-loader
-/Server/node_modules
-/Server/token.json
+node_modules
+node_modules/.cache/babel-loader
 /.pnp
 .pnp.js
-/Client/debug.log
+debug.log
 
 # testing
 /coverage
 
 # production
-/Client/build
+build
 # misc
 .DS_Store
 .env.local
@@ -32,4 +30,4 @@ yarn-error.log*
 
 deploy.sh
 
-/Client/src/styles/styles.css
+src/styles/styles.css
