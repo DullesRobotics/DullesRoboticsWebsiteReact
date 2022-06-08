@@ -1,7 +1,6 @@
 [
   {
     "name": "Stone",
-    "min_cost": "1",
     "max_cost": "499",
     "benefits": ["Thank You Card"],
     "img": "primarytier.png",
