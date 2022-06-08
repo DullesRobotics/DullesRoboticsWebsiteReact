@@ -1,7 +1,7 @@
 [
   {
     "name": "Stone",
-    "max_cost": "500",
+    "max_cost": "499",
     "benefits": ["Thank You Card"],
     "img": "primarytier.png",
     "color": "#fc0303",
@@ -16,7 +16,7 @@
   {
     "name": "Bronze",
     "min_cost": "500",
-    "max_cost": "1999",
+    "max_cost": "1,999",
     "benefits": [
       "Stone Tier Benefits",
       "Mention on Team Website",
