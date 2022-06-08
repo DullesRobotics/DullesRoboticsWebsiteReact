@@ -124,7 +124,7 @@ export default function Media(props) {
         </div>
       </div>
       <SectionDivider className="h-10 lg:h-15" divider="skew-c" color1={5} color2={4} />
-      <div className='bg-gray-4'>
+      <div className='bg-gray-4 min-h-screen'>
         {mediaInformation.loading ? <div className='h-screen py-4'><LoadingIcon /></div> :
           mediaBundle.length === 0 ?
             <div className='text-white text-center text-xl font-semibold h-screen py-4'>No media found</div> :
