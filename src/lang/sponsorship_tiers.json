@@ -16,6 +16,7 @@
   {
     "name": "Bronze",
     "min_cost": "500",
+    "max_cost": "1,999",
     "benefits": [
       "Stone Tier Benefits",
       "Mention on Team Website",
@@ -57,6 +58,7 @@
   {
     "name": "Steel",
     "min_cost": "2,000",
+    "max_cost": "3,999",
     "benefits": ["Stone and Bronze Tier Benefits", "Logo on T-Shirts"],
     "img": "steeltier.png",
     "color": "#9aa4a5",
@@ -71,6 +73,7 @@
   {
     "name": "Silver",
     "min_cost": "4,000",
+    "max_cost": "5,999",
     "benefits": ["All Previous Tier Benefits", "\"Proud Sponsor\" Poster"],
     "img": "silvertier.png",
     "color": "#9aa4a5",
@@ -85,6 +88,7 @@
   {
     "name": "Gold",
     "min_cost": "6,000",
+    "max_cost": "7,999",
     "benefits": ["All Previous Tier Benefits", "Gift Basket"],
     "img": "goldtier.png",
     "color": "#eadb04",
@@ -99,6 +103,7 @@
   {
     "name": "Platinum",
     "min_cost": "8,000",
+    "max_cost": "9,999",
     "benefits": [
       "All Previous Tier Benefits",
       "Logo on Robot",
