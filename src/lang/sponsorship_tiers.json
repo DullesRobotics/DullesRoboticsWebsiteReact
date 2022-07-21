@@ -2,7 +2,10 @@
   {
     "name": "Stone",
     "max_cost": "499",
-    "benefits": ["Thank You Card"],
+    "benefits": [
+      "Thank You Card",
+      "3D Printed Plaque"
+    ],
     "img": "primarytier.png",
     "color": "#fc0303",
     "opacity_percent": 0,
@@ -85,7 +88,7 @@
   {
     "name": "Gold",
     "min_cost": "6,000",
-    "benefits": ["All Previous Tier Benefits", "Gift Basket"],
+    "benefits": ["All Previous Tier Benefits", "Gift Basket", "Plaque"],
     "img": "goldtier.png",
     "color": "#eadb04",
     "opacity_percent": 0.6,
@@ -103,7 +106,6 @@
       "All Previous Tier Benefits",
       "Logo on Robot",
       "Logo on Banner",
-      "Plaque"
     ],
     "img": "platinumtier.png",
     "color": "#c7d6d9",
