@@ -2,10 +2,7 @@
   {
     "name": "Stone",
     "max_cost": "499",
-    "benefits": [
-      "Thank You Card",
-      "3D-Printed Plaque"
-    ],
+    "benefits": ["Thank You Card","Printed Plaque"],
     "img": "primarytier.png",
     "color": "#fc0303",
     "opacity_percent": 0,
@@ -19,11 +16,7 @@
   {
     "name": "Bronze",
     "min_cost": "500",
-    "benefits": [
-      "Stone Tier Benefits",
-      "Mention on Team Website",
-      "Annual Signed Team Photo"
-    ],
+    "benefits": ["Stone Tier Benefits","Logo On Team Shirts"],
     "img": "bronzetier.png",
     "color": "#cc6e16",
     "opacity_percent": 0,
@@ -60,7 +53,7 @@
   {
     "name": "Steel",
     "min_cost": "2,000",
-    "benefits": ["Stone and Bronze Tier Benefits", "Logo on T-Shirts"],
+    "benefits": ["Stone and Bronze Tier Benefits", "Mention On Team Website", "Signed Team Photo"],
     "img": "steeltier.png",
     "color": "#9aa4a5",
     "opacity_percent": 0,
@@ -102,11 +95,7 @@
   {
     "name": "Platinum",
     "min_cost": "8,000",
-    "benefits": [
-      "All Previous Tier Benefits",
-      "Logo on Robot",
-      "Logo on Banner",
-    ],
+    "benefits": ["All Previous Tier Benefits","Logo on Robot","Logo on Banner"],
     "img": "platinumtier.png",
     "color": "#c7d6d9",
     "opacity_percent": 0.9,
@@ -120,11 +109,7 @@
   {
     "name": "Diamond",
     "min_cost": "10,000",
-    "benefits": [
-      "All Previous Tier Benefits",
-      "Prominent Logo",
-      "Robot Demo at Facility"
-    ],
+    "benefits": ["All Previous Tier Benefits","Prominent Logo","Robot Demo at Facility"],
     "icon": "gem",
     "img": "diamondtier.png",
     "color": "#0ed8ea",
