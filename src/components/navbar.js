@@ -13,7 +13,7 @@ const topLevel = [
     { key: 6, title: lang.header.nav.resources, link: "/resources" },
     { key: 7, title: lang.header.nav.support_us, link: "/support-us" },
     { key: 8, title: lang.header.nav.contact, link: "/contact" },
-    //{ key: 9, title: lang.header.nav.interested, link: "/interest", important: true }
+    { key: 9, title: lang.header.nav.interested, link: "/interest", important: true }
 ]
 
 const subMenus = {
