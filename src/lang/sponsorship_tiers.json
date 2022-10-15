@@ -26,6 +26,7 @@
     "importance": 0,
     "hover_background_color": "gray-800",
     "sponsors": [
+      {
         "name": "Active Athlete",
         "description": "Active Athlete is the original sneaker and streetwear retailer located in Houston, Texas. We love and appreciate Active Athlete for all they have done to support us! Their generous offer to print our team shirts has allowed us to worry less about money this season.",
         "image_url": "fyZrjlM59uMw1Ab.jpg",
@@ -33,6 +34,7 @@
         "big_image_width": "16rem",
         "image_properties": "rounded-lg",
         "website": "https://www.activeathlete88.com/"
+      }
     ]
   },
   {
@@ -71,6 +73,7 @@
         "website": "https://www.slb.com/who-we-are"
       }
     ]
+  },
   {
     "name": "Silver",
     "min_cost": "4,000",
