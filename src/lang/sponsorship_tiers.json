@@ -54,13 +54,13 @@
     "hover_background_color": "gray-800",
     "sponsors": [
       {
-        "name": "Schlumberger",
-        "description": "Schlumberger is a leading oilfield services company. Schulmberger employees represent over 160 nationalities, provide leading digital solutions and deploy ground-breaking technologies to enable sustainability for the global energy industry. This wonderful company will provide us support as we go through the 2022-23 season!",
-        "image_url": "nationalinstruments.jpg",
+         "name": "Schlumberger",
+        "description": "Schlumberger is a leading oilfield services company. Schulmberger employees represent over 160 nationalities, provide leading digital solutions and deploy ground-breaking technologies to enable sustainability for the global energy industry. This wonderful company will provide us support as we go through the 2022-23 season! Without Schulmberger, we wouldn't be in the place we are now!",
+        "image_url": "c2r0RziqzHMPYSw.jpg",
         "small_image_width": "6rem",
         "big_image_width": "16rem",
         "image_properties": "rounded-lg",
-        "website": "https://www.ni.com/"
+        "website": "LZCPh6yjRj7-Ojq.who-we-are"
       }
     ]
   },
