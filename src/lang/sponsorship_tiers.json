@@ -54,7 +54,7 @@
     "hover_background_color": "gray-800",
     "sponsors": [
       {
-         "name": "Schlumberger",
+        "name": "Schlumberger",
         "description": "Schlumberger is a leading oilfield services company. Schulmberger employees represent over 160 nationalities, provide leading digital solutions and deploy ground-breaking technologies to enable sustainability for the global energy industry. This wonderful company will provide us support as we go through the 2022-23 season! Without Schulmberger, we wouldn't be in the place we are now!",
         "image_url": "c2r0RziqzHMPYSw.jpg",
         "small_image_width": "6rem",
@@ -62,6 +62,15 @@
         "image_properties": "rounded-lg",
         "website": "https://www.slb.com/who-we-are"
       }
+    ],
+    "sponsors": [
+        "name": "Active Athlete",
+        "description": "Active Athlete is the original sneaker and streetwear retailer located in Houston, Texas. We love and appreciate Active Athlete for all they have done to support us! Their generous offer to print our team shirts has allowed us to worry less about money this season.",
+        "image_url": "fyZrjlM59uMw1Ab.jpg",
+        "small_image_width": "6rem",
+        "big_image_width": "16rem",
+        "image_properties": "rounded-lg",
+        "website": "https://www.activeathlete88.com/"
     ]
   },
   {
