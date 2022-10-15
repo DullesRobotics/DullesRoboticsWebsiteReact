@@ -26,15 +26,15 @@
     "importance": 0,
     "hover_background_color": "gray-800",
     "sponsors": [
-      /*{
-        "name": "National Instruments",
-        "description": "National Instruments is a leading manufacturer of scientific instruments and data acquisition systems. Their generous support of the team has allowed us to pay registration fees for both FTC teams and afford the hardware we need to build each robot.",
-        "image_url": "nationalinstruments.jpg",
-        "small_image_width": "6rem",
-        "big_image_width": "16rem",
-        "image_properties": "rounded-lg",
-        "website": "https://www.ni.com/"
-      }*/
+      //{
+        //"name": "National Instruments",
+        //"description": "National Instruments is a leading manufacturer of scientific instruments and data acquisition systems. Their generous support of the team has allowed us to pay registration fees for both FTC teams and afford the hardware we need to build each robot.",
+        //"image_url": "nationalinstruments.jpg",
+        //"small_image_width": "6rem",
+        //"big_image_width": "16rem",
+        //"image_properties": "rounded-lg",
+        //"website": "https://www.ni.com/"
+      //}
     ]
   },
   {
