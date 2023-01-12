@@ -43,7 +43,7 @@ export default function TBAFeed(props) {
         );
     }
 
-    const title = lang.news.competition_results.title.replace("%year%", competitionsData.season ? (competitionsData.season + parseInt(1)) : new Date().getFullYear())
+    const title = lang.news.competition_results.title.replace("%year%", competitionsData.season ? (competitionsData.season + 1) : new Date().getFullYear())
 
     return (
         <div className="px-4">
