@@ -38,6 +38,7 @@ export default function TBAFeed(props) {
                 endDate={compFinal[c].end_date}
                 status={compFinal[c].status}
                 eventType={compFinal[c].event_type_string}
+                upcoming={compFinal[c].upcoming}
             // TODO add points points={compFinal[c].points}
             />
         );
@@ -157,7 +158,8 @@ class Bobble extends React.Component {
         return descriptor + ".";
     }
 
-    render() {      
+    render() {
+        if(!this.props.upcoming){
             const teamed = (this.props.status.team12456 !== null || this.props.status.team13822 !== null) && isNaN(this.props.status.wins);
             this.rank = teamed ? this.props.status.team12456.rank : this.props.status.rank
             this.scoring = teamed ? [this.props.status.team12456.wins, this.props.status.team12456.losses, this.props.status.team12456.ties] : [this.props.status.wins, this.props.status.losses, this.props.status.ties]
@@ -172,6 +174,8 @@ class Bobble extends React.Component {
 
             let awardList = this.awardListGenerator(this.awards)
             let awardList2 = teamed ? this.awardListGenerator(this.awards2) : null
+
+        }
 
         let title = this.props.title.replace("FTC", "").replace("FRC", ""), suspended = title.indexOf("***SUSPENDED***") > -1, canceled = title.indexOf("(Cancelled)") > -1;
         if (suspended) title = title.replace("***SUSPENDED***", "").trim();
@@ -194,6 +198,7 @@ class Bobble extends React.Component {
                     {this.props.eventType ? <p className="font-thin text-md">{title.toLowerCase().indexOf(this.props.eventType.toLowerCase()) > -1 ? "" : this.props.eventType}</p> : <></>}
                     {suspended ? <p className="text-lg font-semibold italic flex">This event has been suspended.</p>
                         : canceled ? <p className="text-lg font-semibold italic flex">This event has been canceled.</p>
+                        : this.props.upcoming ? <p className="text-lg font-semibold italic flex">This event hasn't started yet.</p>
                             : <Popup
                                 trigger={
                                     <button className="button mt-2">
