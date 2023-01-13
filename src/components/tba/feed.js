@@ -171,7 +171,7 @@ class Bobble extends React.Component {
                 dateDescriptor += " - " + (monthNames[eDate[1] - 1] !== monthNames[sDate[1] - 1] ? monthNames[eDate[1] - 1] + " " : "") + Number(eDate[2]) + ", " + sDate[0];
             } else dateDescriptor += ", " + sDate[0];
         }
-
+        console.log(this.props.upcoming)
         if(this.props.upcoming){
             return (
                 <div className={"bg-gray-4 rounded-lg " + this.props.className + " " + BobbleCSS.card}>
