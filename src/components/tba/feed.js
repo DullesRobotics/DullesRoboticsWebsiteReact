@@ -164,6 +164,14 @@ class Bobble extends React.Component {
         if (suspended) title = title.replace("***SUSPENDED***", "").trim();
         if (canceled) title = title.replace("(Cancelled)", "").replace("*", "");
 
+        let dateDescriptor = "", sDate = this.props.startDate.split("-"), eDate = this.props.endDate.split("-");
+        if (sDate && sDate.length === 3) {
+            dateDescriptor += monthNames[sDate[1] - 1] + " " + Number(sDate[2]);
+            if (eDate && eDate.length === 3 && this.props.endDate !== this.props.startDate) {
+                dateDescriptor += " - " + (monthNames[eDate[1] - 1] !== monthNames[sDate[1] - 1] ? monthNames[eDate[1] - 1] + " " : "") + Number(eDate[2]) + ", " + sDate[0];
+            } else dateDescriptor += ", " + sDate[0];
+        }
+
         if(this.props.upcoming){
             return (
                 <div className={"bg-gray-4 rounded-lg " + this.props.className + " " + BobbleCSS.card}>
@@ -190,17 +198,7 @@ class Bobble extends React.Component {
             }
 
             let awardList = this.awardListGenerator(this.awards)
-            let awardList2 = teamed ? this.awardListGenerator(this.awards2) : null
-
-        
-
-        let dateDescriptor = "", sDate = this.props.startDate.split("-"), eDate = this.props.endDate.split("-");
-        if (sDate && sDate.length === 3) {
-            dateDescriptor += monthNames[sDate[1] - 1] + " " + Number(sDate[2]);
-            if (eDate && eDate.length === 3 && this.props.endDate !== this.props.startDate) {
-                dateDescriptor += " - " + (monthNames[eDate[1] - 1] !== monthNames[sDate[1] - 1] ? monthNames[eDate[1] - 1] + " " : "") + Number(eDate[2]) + ", " + sDate[0];
-            } else dateDescriptor += ", " + sDate[0];
-        }
+            let awardList2 = teamed ? this.awardListGenerator(this.awards2) : null;
 
         return (
             <div className={"bg-gray-4 rounded-lg " + this.props.className + " " + BobbleCSS.card}>
