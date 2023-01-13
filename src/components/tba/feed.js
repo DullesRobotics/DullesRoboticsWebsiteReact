@@ -43,7 +43,7 @@ export default function TBAFeed(props) {
         );
     }
 
-    const title = lang.news.competition_results.title.replace("%year%", competitionsData.season ? competitionsData.season : new Date().getFullYear())
+    const title = lang.news.competition_results.title.replace("%year%", competitionsData.season ? Number(competitionsData.season) + 1 : new Date().getFullYear())
 
     return (
         <div className="px-4">
@@ -157,21 +157,21 @@ class Bobble extends React.Component {
         return descriptor + ".";
     }
 
-    render() {
-        const teamed = (this.props.status.team12456 !== null || this.props.status.team13822 !== null) && isNaN(this.props.status.wins);
-        this.rank = teamed ? this.props.status.team12456.rank : this.props.status.rank
-        this.scoring = teamed ? [this.props.status.team12456.wins, this.props.status.team12456.losses, this.props.status.team12456.ties] : [this.props.status.wins, this.props.status.losses, this.props.status.ties]
-        this.awards = teamed ? this.props.status.team12456.awards : this.props.status.awards
+    render() {      
+            const teamed = (this.props.status.team12456 !== null || this.props.status.team13822 !== null) && isNaN(this.props.status.wins);
+            this.rank = teamed ? this.props.status.team12456.rank : this.props.status.rank
+            this.scoring = teamed ? [this.props.status.team12456.wins, this.props.status.team12456.losses, this.props.status.team12456.ties] : [this.props.status.wins, this.props.status.losses, this.props.status.ties]
+            this.awards = teamed ? this.props.status.team12456.awards : this.props.status.awards
 
-        this.team2 = this.props.status.team13822;
-        if (teamed && this.team2) {
-            this.rank2 = this.props.status.team13822.rank
-            this.scoring2 = [this.props.status.team13822.wins, this.props.status.team13822.losses, this.props.status.team13822.ties]
-            this.awards2 = this.props.status.team13822.awards
-        }
+            this.team2 = this.props.status.team13822;
+            if (teamed && this.team2) {
+                this.rank2 = this.props.status.team13822.rank
+                this.scoring2 = [this.props.status.team13822.wins, this.props.status.team13822.losses, this.props.status.team13822.ties]
+                this.awards2 = this.props.status.team13822.awards
+            }
 
-        let awardList = this.awardListGenerator(this.awards)
-        let awardList2 = teamed ? this.awardListGenerator(this.awards2) : null
+            let awardList = this.awardListGenerator(this.awards)
+            let awardList2 = teamed ? this.awardListGenerator(this.awards2) : null
 
         let title = this.props.title.replace("FTC", "").replace("FRC", ""), suspended = title.indexOf("***SUSPENDED***") > -1, canceled = title.indexOf("(Cancelled)") > -1;
         if (suspended) title = title.replace("***SUSPENDED***", "").trim();
