@@ -159,7 +159,24 @@ class Bobble extends React.Component {
     }
 
     render() {
-        if(!this.props.upcoming){
+
+        let title = this.props.title.replace("FTC", "").replace("FRC", ""), suspended = title.indexOf("***SUSPENDED***") > -1, canceled = title.indexOf("(Cancelled)") > -1;
+        if (suspended) title = title.replace("***SUSPENDED***", "").trim();
+        if (canceled) title = title.replace("(Cancelled)", "").replace("*", "");
+
+        if(this.props.upcoming){
+            return (
+                <div className={"bg-gray-4 rounded-lg " + this.props.className + " " + BobbleCSS.card}>
+                <div className="m-2">
+                    <p className="text-xl font-bold flex">{title}</p>
+                    <p className="font-medium text-md">{this.props.type}</p>
+                    <p className="font-thin text-md">{(dateDescriptor !== "" ? dateDescriptor + " in " : "") + (this.props.location ? this.props.location : "")}</p>
+                    {this.props.eventType ? <p className="font-thin text-md">{title.toLowerCase().indexOf(this.props.eventType.toLowerCase()) > -1 ? "" : this.props.eventType}</p> : <></>}
+                    <p className="text-lg font-semibold italic flex">This event hasn't begun yet.</p>
+                    </div>
+            </div>
+            )
+        } else {
             const teamed = (this.props.status.team12456 !== null || this.props.status.team13822 !== null) && isNaN(this.props.status.wins);
             this.rank = teamed ? this.props.status.team12456.rank : this.props.status.rank
             this.scoring = teamed ? [this.props.status.team12456.wins, this.props.status.team12456.losses, this.props.status.team12456.ties] : [this.props.status.wins, this.props.status.losses, this.props.status.ties]
@@ -175,11 +192,7 @@ class Bobble extends React.Component {
             let awardList = this.awardListGenerator(this.awards)
             let awardList2 = teamed ? this.awardListGenerator(this.awards2) : null
 
-        }
-
-        let title = this.props.title.replace("FTC", "").replace("FRC", ""), suspended = title.indexOf("***SUSPENDED***") > -1, canceled = title.indexOf("(Cancelled)") > -1;
-        if (suspended) title = title.replace("***SUSPENDED***", "").trim();
-        if (canceled) title = title.replace("(Cancelled)", "").replace("*", "");
+        
 
         let dateDescriptor = "", sDate = this.props.startDate.split("-"), eDate = this.props.endDate.split("-");
         if (sDate && sDate.length === 3) {
@@ -198,7 +211,6 @@ class Bobble extends React.Component {
                     {this.props.eventType ? <p className="font-thin text-md">{title.toLowerCase().indexOf(this.props.eventType.toLowerCase()) > -1 ? "" : this.props.eventType}</p> : <></>}
                     {suspended ? <p className="text-lg font-semibold italic flex">This event has been suspended.</p>
                         : canceled ? <p className="text-lg font-semibold italic flex">This event has been canceled.</p>
-                        : this.props.upcoming ? <p className="text-lg font-semibold italic flex">This event hasn't started yet.</p>
                             : <Popup
                                 trigger={
                                     <button className="button mt-2">
@@ -258,7 +270,7 @@ class Bobble extends React.Component {
                 </div>
             </div>
         );
-    }
+    }}
 }
 
 Bobble.propTypes = {
