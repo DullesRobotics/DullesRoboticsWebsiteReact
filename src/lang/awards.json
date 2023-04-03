@@ -4,21 +4,6 @@
     "year": 2022,
     "ftc": [
       {
-        "name": "FTC Inspire Award",
-        "description": "**1st Place**\n\nAwarded at the Southwest Houston League Championship",
-        "icon": "thumbs-up"
-      },
-      {
-        "name": "FTC Finalist Alliance",
-        "description": "Awarded at the Southwest Houston League Championship",
-        "icon": "trophy"
-      },
-      {
-        "name": "FTC Connect Award",
-        "description": "**1st Place**\n\nAwarded at the Southwest Houston League Championship",
-        "icon": "handshake"
-      },
-      {
         "name": "FTC Design Award",
         "description": "**2nd Place**\n\nAwarded at the Southwest Houston League Championship",
         "icon": "palette"
@@ -27,11 +12,6 @@
         "name": "FTC Control Award",
         "description": "**2nd & 3rd Place**\n\nAwarded at the Southwest Houston League Championship",
         "icon": "code"
-      },
-      {
-        "name": "FTC Think Award",
-        "description": "**2nd & 3rd Place**\n\nAwarded at the Southwest Houston League Championship",
-        "icon": "lightbulb"
       }
     ]
   },
