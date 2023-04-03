@@ -5,13 +5,18 @@
     "ftc": [
       {
         "name": "FTC Design Award",
-        "description": "**2nd Place**\n\nAwarded at the Southwest Houston League Championship",
+        "description": "**1st Place**\n\nAwarded at the Southwest Houston League Championship",
         "icon": "palette"
       },
       {
         "name": "FTC Control Award",
-        "description": "**2nd & 3rd Place**\n\nAwarded at the Southwest Houston League Championship",
+        "description": "**1st Place**\n\nAwarded at the Southwest Houston League Championship",
         "icon": "code"
+      }.
+      {
+        "name": "FTC Innovate Award",
+        "description": "**2nd Place**\n\nAwarded at the Southwest Houston League Championship",
+        "icon": "arrow-alt-circle-up"
       }
     ]
   },
