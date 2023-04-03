@@ -30,21 +30,21 @@
     "image": "Sv4ib44pvUuVVxE.jpg"
   },
   {
-    "name": "Hasini Nareddy",
+    "name": "Manvi Vatani",
+    "designation": "Treasurer",
+    "description": "Manvi Vatani has assisted with robotics build teams and administration since her freshmen year. She has been a leader in all robotics competitions, regardless of if Dulles was hosting it. Manvi assists with planning and running meets and tournaments.",
+    "image": "BVhEUYIlr9qepYz.jpg"
+  },
+  {
+    "name": "Alex Chou",
     "designation": "Secretary",
-    "description": "Hasini Nareddy is a sophomore who has shown a passion for robotics ever since she joined our club. She's experienced in the build department, but wants to contribute to programming as she learns how to code. She will be in charge of logging meeting minutes and keeping engineering logs.",
-    "image": "mNujjh68b3UGduP.png"
+    "description": "Alex Chou is a sophomore who has shown a passion for robotics ever since he joined our club. He's experienced in the build department, but wants to contribute to programming as he learns how to code. He will be in charge of logging meeting minutes and keeping engineering logs.",
+    "image": "4y2jm17idMfehrM.jpg"
   },
   {
     "name": "Nathan Luong",
     "designation": "Historian",
     "description": "Nathan Luong is a junior at Dulles and has been with the club for 3 years. He is experienced in CAD and robot build, and he also manages the clubs budget.",
     "image": "D-KEqmaFc8inMmI.png"
-  },
-  {
-    "name": "Tanav Palisetti",
-    "designation": "Senior Advisor",
-    "description": "A senior who has been with the club for all 4 years, Tanav has assisted with robotics build teams and administration since his freshmen year. He has been a leader in all robotics competitions, regardless of if Dulles was hosting it. Tanav assists with planning and running meets and tournaments.",
-    "image": "FZIQw3PADvh0s47.png"
   }
 ]
