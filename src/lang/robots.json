@@ -28,7 +28,7 @@
       "Custom modeled and printed bevel gears to turn motor rotation 90 degrees to the wheels.",
       "Custom modeled and printed claw and motor mounts.",
       "Drawer slides as a linear slide to save money and utilize the materials we had on hand."
-    ],
+    ]
   },
   {
     "name": "Fenrir",
@@ -55,9 +55,8 @@
       }
     ],
     "features": [
-      "Composed of C-Channels, custom 3D printed Bevel Gears and claw, 5203 motors, 96 mm mecanum wheels, and a 4-stage linear slide.",
-      ""
-    ],
+      "Composed of C-Channels, custom 3D printed Bevel Gears and claw, 5203 motors, 96 mm mecanum wheels, and a 4-stage linear slide."
+    ]
   },
   {
     "name": "Plateosaurus",
