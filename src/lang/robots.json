@@ -1,5 +1,65 @@
 [
   {
+    "name": "Tyr(e)",
+    "type": "FTC",
+    "team-name": "Big Red",
+    "team-number": "12456",
+    "year": 2023,
+    "image": "StmdNAlL1vd6t8e.jpg",
+    "gradient": "linear-gradient(180deg, rgba(206, 179, 179, 0.6) 0%, rgba(236, 112, 112, 0.6) 100%)",
+    "description": "Tyr(e) was Big Red's robot used in the FTC Power Play season.",
+    "game": "Power Play",
+    "specs": {
+      "weight": "≅ 30 lbs."
+    },
+    "competitions": [
+      {
+        "name": "Houston Southwest FTC League Meet 1"
+      },
+      {
+        "name": "Houston Southwest FTC League Meet 2"
+      },
+      {
+        "name": "Houston Southwest FTC League Meet 3"
+      }
+    ],
+    "features": [
+      "The mecanum drivetrain gave the robot quick but strafable movement throughout the field. The wheels were bigger to account for the barrier.",
+      "Custom modeled and printed bevel gears to turn motor rotation 90 degrees to the wheels.",
+      "Custom modeled and printed claw and motor mounts.",
+      "Drawer slides as a linear slide to save money and utilize the materials we had on hand."
+    ],
+  },
+  {
+    "name": "Fenrir",
+    "type": "FTC",
+    "team-name": "RoboVikings",
+    "team-number": "13822",
+    "year": 2022,
+    "image": "XHT6cF3MJe6Hhbp.jpg",
+    "gradient": "linear-gradient(180deg, rgba(191, 175, 211, 0.6) 0%, rgba(155, 107, 214, 0.6) 100%)",
+    "description": "Fenrir was Roboviking's robot used in the FTC Power Play season.",
+    "game": "Power Play",
+    "specs": {
+      "weight": "≅ 26 lbs."
+    },
+    "competitions": [
+      {
+        "name": "Houston Southwest FTC League Meet 1"
+      },
+      {
+        "name": "Houston Southwest FTC League Meet 2"
+      },
+      {
+        "name": "Houston Southwest FTC League Meet 3"
+      }
+    ],
+    "features": [
+      "Composed of C-Channels, custom 3D printed Bevel Gears and claw, 5203 motors, 96 mm mecanum wheels, and a 4-stage linear slide.",
+      ""
+    ],
+  },
+  {
     "name": "Plateosaurus",
     "type": "FTC",
     "team-name": "Big Red",
