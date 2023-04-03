@@ -12,15 +12,15 @@
     "image": "lBso4IjogwJQzgC.jpg"
   },
   {
-    "name": "Tanav Palisetti",
-    "designation": "Senior Advisor",
-    "description": "A senior who has been with the club for all 4 years, Tanav has assisted with robotics build teams and administration since his freshmen year. He has been a leader in all robotics competitions, regardless of if Dulles was hosting it. Tanav assists with planning and running meets and tournaments.",
-    "image": "FZIQw3PADvh0s47.png"
+    "name": "Elysia Li",
+    "designation": "Vice President - Communications",
+    "description": "Elysia Li is a sophomore at Dulles who has been with the club for 2 years. She records memories through pictures and media, and spends her time working on pit and other design necessities. She hopes to outreach to as many people as possible.",
+    "image": "IX1oo8s32IxL9kn.jpg"
   },
   {
     "name": "Grace Yu",
-    "designation": "2nd Vice President & Student Life Lead",
-    "description": "Grace id a Sophomore at Dulles and has been with the club for 2 years. She enjoys to CAD and 3d print but finds she spends more time complaining about the printer than printing. For her role in robotics, she tries to get activities organized",
+    "designation": "Vice President - Student Life",
+    "description": "Grace is a Sophomore at Dulles and has been with the club for 2 years. She likes to CAD and 3d print but finds she spends more time complaining about the printer than printing. For her role in robotics, she tries to get activities organized",
     "image": "gjDMgV2ymEU9YlH.jpg"
   },
   {
@@ -37,14 +37,14 @@
   },
   {
     "name": "Nathan Luong",
-    "designation": "Financial Secretary",
+    "designation": "Historian",
     "description": "Nathan Luong is a junior at Dulles and has been with the club for 3 years. He is experienced in CAD and robot build, and he also manages the clubs budget.",
     "image": "D-KEqmaFc8inMmI.png"
   },
   {
-    "name": "Elysia Li",
-    "designation": "Historian",
-    "description": "Elysia Li is a sophomore at Dulles who has been with the club for 2 years. She records memories through pictures and media, and spends her time working on pit and other design necessities. She hopes to outreach to as many people as possible.",
-    "image": "IX1oo8s32IxL9kn.jpg"
+    "name": "Tanav Palisetti",
+    "designation": "Senior Advisor",
+    "description": "A senior who has been with the club for all 4 years, Tanav has assisted with robotics build teams and administration since his freshmen year. He has been a leader in all robotics competitions, regardless of if Dulles was hosting it. Tanav assists with planning and running meets and tournaments.",
+    "image": "FZIQw3PADvh0s47.png"
   }
 ]
